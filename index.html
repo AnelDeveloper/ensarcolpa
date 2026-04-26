@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get On Track | Personal Fitness Trainer — Book Online Sessions, Competition Prep & Coaching</title>
-    <meta name="description" content="Get On Track — certified personal fitness trainer offering 1-on-1 training, competition prep, online coaching & custom nutrition plans. Book your session today. Available in USA & Europe.">
-    <meta name="keywords" content="personal trainer, fitness coach, online coaching, competition prep, bodybuilding coach, personal training sessions, book fitness trainer, nutrition plan, body transformation, workout program, Get On Track fitness">
+    <meta name="description" content="Get On Track — holistic health & lifestyle coaching. Personalized nutrition, training, hormone & blood work optimization, sleep, and habit coaching. Look better, feel better, live better. Available worldwide.">
+    <meta name="keywords" content="health coach, lifestyle coach, personal trainer, online coaching, holistic fitness, hormone optimization, nutrition plan, blood work analysis, sleep optimization, habit coaching, weight loss coach, body transformation, gut health, mindset coaching, Get On Track fitness">
     <meta name="author" content="Get On Track Fitness">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://getontrack.com/">
@@ -210,6 +210,35 @@
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .nav-mobile-controls {
+            display: none;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-toggle {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--white);
+            padding: 6px 12px;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 50px;
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .lang-toggle-mobile {
+            padding: 6px 10px;
+            font-size: 0.75rem;
+        }
 
         /* Touch-friendly tap targets */
         @media (pointer: coarse) {
@@ -451,6 +480,120 @@
             font-size: 0.75rem;
             color: var(--gray-light);
             font-family: var(--font-body);
+        }
+
+        /* Tier system */
+        .services-grid-tiers { margin-bottom: 24px; }
+
+        .service-tier-label {
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .service-card-featured {
+            border-color: var(--red) !important;
+            background: linear-gradient(180deg, rgba(196,30,30,0.08), var(--dark-light));
+            transform: translateY(-12px);
+        }
+
+        .service-card-featured::before {
+            transform: scaleX(1) !important;
+            background: linear-gradient(90deg, var(--red), var(--gold)) !important;
+        }
+
+        .service-featured-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+            padding: 4px 10px;
+            text-transform: uppercase;
+        }
+
+        .service-card-premium {
+            border-color: rgba(245,166,35,0.3) !important;
+            background: linear-gradient(180deg, rgba(245,166,35,0.05), var(--dark-light));
+        }
+
+        .service-card-premium .service-icon {
+            background: rgba(245,166,35,0.15);
+        }
+
+        .service-card-premium .service-icon svg {
+            color: var(--gold);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 6px 0 6px 22px;
+            position: relative;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--red);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .service-card-premium .service-features li::before {
+            color: var(--gold);
+        }
+
+        .services-extras {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .service-card-small {
+            padding: 28px 24px;
+        }
+
+        .service-card-small .service-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 16px;
+        }
+
+        .service-card-small .service-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .service-card-small h3 {
+            font-size: 1rem;
+        }
+
+        .service-card-small p {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card-small .service-price {
+            font-size: 1.2rem;
         }
 
         /* ===== GALLERY ===== */
@@ -1144,6 +1287,9 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid-tiers { grid-template-columns: 1fr; }
+            .service-card-featured { transform: none; }
+            .services-extras { grid-template-columns: repeat(2, 1fr); }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
             .testimonials-grid { grid-template-columns: 1fr 1fr; }
@@ -1172,6 +1318,9 @@
             }
             .nav-links.open a { font-size: 1.2rem; }
             .hamburger { display: flex; }
+            .nav-mobile-controls { display: flex; }
+            .nav-links li:nth-last-child(-n+2) { display: none; }
+            .nav-links.open li:nth-last-child(-n+2) { display: list-item; }
             .logo { font-size: 1.3rem; }
 
             /* Hero */
@@ -1199,6 +1348,8 @@
             .services { padding: 80px 0; }
             .services-grid { grid-template-columns: 1fr; gap: 16px; }
             .service-card { padding: 28px 20px; }
+            .service-card-featured { transform: none; }
+            .services-extras { grid-template-columns: 1fr; gap: 16px; margin-top: 24px; padding-top: 24px; }
 
             /* Gallery */
             .gallery { padding: 80px 0; }
@@ -1337,37 +1488,38 @@
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "1-on-1 Personal Training" },
-                    "price": "85.00",
-                    "priceCurrency": "USD",
+                    "itemOffered": { "@type": "Service", "name": "Foundation Program — nutrition, training, habits, supplements" },
+                    "price": "109.00",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Lifestyle Transformation — coaching with weekly check-ins" },
+                    "price": "229.00",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "Health Optimization — blood work, hormones, gut, sleep" },
+                    "price": "459.00",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": { "@type": "Service", "name": "1-on-1 In-Person Training" },
+                    "price": "79.00",
+                    "priceCurrency": "EUR",
                     "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "session" }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": { "@type": "Service", "name": "Competition Prep" },
-                    "price": "150.00",
-                    "priceCurrency": "USD",
+                    "price": "139.00",
+                    "priceCurrency": "EUR",
                     "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "session" }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Online Coaching" },
-                    "price": "200.00",
-                    "priceCurrency": "USD",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Nutrition Planning" },
-                    "price": "120.00",
-                    "priceCurrency": "USD",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "12-Week Transformation Package" },
-                    "price": "999.00",
-                    "priceCurrency": "USD"
                 }
             ]
         }
@@ -1418,26 +1570,26 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What types of training does Get On Track offer?",
+                "name": "What does Get On Track coaching include?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Get On Track offers 1-on-1 personal training, competition preparation, online coaching, custom nutrition planning, and a 12-week body transformation package."
+                    "text": "Three tiers: Foundation (€109/mo) covers nutrition, training, habits, and supplements. Lifestyle Transformation (€229/mo) adds weekly check-ins and mindset coaching. Health Optimization (€459/mo) is the premium tier with blood work analysis, hormone protocols, gut health, and monthly video consultations."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Can I train online from a different timezone?",
+                "name": "Is this only for athletes or competitors?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! Get On Track supports clients across all US timezones (EST, CST, MST, PST) and European timezones (GMT, CET, EET). Book sessions in your local time."
+                    "text": "No. Get On Track is built for regular people who want to look better, feel better, and improve their health — not for extreme physiques. Most clients are professionals who want sustainable lifestyle change, better blood work, more energy, and habits that actually stick."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How much does a personal training session cost?",
+                "name": "Can I work with the coach online from anywhere?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "1-on-1 personal training starts at $85 per session. Competition prep is $150 per session. Online coaching is $200/month. Your first consultation is free."
+                    "text": "Yes. Get On Track supports clients across all US timezones (EST, CST, MST, PST) and European timezones (GMT, CET, EET). Book sessions and video consultations in your local time."
                 }
             }
         ]
@@ -1453,15 +1605,23 @@
         <div class="container">
             <a href="#" class="logo">GET ON<span>TRACK</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Programs</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#booking">Book</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#booking" class="nav-book-btn">Book Session</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                <li><a href="#booking" data-i18n="nav_book">Book</a></li>
+                <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="#booking" class="nav-book-btn" data-i18n="nav_book_btn">Book Session</a></li>
+                <li><button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+                    <span id="langCurrent">EN</span>
+                </button></li>
             </ul>
-            <div class="hamburger" id="hamburger" onclick="toggleNav()">
-                <span></span><span></span><span></span>
+            <div class="nav-mobile-controls">
+                <button class="lang-toggle lang-toggle-mobile" onclick="toggleLang()" aria-label="Switch language">
+                    <span id="langCurrentMobile">EN</span>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleNav()">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -1475,25 +1635,25 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <span class="hero-badge">Certified Personal Trainer</span>
-                <h1>Transform Your <span class="highlight-red">Body</span> & <span class="highlight-gold">Mind</span></h1>
-                <p>Get On Track with a competition-proven coach. Whether you're starting your fitness journey or preparing for the stage, I'll get you there.</p>
+                <span class="hero-badge" data-i18n="hero_badge">Health & Lifestyle Coach</span>
+                <h1 data-i18n-html="hero_title">Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span></h1>
+                <p data-i18n="hero_desc">Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.</p>
                 <div class="hero-buttons">
-                    <a href="#booking" class="btn btn-primary">Book a Session</a>
-                    <a href="#services" class="btn btn-outline">View Programs</a>
+                    <a href="#booking" class="btn btn-primary" data-i18n="hero_cta_primary">Start Your Journey</a>
+                    <a href="#services" class="btn btn-outline" data-i18n="hero_cta_secondary">View Programs</a>
                 </div>
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <h3>10+</h3>
-                        <p>Years Experience</p>
+                        <p data-i18n="stat_experience">Years Experience</p>
                     </div>
                     <div class="hero-stat">
-                        <h3>500+</h3>
-                        <p>Clients Transformed</p>
+                        <h3>300+</h3>
+                        <p data-i18n="stat_lives">Lives Changed</p>
                     </div>
                     <div class="hero-stat">
-                        <h3>15+</h3>
-                        <p>Competitions Won</p>
+                        <h3>100%</h3>
+                        <p data-i18n="stat_personal">Personalized Approach</p>
                     </div>
                 </div>
             </div>
@@ -1508,26 +1668,34 @@
                     <img src="images/1-2.jpeg" alt="Fitness trainer showing physique results from dedicated training program" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <p class="section-label">About Me</p>
-                    <h2 class="section-title">Dedicated To Your <span>Results</span></h2>
-                    <p>With over a decade of experience in competitive bodybuilding and personal training, I bring a proven, science-based approach to every session. My journey from the gym floor to the competition stage has taught me what it takes to push limits and achieve extraordinary results.</p>
-                    <p>I specialize in body transformations, strength training, and competition preparation. Every program I create is tailored to your unique goals, body type, and lifestyle.</p>
+                    <p class="section-label" data-i18n="about_label">About Me</p>
+                    <h2 class="section-title" data-i18n-html="about_title">A Holistic Approach To <span>Your Health</span></h2>
+                    <p data-i18n="about_p1">Over a decade of coaching has taught me one thing: real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last. I work with regular people who want to look better, feel better, and take ownership of their health.</p>
+                    <p data-i18n="about_p2">My coaching goes beyond workouts. I help clients optimize blood markers, hormones, sleep quality, digestion, mood, and mindset. Whether you want to drop weight, build strength, fix your energy levels, or simply feel at home in your body — every program is built around your real life.</p>
                     <div class="about-features">
                         <div class="about-feature">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Certified Coach</span>
+                            <span data-i18n="about_feat_1">Certified Coach</span>
                         </div>
                         <div class="about-feature">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Competition Prep</span>
+                            <span data-i18n="about_feat_2">Health & Lifestyle</span>
                         </div>
                         <div class="about-feature">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Custom Nutrition</span>
+                            <span data-i18n="about_feat_3">Custom Nutrition</span>
                         </div>
                         <div class="about-feature">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Online & In-Person</span>
+                            <span data-i18n="about_feat_4">Mindset Coaching</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span data-i18n="about_feat_5">Sleep & Recovery</span>
+                        </div>
+                        <div class="about-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span data-i18n="about_feat_6">Online & In-Person</span>
                         </div>
                     </div>
                 </div>
@@ -1539,57 +1707,89 @@
     <section class="services" id="services" aria-label="Training programs and pricing">
         <div class="container">
             <div class="services-header fade-up">
-                <p class="section-label">Programs</p>
-                <h2 class="section-title">Training <span>Programs</span></h2>
+                <p class="section-label" data-i18n="programs_label">Programs</p>
+                <h2 class="section-title" data-i18n-html="programs_title">Coaching <span>Programs</span></h2>
+                <p style="color: var(--gray-light); margin-top: 12px; font-size: 0.95rem;" data-i18n="programs_intro">Three tiers built for real results — from foundational habits to full health optimization. Pick what fits where you are.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid services-grid-tiers">
                 <div class="service-card fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3>1-on-1 Personal Training</h3>
-                    <p>Customized workout sessions tailored to your goals. Hands-on coaching with real-time form correction and motivation.</p>
-                    <div class="service-price">$85 <small>/ session</small></div>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Competition Prep</h3>
-                    <p>Complete stage-ready preparation including posing practice, peak week protocols, and nutrition periodization.</p>
-                    <div class="service-price">$150 <small>/ session</small></div>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    </div>
-                    <h3>Online Coaching</h3>
-                    <p>Full training and nutrition program with weekly check-ins. Perfect for athletes who train remotely.</p>
-                    <div class="service-price">$200 <small>/ month</small></div>
-                </div>
-                <div class="service-card fade-up">
+                    <div class="service-tier-label" data-i18n="tier_1_label">Tier 1 · Foundation</div>
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
                     </div>
-                    <h3>Nutrition Planning</h3>
-                    <p>Personalized meal plans and macro tracking. Designed for your body type, goals, and food preferences.</p>
-                    <div class="service-price">$120 <small>/ month</small></div>
+                    <h3 data-i18n="tier_1_title">Foundation Program</h3>
+                    <p data-i18n="tier_1_desc">Your starting point. Structured nutrition plan, training program, daily habits, and supplement guidance — all delivered through the app.</p>
+                    <ul class="service-features">
+                        <li data-i18n="tier_1_f1">Personalized nutrition plan</li>
+                        <li data-i18n="tier_1_f2">Custom training program</li>
+                        <li data-i18n="tier_1_f3">Habit tracking & guidance</li>
+                        <li data-i18n="tier_1_f4">Supplement recommendations</li>
+                        <li data-i18n="tier_1_f5">Web & app access</li>
+                    </ul>
+                    <div class="service-price">€109 <small data-i18n="per_month">/ month</small></div>
                 </div>
-                <div class="service-card fade-up">
+
+                <div class="service-card service-card-featured fade-up">
+                    <div class="service-featured-badge" data-i18n="most_popular">Most Popular</div>
+                    <div class="service-tier-label" data-i18n="tier_2_label">Tier 2 · Lifestyle</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
-                    <h3>Transformation Package</h3>
-                    <p>12-week full body transformation with training, nutrition, and weekly accountability. Your complete overhaul.</p>
-                    <div class="service-price">$999 <small>/ 12 weeks</small></div>
+                    <h3 data-i18n="tier_2_title">Lifestyle Transformation</h3>
+                    <p data-i18n="tier_2_desc">For sustainable change. Everything in Foundation plus mindset coaching, weekly check-ins, and lifestyle audits to make your habits stick for life.</p>
+                    <ul class="service-features">
+                        <li data-i18n="tier_2_f1">Everything in Foundation</li>
+                        <li data-i18n="tier_2_f2">Weekly video check-ins</li>
+                        <li data-i18n="tier_2_f3">Mindset & belief coaching</li>
+                        <li data-i18n="tier_2_f4">Sleep & stress optimization</li>
+                        <li data-i18n="tier_2_f5">Adjustments based on progress</li>
+                    </ul>
+                    <div class="service-price">€229 <small data-i18n="per_month">/ month</small></div>
                 </div>
-                <div class="service-card fade-up">
+
+                <div class="service-card service-card-premium fade-up">
+                    <div class="service-tier-label" data-i18n="tier_3_label">Tier 3 · Premium</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3 data-i18n="tier_3_title">Health Optimization</h3>
+                    <p data-i18n="tier_3_desc">The complete package. Deep analysis of your blood work, hormones, and lifestyle markers — with a fully personalized protocol to fix them at the root.</p>
+                    <ul class="service-features">
+                        <li data-i18n="tier_3_f1">Everything in Lifestyle</li>
+                        <li data-i18n="tier_3_f2">Blood work & lipid panel analysis</li>
+                        <li data-i18n="tier_3_f3">Hormone optimization protocol</li>
+                        <li data-i18n="tier_3_f4">Gut health & digestion plan</li>
+                        <li data-i18n="tier_3_f5">Personalized supplementation</li>
+                        <li data-i18n="tier_3_f6">Monthly 1-on-1 video consultations</li>
+                    </ul>
+                    <div class="service-price">€459 <small data-i18n="per_month">/ month</small></div>
+                </div>
+            </div>
+
+            <div class="services-extras">
+                <div class="service-card service-card-small fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3 data-i18n="extra_1_title">1-on-1 In-Person Training</h3>
+                    <p data-i18n="extra_1_desc">Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.</p>
+                    <div class="service-price">€79 <small data-i18n="per_session">/ session</small></div>
+                </div>
+                <div class="service-card service-card-small fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 data-i18n="extra_2_title">Competition Prep</h3>
+                    <p data-i18n="extra_2_desc">For the few who want to step on stage — full prep with posing, peak week protocols, and periodization.</p>
+                    <div class="service-price">€139 <small data-i18n="per_session">/ session</small></div>
+                </div>
+                <div class="service-card service-card-small fade-up">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                     </div>
-                    <h3>Free Consultation</h3>
-                    <p>30-minute no-commitment consultation to discuss your goals, assess your needs, and build your roadmap.</p>
-                    <div class="service-price">Free</div>
+                    <h3 data-i18n="extra_3_title">Free Discovery Call</h3>
+                    <p data-i18n="extra_3_desc">30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.</p>
+                    <div class="service-price" data-i18n="free">Free</div>
                 </div>
             </div>
         </div>
@@ -1599,8 +1799,8 @@
     <section class="gallery" id="gallery" aria-label="Photo gallery">
         <div class="container">
             <div class="gallery-header fade-up">
-                <p class="section-label">Gallery</p>
-                <h2 class="section-title">The <span>Grind</span> Never Stops</h2>
+                <p class="section-label" data-i18n="gallery_label">Gallery</p>
+                <h2 class="section-title" data-i18n-html="gallery_title">In The <span>Gym</span></h2>
             </div>
             <div class="gallery-grid fade-up">
                 <div class="gallery-item"><img src="images/1-1.jpeg" alt="Personal trainer doing cable crossover exercise in the gym" loading="lazy"></div>
@@ -1616,9 +1816,9 @@
     <section class="booking" id="booking" aria-label="Book a training session">
         <div class="container">
             <div class="booking-header fade-up">
-                <p class="section-label">Schedule</p>
-                <h2 class="section-title">Book Your <span>Session</span></h2>
-                <p>Select your timezone, pick a date, and choose a time that works for you. Sessions available for both USA and European clients.</p>
+                <p class="section-label" data-i18n="booking_label">Schedule</p>
+                <h2 class="section-title" data-i18n-html="booking_title">Book Your <span>Session</span></h2>
+                <p data-i18n="booking_desc">Select your timezone, pick a date, and choose a time that works for you. Sessions available for both USA and European clients.</p>
             </div>
             <div class="booking-wrapper fade-up">
                 <div class="calendar-section">
@@ -1638,22 +1838,22 @@
                             <button onclick="changeMonth(1)">&#8594;</button>
                         </div>
                         <div class="calendar-weekdays">
-                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                            <span data-i18n="day_mon">Mon</span><span data-i18n="day_tue">Tue</span><span data-i18n="day_wed">Wed</span><span data-i18n="day_thu">Thu</span><span data-i18n="day_fri">Fri</span><span data-i18n="day_sat">Sat</span><span data-i18n="day_sun">Sun</span>
                         </div>
                         <div class="calendar-days" id="calendarDays"></div>
                         <div class="calendar-legend">
-                            <div class="legend-item"><div class="legend-dot available"></div> Available</div>
-                            <div class="legend-item"><div class="legend-dot booked-dot"></div> Booked</div>
-                            <div class="legend-item"><div class="legend-dot today-dot"></div> Today</div>
+                            <div class="legend-item"><div class="legend-dot available"></div> <span data-i18n="legend_available">Available</span></div>
+                            <div class="legend-item"><div class="legend-dot booked-dot"></div> <span data-i18n="legend_booked">Booked</span></div>
+                            <div class="legend-item"><div class="legend-dot today-dot"></div> <span data-i18n="legend_today">Today</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="time-slots-section">
-                    <h3>Select Time</h3>
+                    <h3 data-i18n="select_time">Select Time</h3>
                     <div id="timeSlotContent">
                         <div class="no-date-message">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            <p>Select a date on the calendar to see available time slots</p>
+                            <p data-i18n="select_date_msg">Select a date on the calendar to see available time slots</p>
                         </div>
                     </div>
                 </div>
@@ -1665,8 +1865,8 @@
     <section class="testimonials" id="testimonials" aria-label="Client testimonials and reviews">
         <div class="container">
             <div class="testimonials-header fade-up">
-                <p class="section-label">Testimonials</p>
-                <h2 class="section-title">What Clients <span>Say</span></h2>
+                <p class="section-label" data-i18n="testimonials_label">Testimonials</p>
+                <h2 class="section-title" data-i18n-html="testimonials_title">What Clients <span>Say</span></h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-up">
@@ -1677,12 +1877,12 @@
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <p>Potpuno mi je promijenio tijelo za 12 sedmica. Svaki trening je detaljno isplaniran, svaki obrok ima smisla. Nikad se nisam osjećao jače i samopouzdanije. Preporučujem svima!</p>
+                    <p data-i18n="review_1_text">Skinuo sam 14kg, ali još više od toga — energija mi se vratila, spavam bolje, krvna slika mi je sjajna. Nije ovo bila dijeta, nego promjena cijelog života. Konačno se osjećam dobro u svom tijelu.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Admir Kovačević"></div>
                         <div class="testimonial-author-info">
                             <strong>Admir Kovačević</strong>
-                            <span>Skinuo 14kg za 12 sedmica — Sarajevo, BiH</span>
+                            <span data-i18n="review_1_role">Lifestyle transformacija — Sarajevo, BiH</span>
                         </div>
                     </div>
                 </div>
@@ -1694,12 +1894,12 @@
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <p>Najbolja investicija ikad. Online program je toliko detaljan da sam se osjećala kao da imam trenera pored sebe na svakom treningu. Od početnice do takmičarke za samo 6 mjeseci!</p>
+                    <p data-i18n="review_2_text">Najbolja investicija ikad. Hormoni su mi se sredili, digestija također, raspoloženje neprepoznatljivo. Naučila sam kako da jedem, kako da treniram, kako da brinem o sebi. Ovo nije program — ovo je novi život.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Jovana Joca"></div>
                         <div class="testimonial-author-info">
                             <strong>Jovana-Joca</strong>
-                            <span>Prvo bikini takmičenje — 2. mjesto, Beograd</span>
+                            <span data-i18n="review_2_role">Health Optimization klijent — Beograd</span>
                         </div>
                     </div>
                 </div>
@@ -1711,12 +1911,12 @@
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <p>Working with him remotely from the US has been incredible. The timezone flexibility, weekly check-ins, and how he adapts my program based on progress — nothing else compares. Truly world-class coaching.</p>
+                    <p data-i18n="review_3_text">I came in tired, overweight, and burned out. Six months later my blood work looks unrecognizable, I'm sleeping 8 hours straight, and I have energy I haven't had since my 20s. This isn't just training — it's a complete reset.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jake Mitchell"></div>
                         <div class="testimonial-author-info">
                             <strong>Jake Mitchell</strong>
-                            <span>Online client — Austin, Texas, USA</span>
+                            <span data-i18n="review_3_role">Health Optimization client — Austin, Texas, USA</span>
                         </div>
                     </div>
                 </div>
@@ -1727,10 +1927,10 @@
     <!-- CTA -->
     <section class="cta">
         <div class="cta-content fade-up">
-            <p class="section-label">Ready?</p>
-            <h2>Start Your <span style="color: var(--gold);">Transformation</span> Today</h2>
-            <p>Your first consultation is free. No commitment, no pressure — just a conversation about your goals and how we can get you there.</p>
-            <a href="#booking" class="btn btn-primary">Book Free Consultation</a>
+            <p class="section-label" data-i18n="cta_label">Ready?</p>
+            <h2 data-i18n-html="cta_title">Ready To <span style="color: var(--gold);">Get On Track</span>?</h2>
+            <p data-i18n="cta_desc">Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.</p>
+            <a href="#booking" class="btn btn-primary" data-i18n="cta_btn">Book Free Discovery Call</a>
         </div>
     </section>
 
@@ -1741,28 +1941,28 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="logo">GET ON<span>TRACK</span></div>
-                    <p>Get On Track — personal training for anyone serious about transforming their body and performance. Available worldwide — in person and online.</p>
+                    <p data-i18n="footer_about">Get On Track — holistic health and lifestyle coaching for anyone serious about looking better, feeling better, and living better. Available worldwide — in person and online.</p>
                 </div>
                 <div>
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footer_quicklinks">Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Programs</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#booking">Book Session</a></li>
+                        <li><a href="#about" data-i18n="nav_about">About</a></li>
+                        <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
+                        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                        <li><a href="#booking" data-i18n="nav_book_btn">Book Session</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Programs</h4>
+                    <h4 data-i18n="footer_programs">Programs</h4>
                     <ul>
-                        <li><a href="#services">Personal Training</a></li>
-                        <li><a href="#services">Competition Prep</a></li>
-                        <li><a href="#services">Online Coaching</a></li>
-                        <li><a href="#services">Nutrition Plans</a></li>
+                        <li><a href="#services" data-i18n="tier_1_title">Foundation Program</a></li>
+                        <li><a href="#services" data-i18n="tier_2_title">Lifestyle Transformation</a></li>
+                        <li><a href="#services" data-i18n="tier_3_title">Health Optimization</a></li>
+                        <li><a href="#services" data-i18n="extra_1_title">In-Person Training</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Contact</h4>
+                    <h4 data-i18n="footer_contact">Contact</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1774,13 +1974,13 @@
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span style="font-size: 0.85rem; color: var(--gray-light);">Available Worldwide</span>
+                            <span style="font-size: 0.85rem; color: var(--gray-light);" data-i18n="available_worldwide">Available Worldwide</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Get On Track. All rights reserved.</p>
+                <p>&copy; 2026 Get On Track. <span data-i18n="rights_reserved">All rights reserved.</span></p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/ensar_colpa_fitness/" target="_blank" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -1810,13 +2010,262 @@
         <div class="modal">
             <button class="modal-close" onclick="closeModal()">&times;</button>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <h3>Session Booked!</h3>
-            <p>Your training session has been confirmed. You'll receive an email with the details and a calendar invite shortly.</p>
+            <h3 data-i18n="modal_title">Session Booked!</h3>
+            <p data-i18n="modal_desc">Your training session has been confirmed. You'll receive an email with the details and a calendar invite shortly.</p>
             <div class="booking-details" id="bookingDetails"></div>
         </div>
     </div>
 
+    <!-- EmailJS — free email service (200 emails/month) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // === EmailJS Configuration ===
+        // Sign up free at https://www.emailjs.com/ and replace these values:
+        const EMAILJS_CONFIG = {
+            publicKey: 'YOUR_PUBLIC_KEY',         // From EmailJS dashboard → Account → API Keys
+            serviceId: 'YOUR_SERVICE_ID',         // From EmailJS dashboard → Email Services
+            trainerTemplateId: 'YOUR_TRAINER_TEMPLATE_ID',  // Template that emails the trainer
+            clientTemplateId: 'YOUR_CLIENT_TEMPLATE_ID',    // Template that emails the client
+            trainerEmail: 'coach@getontrack.com'  // Trainer's email address
+        };
+
+        if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+            emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+        }
+    </script>
+
+    <script>
+        // ===== TRANSLATIONS (BS / EN) =====
+        const translations = {
+            en: {
+                // Navigation
+                nav_about: 'About', nav_programs: 'Programs', nav_gallery: 'Gallery',
+                nav_book: 'Book', nav_reviews: 'Reviews', nav_book_btn: 'Book Session',
+
+                // Hero
+                hero_badge: 'Health & Lifestyle Coach',
+                hero_title: 'Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span>',
+                hero_desc: "Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.",
+                hero_cta_primary: 'Start Your Journey', hero_cta_secondary: 'View Programs',
+                stat_experience: 'Years Experience', stat_lives: 'Lives Changed', stat_personal: 'Personalized Approach',
+
+                // About
+                about_label: 'About Me',
+                about_title: 'A Holistic Approach To <span>Your Health</span>',
+                about_p1: "Over a decade of coaching has taught me one thing: real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last. I work with regular people who want to look better, feel better, and take ownership of their health.",
+                about_p2: 'My coaching goes beyond workouts. I help clients optimize blood markers, hormones, sleep quality, digestion, mood, and mindset. Whether you want to drop weight, build strength, fix your energy levels, or simply feel at home in your body — every program is built around your real life.',
+                about_feat_1: 'Certified Coach', about_feat_2: 'Health & Lifestyle', about_feat_3: 'Custom Nutrition',
+                about_feat_4: 'Mindset Coaching', about_feat_5: 'Sleep & Recovery', about_feat_6: 'Online & In-Person',
+
+                // Programs
+                programs_label: 'Programs',
+                programs_title: 'Coaching <span>Programs</span>',
+                programs_intro: 'Three tiers built for real results — from foundational habits to full health optimization. Pick what fits where you are.',
+                most_popular: 'Most Popular', per_month: '/ month', per_session: '/ session', free: 'Free',
+
+                tier_1_label: 'Tier 1 · Foundation', tier_1_title: 'Foundation Program',
+                tier_1_desc: 'Your starting point. Structured nutrition plan, training program, daily habits, and supplement guidance — all delivered through the app.',
+                tier_1_f1: 'Personalized nutrition plan', tier_1_f2: 'Custom training program',
+                tier_1_f3: 'Habit tracking & guidance', tier_1_f4: 'Supplement recommendations', tier_1_f5: 'Web & app access',
+
+                tier_2_label: 'Tier 2 · Lifestyle', tier_2_title: 'Lifestyle Transformation',
+                tier_2_desc: 'For sustainable change. Everything in Foundation plus mindset coaching, weekly check-ins, and lifestyle audits to make your habits stick for life.',
+                tier_2_f1: 'Everything in Foundation', tier_2_f2: 'Weekly video check-ins',
+                tier_2_f3: 'Mindset & belief coaching', tier_2_f4: 'Sleep & stress optimization', tier_2_f5: 'Adjustments based on progress',
+
+                tier_3_label: 'Tier 3 · Premium', tier_3_title: 'Health Optimization',
+                tier_3_desc: 'The complete package. Deep analysis of your blood work, hormones, and lifestyle markers — with a fully personalized protocol to fix them at the root.',
+                tier_3_f1: 'Everything in Lifestyle', tier_3_f2: 'Blood work & lipid panel analysis',
+                tier_3_f3: 'Hormone optimization protocol', tier_3_f4: 'Gut health & digestion plan',
+                tier_3_f5: 'Personalized supplementation', tier_3_f6: 'Monthly 1-on-1 video consultations',
+
+                extra_1_title: '1-on-1 In-Person Training',
+                extra_1_desc: 'Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.',
+                extra_2_title: 'Competition Prep',
+                extra_2_desc: 'For the few who want to step on stage — full prep with posing, peak week protocols, and periodization.',
+                extra_3_title: 'Free Discovery Call',
+                extra_3_desc: '30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.',
+
+                // Gallery
+                gallery_label: 'Gallery', gallery_title: 'In The <span>Gym</span>',
+
+                // Booking
+                booking_label: 'Schedule', booking_title: 'Book Your <span>Session</span>',
+                booking_desc: 'Select your timezone, pick a date, and choose a time that works for you. Sessions available for both USA and European clients.',
+                day_mon: 'Mon', day_tue: 'Tue', day_wed: 'Wed', day_thu: 'Thu', day_fri: 'Fri', day_sat: 'Sat', day_sun: 'Sun',
+                legend_available: 'Available', legend_booked: 'Booked', legend_today: 'Today',
+                select_time: 'Select Time',
+                select_date_msg: 'Select a date on the calendar to see available time slots',
+
+                form_name: 'Your Full Name', form_email: 'Email Address', form_phone: 'Phone Number',
+                form_select_type: 'Select Session Type', form_confirm: 'Confirm Booking',
+                booking_sending: 'Sending...',
+                alert_required_fields: 'Please fill in all required fields.',
+                booking_date: 'Date', booking_time: 'Time', booking_session: 'Session',
+                booking_name: 'Name', booking_email: 'Email',
+
+                opt_discovery: 'Free Discovery Call (30 min)',
+                opt_foundation: 'Foundation Program Consultation',
+                opt_lifestyle: 'Lifestyle Transformation Consultation',
+                opt_health: 'Health Optimization Consultation',
+                opt_personal: '1-on-1 In-Person Training — €79',
+                opt_competition: 'Competition Prep — €139',
+
+                // Testimonials
+                testimonials_label: 'Testimonials', testimonials_title: 'What Clients <span>Say</span>',
+                review_1_text: 'I lost 14kg, but more than that — my energy is back, I sleep better, my blood work is excellent. This wasn\'t a diet, it was a complete life change. I finally feel good in my body.',
+                review_1_role: 'Lifestyle Transformation — Sarajevo, BiH',
+                review_2_text: 'Best investment ever. My hormones got sorted, digestion too, my mood is unrecognizable. I learned how to eat, how to train, how to take care of myself. This isn\'t a program — it\'s a new life.',
+                review_2_role: 'Health Optimization client — Belgrade',
+                review_3_text: 'I came in tired, overweight, and burned out. Six months later my blood work looks unrecognizable, I\'m sleeping 8 hours straight, and I have energy I haven\'t had since my 20s. This isn\'t just training — it\'s a complete reset.',
+                review_3_role: 'Health Optimization client — Austin, Texas, USA',
+
+                // CTA
+                cta_label: 'Ready?', cta_title: 'Ready To <span style="color: var(--gold);">Get On Track</span>?',
+                cta_desc: 'Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.',
+                cta_btn: 'Book Free Discovery Call',
+
+                // Footer
+                footer_about: 'Get On Track — holistic health and lifestyle coaching for anyone serious about looking better, feeling better, and living better. Available worldwide — in person and online.',
+                footer_quicklinks: 'Quick Links', footer_programs: 'Programs', footer_contact: 'Contact',
+                available_worldwide: 'Available Worldwide', rights_reserved: 'All rights reserved.',
+
+                // Modal
+                modal_title: 'Session Booked!',
+                modal_desc: "Your training session has been confirmed. You'll receive an email with the details and a calendar invite shortly."
+            },
+            bs: {
+                // Navigation
+                nav_about: 'O Meni', nav_programs: 'Programi', nav_gallery: 'Galerija',
+                nav_book: 'Rezerviši', nav_reviews: 'Recenzije', nav_book_btn: 'Rezerviši Termin',
+
+                // Hero
+                hero_badge: 'Coach za Zdravlje i Lifestyle',
+                hero_title: 'Bolji Izgled. <span class="highlight-red">Bolje Zdravlje.</span> <span class="highlight-gold">Bolji Život.</span>',
+                hero_desc: 'Održiva transformacija kroz pametnu ishranu, strukturirani trening i navike koje stvarno traju. Optimizuj svoje zdravlje, energiju, san i način razmišljanja — sa coachem koji ovo radi više od deset godina.',
+                hero_cta_primary: 'Započni Putovanje', hero_cta_secondary: 'Pogledaj Programe',
+                stat_experience: 'Godina Iskustva', stat_lives: 'Promijenjenih Života', stat_personal: 'Personalizovan Pristup',
+
+                // About
+                about_label: 'O Meni',
+                about_title: 'Holistički Pristup <span>Tvom Zdravlju</span>',
+                about_p1: 'Više od deset godina coachinga me naučilo jednu stvar: prava transformacija nije o ekstremnim fizikama — radi se o tome da se osjećaš dobro u svom tijelu, da imaš energiju, da dobro spavaš i gradiš navike koje traju. Radim sa običnim ljudima koji žele bolji izgled, bolje zdravlje i preuzimanje kontrole nad svojim životom.',
+                about_p2: 'Moj coaching ide dalje od treninga. Pomažem klijentima da optimizuju krvnu sliku, hormone, kvalitet sna, digestiju, raspoloženje i mindset. Bilo da želiš skinuti kilograme, izgraditi snagu, popraviti nivoe energije ili se jednostavno osjećati prijatno u svom tijelu — svaki program je napravljen oko tvog stvarnog života.',
+                about_feat_1: 'Certificirani Coach', about_feat_2: 'Zdravlje i Lifestyle', about_feat_3: 'Personalizovana Ishrana',
+                about_feat_4: 'Mindset Coaching', about_feat_5: 'San i Oporavak', about_feat_6: 'Online i Uživo',
+
+                // Programs
+                programs_label: 'Programi',
+                programs_title: 'Coaching <span>Programi</span>',
+                programs_intro: 'Tri nivoa napravljena za prave rezultate — od osnovnih navika do potpune optimizacije zdravlja. Odaberi ono što ti odgovara.',
+                most_popular: 'Najpopularniji', per_month: '/ mjesec', per_session: '/ sesija', free: 'Besplatno',
+
+                tier_1_label: 'Nivo 1 · Foundation', tier_1_title: 'Foundation Program',
+                tier_1_desc: 'Tvoja polazna tačka. Strukturiran plan ishrane, trening program, dnevne navike i preporuke za suplementaciju — sve kroz aplikaciju.',
+                tier_1_f1: 'Personalizovan plan ishrane', tier_1_f2: 'Prilagođen trening program',
+                tier_1_f3: 'Praćenje navika', tier_1_f4: 'Preporuke za suplemente', tier_1_f5: 'Pristup web i app-u',
+
+                tier_2_label: 'Nivo 2 · Lifestyle', tier_2_title: 'Lifestyle Transformacija',
+                tier_2_desc: 'Za održivu promjenu. Sve iz Foundation plus mindset coaching, sedmični check-in i analiza lifestyla da tvoje navike traju cijeli život.',
+                tier_2_f1: 'Sve iz Foundation programa', tier_2_f2: 'Sedmični video razgovori',
+                tier_2_f3: 'Mindset coaching', tier_2_f4: 'Optimizacija sna i stresa', tier_2_f5: 'Prilagodbe prema napretku',
+
+                tier_3_label: 'Nivo 3 · Premium', tier_3_title: 'Health Optimization',
+                tier_3_desc: 'Kompletan paket. Detaljna analiza krvne slike, hormona i lifestyle markera — sa potpuno personalizovanim protokolom da to popraviš iz korijena.',
+                tier_3_f1: 'Sve iz Lifestyle programa', tier_3_f2: 'Analiza krvne slike i lipidnog panela',
+                tier_3_f3: 'Protokol za optimizaciju hormona', tier_3_f4: 'Plan za zdravlje crijeva i digestiju',
+                tier_3_f5: 'Personalizovana suplementacija', tier_3_f6: 'Mjesečne 1-na-1 video konsultacije',
+
+                extra_1_title: '1-na-1 Trening Uživo',
+                extra_1_desc: 'Direktan coaching uživo sa korekcijom forme u realnom vremenu. Idealno za lokalne klijente.',
+                extra_2_title: 'Priprema za Takmičenje',
+                extra_2_desc: 'Za one koji žele izaći na binu — kompletna priprema, posing, peak week protokoli i periodizacija.',
+                extra_3_title: 'Besplatan Razgovor',
+                extra_3_desc: 'Razgovor od 30 minuta bez obaveze. Razgovaramo o ciljevima, gdje si trenutno i koji program ti odgovara.',
+
+                // Gallery
+                gallery_label: 'Galerija', gallery_title: 'U <span>Teretani</span>',
+
+                // Booking
+                booking_label: 'Termini', booking_title: 'Rezerviši Svoju <span>Sesiju</span>',
+                booking_desc: 'Odaberi vremensku zonu, pa datum i vrijeme koje ti odgovara. Sesije dostupne za klijente iz Evrope i SAD-a.',
+                day_mon: 'Pon', day_tue: 'Uto', day_wed: 'Sri', day_thu: 'Čet', day_fri: 'Pet', day_sat: 'Sub', day_sun: 'Ned',
+                legend_available: 'Dostupno', legend_booked: 'Rezervisano', legend_today: 'Danas',
+                select_time: 'Odaberi Vrijeme',
+                select_date_msg: 'Odaberi datum u kalendaru da vidiš dostupne termine',
+
+                form_name: 'Ime i Prezime', form_email: 'Email Adresa', form_phone: 'Broj Telefona',
+                form_select_type: 'Odaberi Tip Sesije', form_confirm: 'Potvrdi Rezervaciju',
+                booking_sending: 'Šalje se...',
+                alert_required_fields: 'Molim te popuni sva obavezna polja.',
+                booking_date: 'Datum', booking_time: 'Vrijeme', booking_session: 'Sesija',
+                booking_name: 'Ime', booking_email: 'Email',
+
+                opt_discovery: 'Besplatan Razgovor (30 min)',
+                opt_foundation: 'Foundation Program Konsultacija',
+                opt_lifestyle: 'Lifestyle Transformacija Konsultacija',
+                opt_health: 'Health Optimization Konsultacija',
+                opt_personal: '1-na-1 Trening Uživo — €79',
+                opt_competition: 'Priprema za Takmičenje — €139',
+
+                // Testimonials
+                testimonials_label: 'Recenzije', testimonials_title: 'Šta Klijenti <span>Kažu</span>',
+                review_1_text: 'Skinuo sam 14kg, ali još više od toga — energija mi se vratila, spavam bolje, krvna slika mi je sjajna. Nije ovo bila dijeta, nego promjena cijelog života. Konačno se osjećam dobro u svom tijelu.',
+                review_1_role: 'Lifestyle transformacija — Sarajevo, BiH',
+                review_2_text: 'Najbolja investicija ikad. Hormoni su mi se sredili, digestija također, raspoloženje neprepoznatljivo. Naučila sam kako da jedem, kako da treniram, kako da brinem o sebi. Ovo nije program — ovo je novi život.',
+                review_2_role: 'Health Optimization klijent — Beograd',
+                review_3_text: 'Došao sam umoran, gojazan i izgorio. Šest mjeseci kasnije moja krvna slika izgleda neprepoznatljivo, spavam 8 sati u komadu, a imam energiju kakvu nisam imao od svojih dvadesetih. Ovo nije samo trening — ovo je kompletan reset.',
+                review_3_role: 'Health Optimization klijent — Austin, Texas, SAD',
+
+                // CTA
+                cta_label: 'Spreman/a?', cta_title: 'Vrijeme Je Da <span style="color: var(--gold);">Kreneš</span>?',
+                cta_desc: 'Tvoj prvi razgovor je besplatan. Bez obaveze, bez pritiska — samo iskren razgovor o tome gdje si, kuda želiš ići i koji program te najbolje vodi tamo.',
+                cta_btn: 'Zakaži Besplatan Razgovor',
+
+                // Footer
+                footer_about: 'Get On Track — holistički coaching zdravlja i lifestylea za sve koji ozbiljno žele bolji izgled, bolje zdravlje i bolji život. Dostupno svuda — uživo i online.',
+                footer_quicklinks: 'Brzi Linkovi', footer_programs: 'Programi', footer_contact: 'Kontakt',
+                available_worldwide: 'Dostupno Svuda', rights_reserved: 'Sva prava zadržana.',
+
+                // Modal
+                modal_title: 'Termin Rezervisan!',
+                modal_desc: 'Tvoj termin je potvrđen. Uskoro ćeš dobiti email sa detaljima i pozivnicom za kalendar.'
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('bs') || navigator.language.startsWith('hr') || navigator.language.startsWith('sr') ? 'bs' : 'en');
+
+        function t(key) {
+            return (translations[currentLang] && translations[currentLang][key]) || translations.en[key] || key;
+        }
+
+        function applyLang() {
+            document.documentElement.lang = currentLang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
+            });
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
+            });
+            const display = currentLang.toUpperCase();
+            const lc = document.getElementById('langCurrent');
+            const lcm = document.getElementById('langCurrentMobile');
+            if (lc) lc.textContent = display;
+            if (lcm) lcm.textContent = display;
+
+            // Re-render dynamic UI
+            if (typeof renderCalendar === 'function') renderCalendar();
+            if (typeof renderTimeSlots === 'function' && selectedDate) renderTimeSlots();
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'bs' : 'en';
+            localStorage.setItem('lang', currentLang);
+            applyLang();
+        }
+
         // ===== NAVIGATION =====
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1856,6 +2305,11 @@
 
         const months = ['January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'];
+        const monthsLocalized = {
+            en: months,
+            bs: ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni',
+                 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar']
+        };
 
         // Fake booked dates (day of month mapped per year-month)
         const bookedDates = {
@@ -1940,7 +2394,7 @@
             const lastDay = new Date(currentYear, currentMonth + 1, 0);
             const startDay = (firstDay.getDay() + 6) % 7; // Monday start
 
-            document.getElementById('calendarMonth').textContent = `${months[currentMonth]} ${currentYear}`;
+            document.getElementById('calendarMonth').textContent = `${monthsLocalized[currentLang][currentMonth]} ${currentYear}`;
 
             const container = document.getElementById('calendarDays');
             container.innerHTML = '';
@@ -1995,7 +2449,7 @@
                 container.innerHTML = `
                     <div class="no-date-message">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        <p>Select a date on the calendar to see available time slots</p>
+                        <p>${t('select_date_msg')}</p>
                     </div>`;
                 return;
             }
@@ -2004,8 +2458,14 @@
             const unavailableEST = partiallyBookedSlots[dateKey] || [];
 
             const dateObj = new Date(selectedDate.year, selectedDate.month, selectedDate.day);
-            const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const formattedDate = `${dayNames[dateObj.getDay()]}, ${months[selectedDate.month]} ${selectedDate.day}, ${selectedDate.year}`;
+            const dayNamesEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayNamesBS = ['Nedjelja', 'Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota'];
+            const monthsBS = ['januar', 'februar', 'mart', 'april', 'maj', 'juni', 'juli', 'august', 'septembar', 'oktobar', 'novembar', 'decembar'];
+            const dayName = currentLang === 'bs' ? dayNamesBS[dateObj.getDay()] : dayNamesEN[dateObj.getDay()];
+            const monthName = currentLang === 'bs' ? monthsBS[selectedDate.month] : months[selectedDate.month];
+            const formattedDate = currentLang === 'bs'
+                ? `${dayName}, ${selectedDate.day}. ${monthName} ${selectedDate.year}`
+                : `${dayName}, ${monthName} ${selectedDate.day}, ${selectedDate.year}`;
 
             let html = `<p class="selected-date-display">${formattedDate}</p>`;
             html += '<div class="time-slots">';
@@ -2025,16 +2485,19 @@
             html += '</div>';
 
             html += `<div class="booking-form ${selectedSlot ? 'visible' : ''}" id="bookingForm">
-                <input type="text" id="clientName" placeholder="Your Full Name" required>
-                <input type="email" id="clientEmail" placeholder="Email Address" required>
-                <input type="tel" id="clientPhone" placeholder="Phone Number">
+                <input type="text" id="clientName" placeholder="${t('form_name')}" required>
+                <input type="email" id="clientEmail" placeholder="${t('form_email')}" required>
+                <input type="tel" id="clientPhone" placeholder="${t('form_phone')}">
                 <select id="sessionType">
-                    <option value="">Select Session Type</option>
-                    <option value="personal">1-on-1 Personal Training — $85</option>
-                    <option value="competition">Competition Prep — $150</option>
-                    <option value="consultation">Free Consultation</option>
+                    <option value="">${t('form_select_type')}</option>
+                    <option value="discovery">${t('opt_discovery')}</option>
+                    <option value="foundation">${t('opt_foundation')}</option>
+                    <option value="lifestyle">${t('opt_lifestyle')}</option>
+                    <option value="health">${t('opt_health')}</option>
+                    <option value="personal">${t('opt_personal')}</option>
+                    <option value="competition">${t('opt_competition')}</option>
                 </select>
-                <button class="btn btn-primary confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
+                <button class="btn btn-primary confirm-btn" onclick="confirmBooking()">${t('form_confirm')}</button>
             </div>`;
 
             container.innerHTML = html;
@@ -2052,34 +2515,69 @@
             renderCalendar();
         }
 
-        function confirmBooking() {
+        async function confirmBooking() {
             const name = document.getElementById('clientName').value.trim();
             const email = document.getElementById('clientEmail').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
             const sessionType = document.getElementById('sessionType').value;
 
             if (!name || !email || !sessionType) {
-                alert('Please fill in all required fields.');
+                alert(t('alert_required_fields'));
                 return;
             }
 
             const displayTime = convertTime(selectedSlot, selectedTimezone);
-            const dateObj = new Date(selectedDate.year, selectedDate.month, selectedDate.day);
-            const formattedDate = `${months[selectedDate.month]} ${selectedDate.day}, ${selectedDate.year}`;
+            const formattedDate = currentLang === 'bs'
+                ? `${selectedDate.day}. ${monthsLocalized.bs[selectedDate.month]} ${selectedDate.year}`
+                : `${months[selectedDate.month]} ${selectedDate.day}, ${selectedDate.year}`;
 
             const sessionLabels = {
-                'personal': '1-on-1 Personal Training',
-                'competition': 'Competition Prep',
-                'consultation': 'Free Consultation',
+                'discovery': t('opt_discovery').replace(' (30 min)', ''),
+                'foundation': t('opt_foundation'),
+                'lifestyle': t('opt_lifestyle'),
+                'health': t('opt_health'),
+                'personal': currentLang === 'bs' ? '1-na-1 Trening Uživo' : '1-on-1 In-Person Training',
+                'competition': t('extra_2_title'),
             };
 
+            const confirmBtn = document.querySelector('.confirm-btn');
+            const originalBtnText = confirmBtn.textContent;
+            confirmBtn.textContent = t('booking_sending') || 'Sending...';
+            confirmBtn.disabled = true;
+
+            const templateParams = {
+                client_name: name,
+                client_email: email,
+                client_phone: phone || 'Not provided',
+                session_type: sessionLabels[sessionType],
+                booking_date: formattedDate,
+                booking_time: `${formatTime12(displayTime)} (${tzLabels[selectedTimezone]})`,
+                trainer_email: EMAILJS_CONFIG.trainerEmail,
+                to_email: email
+            };
+
+            // Send emails via EmailJS — silent fallback if not configured
+            if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+                try {
+                    await Promise.all([
+                        emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.trainerTemplateId, templateParams),
+                        emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.clientTemplateId, templateParams)
+                    ]);
+                } catch (err) {
+                    console.error('EmailJS error:', err);
+                }
+            }
+
             document.getElementById('bookingDetails').innerHTML = `
-                <p><strong>Date:</strong> ${formattedDate}</p>
-                <p><strong>Time:</strong> ${formatTime12(displayTime)} (${tzLabels[selectedTimezone]})</p>
-                <p><strong>Session:</strong> ${sessionLabels[sessionType]}</p>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>${t('booking_date')}:</strong> ${formattedDate}</p>
+                <p><strong>${t('booking_time')}:</strong> ${formatTime12(displayTime)} (${tzLabels[selectedTimezone]})</p>
+                <p><strong>${t('booking_session')}:</strong> ${sessionLabels[sessionType]}</p>
+                <p><strong>${t('booking_name')}:</strong> ${name}</p>
+                <p><strong>${t('booking_email')}:</strong> ${email}</p>
             `;
 
+            confirmBtn.textContent = originalBtnText;
+            confirmBtn.disabled = false;
             document.getElementById('bookingModal').classList.add('active');
         }
 
@@ -2134,6 +2632,7 @@
         });
 
         // Init
+        applyLang();
         renderCalendar();
     </script>
 </body>
