@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get On Track | Personal Fitness Trainer — Book Online Sessions, Competition Prep & Coaching</title>
+    <title>Get On Track | Personal Fitness Trainer — Online Coaching & Body Transformations</title>
     <meta name="description" content="Get On Track — holistic health & lifestyle coaching. Personalized nutrition, training, hormone & blood work optimization, sleep, and habit coaching. Look better, feel better, live better. Available worldwide.">
     <meta name="keywords" content="health coach, lifestyle coach, personal trainer, online coaching, holistic fitness, hormone optimization, nutrition plan, blood work analysis, sleep optimization, habit coaching, weight loss coach, body transformation, gut health, mindset coaching, Get On Track fitness">
     <meta name="author" content="Get On Track Fitness">
@@ -13,8 +13,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getontrack.com/">
-    <meta property="og:title" content="Get On Track | Personal Fitness Trainer — Book Your Session">
-    <meta property="og:description" content="Certified personal trainer offering 1-on-1 sessions, competition prep, online coaching & nutrition plans. Train with a competition-proven coach. Book now.">
+    <meta property="og:title" content="Get On Track | Personal Fitness Trainer — Online Coaching & Transformations">
+    <meta property="og:description" content="Certified personal trainer offering 1-on-1 sessions, online coaching & nutrition plans. Real client transformations. Reach out by phone or Instagram.">
     <meta property="og:image" content="https://getontrack.com/images/1-7.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,8 +23,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Get On Track | Personal Fitness Trainer — Book Your Session">
-    <meta name="twitter:description" content="Certified personal trainer offering 1-on-1 sessions, competition prep, online coaching & nutrition plans. Book your session today.">
+    <meta name="twitter:title" content="Get On Track | Personal Fitness Trainer — Online Coaching & Transformations">
+    <meta name="twitter:description" content="Certified personal trainer offering 1-on-1 sessions, online coaching & nutrition plans. Contact me directly by phone or Instagram.">
     <meta name="twitter:image" content="https://getontrack.com/images/1-7.jpeg">
 
     <!-- Favicon -->
@@ -559,6 +559,19 @@
             color: var(--gold);
         }
 
+        .pricing-note {
+            max-width: 760px;
+            margin: 40px auto 0;
+            text-align: center;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            padding: 18px 22px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 4px;
+        }
+
         .services-extras {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -642,6 +655,172 @@
         }
 
         .gallery-item:hover::after { opacity: 1; }
+
+        /* ===== TRANSFORMATIONS ===== */
+        .transformations {
+            padding: 120px 0;
+            background: var(--dark);
+        }
+
+        .transformations-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .trans-group {
+            margin-bottom: 80px;
+        }
+
+        .trans-group:last-child { margin-bottom: 0; }
+
+        .trans-group-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--white);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .trans-group-title::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 3px;
+            background: var(--red);
+        }
+
+        .trans-group-subtitle {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+            padding-left: 54px;
+        }
+
+        .trans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .trans-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            aspect-ratio: 1 / 1;
+        }
+
+        .trans-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--red);
+        }
+
+        .trans-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .trans-item:hover img { transform: scale(1.04); }
+
+        .trans-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--red);
+            color: var(--white);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            border-radius: 2px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact { padding: 120px 0; background: var(--dark-light); }
+
+        .contact-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-card:hover { transform: translateY(-6px); border-color: var(--red); }
+
+        .contact-card .contact-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(196,30,30,0.12);
+            color: var(--red);
+        }
+
+        .contact-card .contact-icon svg { width: 28px; height: 28px; stroke-width: 2; }
+
+        .contact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--white);
+        }
+
+        .contact-card .contact-value {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--white);
+            word-break: break-all;
+        }
+
+        .contact-card p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-card .btn {
+            margin-top: 8px;
+            width: 100%;
+            max-width: 240px;
+        }
 
         /* ===== BOOKING ===== */
         .booking { padding: 120px 0; }
@@ -940,6 +1119,53 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
+
+        .google-reviews-cta {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 28px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .google-reviews-logo {
+            flex-shrink: 0;
+            background: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-reviews-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .google-reviews-text strong {
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .google-reviews-text span {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+        }
+
+        .google-reviews-cta .btn { flex-shrink: 0; padding: 12px 22px; font-size: 0.85rem; }
 
         .testimonial-card {
             background: rgba(255,255,255,0.02);
@@ -1295,6 +1521,7 @@
             .testimonials-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .booking-wrapper { grid-template-columns: 1fr; }
+            .trans-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -1357,6 +1584,20 @@
             .gallery-item:nth-child(1) { grid-column: span 1; }
             .gallery-item img { height: 200px; }
 
+            /* Transformations */
+            .transformations { padding: 80px 0; }
+            .trans-group { margin-bottom: 56px; }
+            .trans-group-title { font-size: 1.5rem; letter-spacing: 1px; }
+            .trans-group-title::before { width: 28px; }
+            .trans-group-subtitle { padding-left: 42px; font-size: 0.85rem; margin-bottom: 24px; }
+            .trans-grid { grid-template-columns: 1fr; gap: 14px; }
+            .trans-badge { font-size: 0.65rem; padding: 5px 8px; }
+
+            /* Contact */
+            .contact { padding: 80px 0; }
+            .contact-grid { grid-template-columns: 1fr; gap: 16px; }
+            .contact-card { padding: 32px 24px; }
+
             /* Booking */
             .booking { padding: 80px 0; }
             .booking-wrapper { padding: 12px; gap: 24px; }
@@ -1379,6 +1620,8 @@
             .testimonials { padding: 80px 0; }
             .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
             .testimonial-card { padding: 28px 20px; }
+            .google-reviews-cta { flex-direction: column; text-align: center; padding: 20px; gap: 14px; margin-top: 32px; }
+            .google-reviews-cta .btn { width: 100%; }
 
             /* CTA */
             .cta { padding: 70px 0; }
@@ -1461,13 +1704,13 @@
         "@type": "Person",
         "name": "Ensar Colpa",
         "jobTitle": "Certified Personal Trainer",
-        "description": "Competition-proven fitness coach with 10+ years experience, specializing in body transformations, strength training, and competition preparation.",
+        "description": "FASTO Faculty graduate and certified personal trainer with 10+ years experience, specializing in body transformations, sustainable fat loss, and strength training.",
         "url": "https://getontrack.com",
         "image": "https://getontrack.com/images/1-7.jpeg",
         "sameAs": [
             "https://www.instagram.com/ensar_colpa_fitness/"
         ],
-        "knowsAbout": ["Personal Training", "Competition Preparation", "Nutrition Planning", "Body Transformation", "Strength Training", "Online Coaching"]
+        "knowsAbout": ["Personal Training", "Nutrition Planning", "Body Transformation", "Strength Training", "Online Coaching", "Lifestyle Coaching"]
     }
     </script>
 
@@ -1511,13 +1754,6 @@
                     "@type": "Offer",
                     "itemOffered": { "@type": "Service", "name": "1-on-1 In-Person Training" },
                     "price": "79.00",
-                    "priceCurrency": "EUR",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "session" }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Competition Prep" },
-                    "price": "139.00",
                     "priceCurrency": "EUR",
                     "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "session" }
                 }
@@ -1607,10 +1843,10 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-i18n="nav_about">About</a></li>
                 <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
+                <li><a href="#transformations" data-i18n="nav_transformations">Transformations</a></li>
                 <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="#booking" data-i18n="nav_book">Book</a></li>
                 <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
-                <li><a href="#booking" class="nav-book-btn" data-i18n="nav_book_btn">Book Session</a></li>
+                <li><a href="#contact" class="nav-book-btn" data-i18n="nav_contact_btn">Contact</a></li>
                 <li><button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
                     <span id="langCurrent">EN</span>
                 </button></li>
@@ -1639,7 +1875,7 @@
                 <h1 data-i18n-html="hero_title">Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span></h1>
                 <p data-i18n="hero_desc">Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.</p>
                 <div class="hero-buttons">
-                    <a href="#booking" class="btn btn-primary" data-i18n="hero_cta_primary">Start Your Journey</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_primary">Contact Me</a>
                     <a href="#services" class="btn btn-outline" data-i18n="hero_cta_secondary">View Programs</a>
                 </div>
                 <div class="hero-stats">
@@ -1648,8 +1884,8 @@
                         <p data-i18n="stat_experience">Years Experience</p>
                     </div>
                     <div class="hero-stat">
-                        <h3>300+</h3>
-                        <p data-i18n="stat_lives">Lives Changed</p>
+                        <h3>500+</h3>
+                        <p data-i18n="stat_lives">Transformations</p>
                     </div>
                     <div class="hero-stat">
                         <h3>100%</h3>
@@ -1665,12 +1901,12 @@
         <div class="container">
             <div class="about-grid fade-up">
                 <div class="about-image">
-                    <img src="images/1-2.jpeg" alt="Fitness trainer showing physique results from dedicated training program" loading="lazy">
+                    <img src="images/1-3.jpeg" alt="Ensar Colpa personal trainer working out in the gym" loading="lazy">
                 </div>
                 <div class="about-text">
                     <p class="section-label" data-i18n="about_label">About Me</p>
                     <h2 class="section-title" data-i18n-html="about_title">A Holistic Approach To <span>Your Health</span></h2>
-                    <p data-i18n="about_p1">Over a decade of coaching has taught me one thing: real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last. I work with regular people who want to look better, feel better, and take ownership of their health.</p>
+                    <p data-i18n="about_p1">I'm a graduate of the FASTO Faculty (Faculty of Sport and Physical Education) and have spent over a decade coaching everyday people toward real, lasting results. Real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last.</p>
                     <p data-i18n="about_p2">My coaching goes beyond workouts. I help clients optimize blood markers, hormones, sleep quality, digestion, mood, and mindset. Whether you want to drop weight, build strength, fix your energy levels, or simply feel at home in your body — every program is built around your real life.</p>
                     <div class="about-features">
                         <div class="about-feature">
@@ -1726,7 +1962,7 @@
                         <li data-i18n="tier_1_f4">Supplement recommendations</li>
                         <li data-i18n="tier_1_f5">Web & app access</li>
                     </ul>
-                    <div class="service-price">€109 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
                 </div>
 
                 <div class="service-card service-card-featured fade-up">
@@ -1744,7 +1980,7 @@
                         <li data-i18n="tier_2_f4">Sleep & stress optimization</li>
                         <li data-i18n="tier_2_f5">Adjustments based on progress</li>
                     </ul>
-                    <div class="service-price">€229 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
                 </div>
 
                 <div class="service-card service-card-premium fade-up">
@@ -1762,9 +1998,11 @@
                         <li data-i18n="tier_3_f5">Personalized supplementation</li>
                         <li data-i18n="tier_3_f6">Monthly 1-on-1 video consultations</li>
                     </ul>
-                    <div class="service-price">€459 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
                 </div>
             </div>
+
+            <p class="pricing-note fade-up" data-i18n="pricing_note">Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €30. Full coaching packages are scoped after our discovery call.</p>
 
             <div class="services-extras">
                 <div class="service-card service-card-small fade-up">
@@ -1773,15 +2011,7 @@
                     </div>
                     <h3 data-i18n="extra_1_title">1-on-1 In-Person Training</h3>
                     <p data-i18n="extra_1_desc">Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.</p>
-                    <div class="service-price">€79 <small data-i18n="per_session">/ session</small></div>
-                </div>
-                <div class="service-card service-card-small fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3 data-i18n="extra_2_title">Competition Prep</h3>
-                    <p data-i18n="extra_2_desc">For the few who want to step on stage — full prep with posing, peak week protocols, and periodization.</p>
-                    <div class="service-price">€139 <small data-i18n="per_session">/ session</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_session">/ session</small></div>
                 </div>
                 <div class="service-card service-card-small fade-up">
                     <div class="service-icon">
@@ -1812,50 +2042,83 @@
         </div>
     </section>
 
-    <!-- BOOKING -->
-    <section class="booking" id="booking" aria-label="Book a training session">
+    <!-- TRANSFORMATIONS -->
+    <section class="transformations" id="transformations" aria-label="Client transformations">
         <div class="container">
-            <div class="booking-header fade-up">
-                <p class="section-label" data-i18n="booking_label">Schedule</p>
-                <h2 class="section-title" data-i18n-html="booking_title">Book Your <span>Session</span></h2>
-                <p data-i18n="booking_desc">Select your timezone, pick a date, and choose a time that works for you. Sessions available for both USA and European clients.</p>
+            <div class="transformations-header fade-up">
+                <p class="section-label" data-i18n="trans_label">Results</p>
+                <h2 class="section-title" data-i18n-html="trans_title">Real Client <span>Transformations</span></h2>
+                <p data-i18n="trans_desc">Real people, real results. These are clients who showed up, did the work, and changed their bodies and their lives.</p>
             </div>
-            <div class="booking-wrapper fade-up">
-                <div class="calendar-section">
-                    <div class="timezone-selector">
-                        <button class="tz-btn active" data-tz="America/New_York">EST (New York)</button>
-                        <button class="tz-btn" data-tz="America/Chicago">CST (Chicago)</button>
-                        <button class="tz-btn" data-tz="America/Denver">MST (Denver)</button>
-                        <button class="tz-btn" data-tz="America/Los_Angeles">PST (LA)</button>
-                        <button class="tz-btn" data-tz="Europe/London">GMT (London)</button>
-                        <button class="tz-btn" data-tz="Europe/Berlin">CET (Berlin)</button>
-                        <button class="tz-btn" data-tz="Europe/Bucharest">EET (Bucharest)</button>
+
+            <div class="trans-group fade-up">
+                <h3 class="trans-group-title" data-i18n="trans_men_title">Men's Transformations</h3>
+                <p class="trans-group-subtitle" data-i18n="trans_men_sub">Strength, fat loss, and lifestyle transformations from male clients.</p>
+                <div class="trans-grid">
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans1_man.jpg" alt="Male client body transformation — before and after" loading="lazy">
                     </div>
-                    <div class="calendar">
-                        <div class="calendar-nav">
-                            <button onclick="changeMonth(-1)">&#8592;</button>
-                            <h3 id="calendarMonth"></h3>
-                            <button onclick="changeMonth(1)">&#8594;</button>
-                        </div>
-                        <div class="calendar-weekdays">
-                            <span data-i18n="day_mon">Mon</span><span data-i18n="day_tue">Tue</span><span data-i18n="day_wed">Wed</span><span data-i18n="day_thu">Thu</span><span data-i18n="day_fri">Fri</span><span data-i18n="day_sat">Sat</span><span data-i18n="day_sun">Sun</span>
-                        </div>
-                        <div class="calendar-days" id="calendarDays"></div>
-                        <div class="calendar-legend">
-                            <div class="legend-item"><div class="legend-dot available"></div> <span data-i18n="legend_available">Available</span></div>
-                            <div class="legend-item"><div class="legend-dot booked-dot"></div> <span data-i18n="legend_booked">Booked</span></div>
-                            <div class="legend-item"><div class="legend-dot today-dot"></div> <span data-i18n="legend_today">Today</span></div>
-                        </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans2_man.jpg" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans3_man.jpg" alt="Male client body transformation — before and after" loading="lazy">
                     </div>
                 </div>
-                <div class="time-slots-section">
-                    <h3 data-i18n="select_time">Select Time</h3>
-                    <div id="timeSlotContent">
-                        <div class="no-date-message">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            <p data-i18n="select_date_msg">Select a date on the calendar to see available time slots</p>
-                        </div>
+            </div>
+
+            <div class="trans-group fade-up">
+                <h3 class="trans-group-title" data-i18n="trans_women_title">Women's Transformations</h3>
+                <p class="trans-group-subtitle" data-i18n="trans_women_sub">Sustainable fat loss, strength, and confidence from female clients.</p>
+                <div class="trans-grid">
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans1_women.jpg" alt="Female client body transformation — before and after" loading="lazy">
                     </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans2_women.jpg" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans3_women.jpg" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-label="Contact Ensar Colpa">
+        <div class="container">
+            <div class="contact-header fade-up">
+                <p class="section-label" data-i18n="contact_label">Get In Touch</p>
+                <h2 class="section-title" data-i18n-html="contact_title">Let's <span>Connect</span></h2>
+                <p data-i18n="contact_desc">Ready to start? Reach out directly by phone or Instagram. No forms, no waiting — just a real conversation about your goals.</p>
+            </div>
+
+            <div class="contact-grid fade-up">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3 data-i18n="contact_phone_title">Call or Text</h3>
+                    <span class="contact-value">+387 62 321 113</span>
+                    <p data-i18n="contact_phone_sub">Direct line — call, text, or WhatsApp</p>
+                    <a href="tel:+38762321113" class="btn btn-primary" data-i18n="contact_phone_btn">Call Now</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <h3 data-i18n="contact_ig_title">Instagram DM</h3>
+                    <span class="contact-value">@ensar_colpa_fitness</span>
+                    <p data-i18n="contact_ig_sub">DM me anytime — fastest way to reach me</p>
+                    <a href="https://www.instagram.com/ensar_colpa_fitness/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="contact_ig_btn">Message on Instagram</a>
                 </div>
             </div>
         </div>
@@ -1921,6 +2184,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="google-reviews-cta fade-up">
+                <div class="google-reviews-logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                </div>
+                <div class="google-reviews-text">
+                    <strong data-i18n="google_reviews_title">Verified Google Reviews</strong>
+                    <span data-i18n="google_reviews_sub">Read what real clients say on Google.</span>
+                </div>
+                <a href="https://share.google/cciGceQJl836sNsHq" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="google_reviews_btn">See All Reviews</a>
+            </div>
         </div>
     </section>
 
@@ -1930,7 +2204,7 @@
             <p class="section-label" data-i18n="cta_label">Ready?</p>
             <h2 data-i18n-html="cta_title">Ready To <span style="color: var(--gold);">Get On Track</span>?</h2>
             <p data-i18n="cta_desc">Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.</p>
-            <a href="#booking" class="btn btn-primary" data-i18n="cta_btn">Book Free Discovery Call</a>
+            <a href="#contact" class="btn btn-primary" data-i18n="cta_btn">Contact Me Now</a>
         </div>
     </section>
 
@@ -1948,8 +2222,9 @@
                     <ul>
                         <li><a href="#about" data-i18n="nav_about">About</a></li>
                         <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
+                        <li><a href="#transformations" data-i18n="nav_transformations">Transformations</a></li>
                         <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
-                        <li><a href="#booking" data-i18n="nav_book_btn">Book Session</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact_btn">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2005,52 +2280,27 @@
         <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
-    <!-- BOOKING CONFIRMATION MODAL -->
-    <div class="modal-overlay" id="bookingModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <h3 data-i18n="modal_title">Session Booked!</h3>
-            <p data-i18n="modal_desc">Your training session has been confirmed. You'll receive an email with the details and a calendar invite shortly.</p>
-            <div class="booking-details" id="bookingDetails"></div>
-        </div>
-    </div>
-
-    <!-- EmailJS — free email service (200 emails/month). Config injected via build.js from .env / Vercel env vars. -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="config.js"></script>
-    <script>
-        const EMAILJS_CONFIG = window.EMAILJS_CONFIG || {
-            publicKey: '', serviceId: '', trainerTemplateId: '', clientTemplateId: '',
-            trainerEmail: 'coach@getontrack.com'
-        };
-
-        if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
-            emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
-        }
-    </script>
-
     <script>
         // ===== TRANSLATIONS (BS / EN) =====
         const translations = {
             en: {
                 // Navigation
                 nav_about: 'About', nav_programs: 'Programs', nav_gallery: 'Gallery',
-                nav_book: 'Book', nav_reviews: 'Reviews', nav_book_btn: 'Book Session',
+                nav_transformations: 'Transformations', nav_reviews: 'Reviews', nav_contact_btn: 'Contact',
 
                 // Hero
                 hero_badge: 'Health & Lifestyle Coach',
                 hero_title: 'Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span>',
                 hero_desc: "Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.",
-                hero_cta_primary: 'Start Your Journey', hero_cta_secondary: 'View Programs',
-                stat_experience: 'Years Experience', stat_lives: 'Lives Changed', stat_personal: 'Personalized Approach',
+                hero_cta_primary: 'Contact Me', hero_cta_secondary: 'View Programs',
+                stat_experience: 'Years Experience', stat_lives: 'Transformations', stat_personal: 'Personalized Approach',
 
                 // About
                 about_label: 'About Me',
                 about_title: 'A Holistic Approach To <span>Your Health</span>',
-                about_p1: "Over a decade of coaching has taught me one thing: real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last. I work with regular people who want to look better, feel better, and take ownership of their health.",
+                about_p1: "I'm a graduate of the FASTO Faculty (Faculty of Sport and Physical Education) and have spent over a decade coaching everyday people toward real, lasting results. Real transformation isn't about extreme physiques — it's about feeling good in your own body, having energy, sleeping well, and building habits that last.",
                 about_p2: 'My coaching goes beyond workouts. I help clients optimize blood markers, hormones, sleep quality, digestion, mood, and mindset. Whether you want to drop weight, build strength, fix your energy levels, or simply feel at home in your body — every program is built around your real life.',
-                about_feat_1: 'Certified Coach', about_feat_2: 'Health & Lifestyle', about_feat_3: 'Custom Nutrition',
+                about_feat_1: 'FASTO Graduate', about_feat_2: 'Health & Lifestyle', about_feat_3: 'Custom Nutrition',
                 about_feat_4: 'Mindset Coaching', about_feat_5: 'Sleep & Recovery', about_feat_6: 'Online & In-Person',
 
                 // Programs
@@ -2077,35 +2327,34 @@
 
                 extra_1_title: '1-on-1 In-Person Training',
                 extra_1_desc: 'Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.',
-                extra_2_title: 'Competition Prep',
-                extra_2_desc: 'For the few who want to step on stage — full prep with posing, peak week protocols, and periodization.',
                 extra_3_title: 'Free Discovery Call',
                 extra_3_desc: '30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.',
+                price_from: 'From',
+                pricing_note: 'Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €30. Full coaching packages are scoped after our discovery call.',
 
                 // Gallery
                 gallery_label: 'Gallery', gallery_title: 'In The <span>Gym</span>',
 
-                // Booking
-                booking_label: 'Schedule', booking_title: 'Book Your <span>Session</span>',
-                booking_desc: 'Select your timezone, pick a date, and choose a time that works for you. Sessions available for both USA and European clients.',
-                day_mon: 'Mon', day_tue: 'Tue', day_wed: 'Wed', day_thu: 'Thu', day_fri: 'Fri', day_sat: 'Sat', day_sun: 'Sun',
-                legend_available: 'Available', legend_booked: 'Booked', legend_today: 'Today',
-                select_time: 'Select Time',
-                select_date_msg: 'Select a date on the calendar to see available time slots',
+                // Transformations
+                trans_label: 'Results',
+                trans_title: 'Real Client <span>Transformations</span>',
+                trans_desc: 'Real people, real results. These are clients who showed up, did the work, and changed their bodies and their lives.',
+                trans_men_title: "Men's Transformations",
+                trans_men_sub: 'Strength, fat loss, and lifestyle transformations from male clients.',
+                trans_women_title: "Women's Transformations",
+                trans_women_sub: 'Sustainable fat loss, strength, and confidence from female clients.',
+                trans_before_after: 'Before / After',
 
-                form_name: 'Your Full Name', form_email: 'Email Address', form_phone: 'Phone Number',
-                form_select_type: 'Select Session Type', form_confirm: 'Confirm Booking',
-                booking_sending: 'Sending...',
-                alert_required_fields: 'Please fill in all required fields.',
-                booking_date: 'Date', booking_time: 'Time', booking_session: 'Session',
-                booking_name: 'Name', booking_email: 'Email',
-
-                opt_discovery: 'Free Discovery Call (30 min)',
-                opt_foundation: 'Foundation Program Consultation',
-                opt_lifestyle: 'Lifestyle Transformation Consultation',
-                opt_health: 'Health Optimization Consultation',
-                opt_personal: '1-on-1 In-Person Training — €79',
-                opt_competition: 'Competition Prep — €139',
+                // Contact
+                contact_label: 'Get In Touch',
+                contact_title: "Let's <span>Connect</span>",
+                contact_desc: 'Ready to start? Reach out directly by phone or Instagram. No forms, no waiting — just a real conversation about your goals.',
+                contact_phone_title: 'Call or Text',
+                contact_phone_sub: 'Direct line — call, text, or WhatsApp',
+                contact_phone_btn: 'Call Now',
+                contact_ig_title: 'Instagram DM',
+                contact_ig_sub: 'DM me anytime — fastest way to reach me',
+                contact_ig_btn: 'Message on Instagram',
 
                 // Testimonials
                 testimonials_label: 'Testimonials', testimonials_title: 'What Clients <span>Say</span>',
@@ -2115,39 +2364,38 @@
                 review_2_role: 'Health Optimization client — Belgrade',
                 review_3_text: 'I came in tired, overweight, and burned out. Six months later my blood work looks unrecognizable, I\'m sleeping 8 hours straight, and I have energy I haven\'t had since my 20s. This isn\'t just training — it\'s a complete reset.',
                 review_3_role: 'Health Optimization client — Austin, Texas, USA',
+                google_reviews_title: 'Verified Google Reviews',
+                google_reviews_sub: 'Read what real clients say on Google.',
+                google_reviews_btn: 'See All Reviews',
 
                 // CTA
                 cta_label: 'Ready?', cta_title: 'Ready To <span style="color: var(--gold);">Get On Track</span>?',
                 cta_desc: 'Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.',
-                cta_btn: 'Book Free Discovery Call',
+                cta_btn: 'Contact Me Now',
 
                 // Footer
                 footer_about: 'Get On Track — holistic health and lifestyle coaching for anyone serious about looking better, feeling better, and living better. Available worldwide — in person and online.',
                 footer_quicklinks: 'Quick Links', footer_programs: 'Programs', footer_contact: 'Contact',
-                available_worldwide: 'Available Worldwide', rights_reserved: 'All rights reserved.',
-
-                // Modal
-                modal_title: 'Session Booked!',
-                modal_desc: "Your training session has been confirmed. You'll receive an email with the details and a calendar invite shortly."
+                available_worldwide: 'Available Worldwide', rights_reserved: 'All rights reserved.'
             },
             bs: {
                 // Navigation
                 nav_about: 'O Meni', nav_programs: 'Programi', nav_gallery: 'Galerija',
-                nav_book: 'Rezerviši', nav_reviews: 'Recenzije', nav_book_btn: 'Rezerviši Termin',
+                nav_transformations: 'Transformacije', nav_reviews: 'Recenzije', nav_contact_btn: 'Kontakt',
 
                 // Hero
                 hero_badge: 'Coach za Zdravlje i Lifestyle',
                 hero_title: 'Bolji Izgled. <span class="highlight-red">Bolje Zdravlje.</span> <span class="highlight-gold">Bolji Život.</span>',
                 hero_desc: 'Održiva transformacija kroz pametnu ishranu, strukturirani trening i navike koje stvarno traju. Optimizuj svoje zdravlje, energiju, san i način razmišljanja — sa coachem koji ovo radi više od deset godina.',
-                hero_cta_primary: 'Započni Putovanje', hero_cta_secondary: 'Pogledaj Programe',
-                stat_experience: 'Godina Iskustva', stat_lives: 'Promijenjenih Života', stat_personal: 'Personalizovan Pristup',
+                hero_cta_primary: 'Kontaktiraj Me', hero_cta_secondary: 'Pogledaj Programe',
+                stat_experience: 'Godina Iskustva', stat_lives: 'Transformacija', stat_personal: 'Personalizovan Pristup',
 
                 // About
                 about_label: 'O Meni',
                 about_title: 'Holistički Pristup <span>Tvom Zdravlju</span>',
-                about_p1: 'Više od deset godina coachinga me naučilo jednu stvar: prava transformacija nije o ekstremnim fizikama — radi se o tome da se osjećaš dobro u svom tijelu, da imaš energiju, da dobro spavaš i gradiš navike koje traju. Radim sa običnim ljudima koji žele bolji izgled, bolje zdravlje i preuzimanje kontrole nad svojim životom.',
+                about_p1: 'Završio sam FASTO fakultet (Fakultet sporta i tjelesnog odgoja) i više od deset godina coachiram obične ljude do stvarnih, trajnih rezultata. Prava transformacija nije o ekstremnim fizikama — radi se o tome da se osjećaš dobro u svom tijelu, da imaš energiju, da dobro spavaš i gradiš navike koje traju.',
                 about_p2: 'Moj coaching ide dalje od treninga. Pomažem klijentima da optimizuju krvnu sliku, hormone, kvalitet sna, digestiju, raspoloženje i mindset. Bilo da želiš skinuti kilograme, izgraditi snagu, popraviti nivoe energije ili se jednostavno osjećati prijatno u svom tijelu — svaki program je napravljen oko tvog stvarnog života.',
-                about_feat_1: 'Certificirani Coach', about_feat_2: 'Zdravlje i Lifestyle', about_feat_3: 'Personalizovana Ishrana',
+                about_feat_1: 'FASTO Diplomirani', about_feat_2: 'Zdravlje i Lifestyle', about_feat_3: 'Personalizovana Ishrana',
                 about_feat_4: 'Mindset Coaching', about_feat_5: 'San i Oporavak', about_feat_6: 'Online i Uživo',
 
                 // Programs
@@ -2155,6 +2403,8 @@
                 programs_title: 'Coaching <span>Programi</span>',
                 programs_intro: 'Tri nivoa napravljena za prave rezultate — od osnovnih navika do potpune optimizacije zdravlja. Odaberi ono što ti odgovara.',
                 most_popular: 'Najpopularniji', per_month: '/ mjesec', per_session: '/ sesija', free: 'Besplatno',
+                price_from: 'Od',
+                pricing_note: 'Cijene su potpuno prilagođene tvojim potrebama. Jednostavni planovi — samo trening program ili samo jelovnik — kreću od €30. Kompletni coaching paketi se dogovaraju nakon besplatnog razgovora.',
 
                 tier_1_label: 'Nivo 1 · Foundation', tier_1_title: 'Foundation Program',
                 tier_1_desc: 'Tvoja polazna tačka. Strukturiran plan ishrane, trening program, dnevne navike i preporuke za suplementaciju — sve kroz aplikaciju.',
@@ -2174,35 +2424,32 @@
 
                 extra_1_title: '1-na-1 Trening Uživo',
                 extra_1_desc: 'Direktan coaching uživo sa korekcijom forme u realnom vremenu. Idealno za lokalne klijente.',
-                extra_2_title: 'Priprema za Takmičenje',
-                extra_2_desc: 'Za one koji žele izaći na binu — kompletna priprema, posing, peak week protokoli i periodizacija.',
                 extra_3_title: 'Besplatan Razgovor',
                 extra_3_desc: 'Razgovor od 30 minuta bez obaveze. Razgovaramo o ciljevima, gdje si trenutno i koji program ti odgovara.',
 
                 // Gallery
                 gallery_label: 'Galerija', gallery_title: 'U <span>Teretani</span>',
 
-                // Booking
-                booking_label: 'Termini', booking_title: 'Rezerviši Svoju <span>Sesiju</span>',
-                booking_desc: 'Odaberi vremensku zonu, pa datum i vrijeme koje ti odgovara. Sesije dostupne za klijente iz Evrope i SAD-a.',
-                day_mon: 'Pon', day_tue: 'Uto', day_wed: 'Sri', day_thu: 'Čet', day_fri: 'Pet', day_sat: 'Sub', day_sun: 'Ned',
-                legend_available: 'Dostupno', legend_booked: 'Rezervisano', legend_today: 'Danas',
-                select_time: 'Odaberi Vrijeme',
-                select_date_msg: 'Odaberi datum u kalendaru da vidiš dostupne termine',
+                // Transformations
+                trans_label: 'Rezultati',
+                trans_title: 'Prave Klijentske <span>Transformacije</span>',
+                trans_desc: 'Pravi ljudi, pravi rezultati. Ovo su klijenti koji su se pojavili, odradili posao i promijenili svoja tijela i živote.',
+                trans_men_title: 'Muške Transformacije',
+                trans_men_sub: 'Snaga, gubitak masti i promjena životnih navika kod muških klijenata.',
+                trans_women_title: 'Ženske Transformacije',
+                trans_women_sub: 'Održivi gubitak masti, snaga i samopouzdanje kod ženskih klijentica.',
+                trans_before_after: 'Prije / Poslije',
 
-                form_name: 'Ime i Prezime', form_email: 'Email Adresa', form_phone: 'Broj Telefona',
-                form_select_type: 'Odaberi Tip Sesije', form_confirm: 'Potvrdi Rezervaciju',
-                booking_sending: 'Šalje se...',
-                alert_required_fields: 'Molim te popuni sva obavezna polja.',
-                booking_date: 'Datum', booking_time: 'Vrijeme', booking_session: 'Sesija',
-                booking_name: 'Ime', booking_email: 'Email',
-
-                opt_discovery: 'Besplatan Razgovor (30 min)',
-                opt_foundation: 'Foundation Program Konsultacija',
-                opt_lifestyle: 'Lifestyle Transformacija Konsultacija',
-                opt_health: 'Health Optimization Konsultacija',
-                opt_personal: '1-na-1 Trening Uživo — €79',
-                opt_competition: 'Priprema za Takmičenje — €139',
+                // Contact
+                contact_label: 'Stupi U Kontakt',
+                contact_title: 'Hajde Da Se <span>Čujemo</span>',
+                contact_desc: 'Spreman/a si krenuti? Javi se direktno na telefon ili Instagram. Bez formi, bez čekanja — samo iskren razgovor o tvojim ciljevima.',
+                contact_phone_title: 'Pozovi ili Pošalji Poruku',
+                contact_phone_sub: 'Direktna linija — poziv, SMS ili WhatsApp',
+                contact_phone_btn: 'Pozovi Sada',
+                contact_ig_title: 'Instagram DM',
+                contact_ig_sub: 'Pošalji mi DM bilo kada — najbrži način da me uhvatiš',
+                contact_ig_btn: 'Pošalji Poruku na Instagramu',
 
                 // Testimonials
                 testimonials_label: 'Recenzije', testimonials_title: 'Šta Klijenti <span>Kažu</span>',
@@ -2212,20 +2459,19 @@
                 review_2_role: 'Health Optimization klijent — Beograd',
                 review_3_text: 'Došao sam umoran, gojazan i izgorio. Šest mjeseci kasnije moja krvna slika izgleda neprepoznatljivo, spavam 8 sati u komadu, a imam energiju kakvu nisam imao od svojih dvadesetih. Ovo nije samo trening — ovo je kompletan reset.',
                 review_3_role: 'Health Optimization klijent — Austin, Texas, SAD',
+                google_reviews_title: 'Verifikovane Google Recenzije',
+                google_reviews_sub: 'Pročitaj šta stvarni klijenti kažu na Googleu.',
+                google_reviews_btn: 'Pogledaj Sve Recenzije',
 
                 // CTA
                 cta_label: 'Spreman/a?', cta_title: 'Vrijeme Je Da <span style="color: var(--gold);">Kreneš</span>?',
                 cta_desc: 'Tvoj prvi razgovor je besplatan. Bez obaveze, bez pritiska — samo iskren razgovor o tome gdje si, kuda želiš ići i koji program te najbolje vodi tamo.',
-                cta_btn: 'Zakaži Besplatan Razgovor',
+                cta_btn: 'Kontaktiraj Me Sada',
 
                 // Footer
                 footer_about: 'Get On Track — holistički coaching zdravlja i lifestylea za sve koji ozbiljno žele bolji izgled, bolje zdravlje i bolji život. Dostupno svuda — uživo i online.',
                 footer_quicklinks: 'Brzi Linkovi', footer_programs: 'Programi', footer_contact: 'Kontakt',
-                available_worldwide: 'Dostupno Svuda', rights_reserved: 'Sva prava zadržana.',
-
-                // Modal
-                modal_title: 'Termin Rezervisan!',
-                modal_desc: 'Tvoj termin je potvrđen. Uskoro ćeš dobiti email sa detaljima i pozivnicom za kalendar.'
+                available_worldwide: 'Dostupno Svuda', rights_reserved: 'Sva prava zadržana.'
             }
         };
 
@@ -2250,10 +2496,6 @@
             const lcm = document.getElementById('langCurrentMobile');
             if (lc) lc.textContent = display;
             if (lcm) lcm.textContent = display;
-
-            // Re-render dynamic UI
-            if (typeof renderCalendar === 'function') renderCalendar();
-            if (typeof renderTimeSlots === 'function' && selectedDate) renderTimeSlots();
         }
 
         function toggleLang() {
@@ -2290,300 +2532,6 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        // ===== BOOKING CALENDAR =====
-        let currentDate = new Date();
-        let currentMonth = currentDate.getMonth();
-        let currentYear = currentDate.getFullYear();
-        let selectedDate = null;
-        let selectedSlot = null;
-        let selectedTimezone = 'America/New_York';
-
-        const months = ['January', 'February', 'March', 'April', 'May', 'June',
-                        'July', 'August', 'September', 'October', 'November', 'December'];
-        const monthsLocalized = {
-            en: months,
-            bs: ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni',
-                 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar']
-        };
-
-        // Fake booked dates (day of month mapped per year-month)
-        const bookedDates = {
-            '2026-4': [2, 5, 8, 11, 14, 17, 20, 23, 26, 29],
-            '2026-5': [1, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30],
-            '2026-6': [2, 4, 7, 10, 13, 16, 19, 22, 25, 28],
-            '2026-7': [1, 5, 8, 11, 14, 17, 20, 23, 26, 29],
-            '2026-8': [3, 6, 9, 12, 15, 18, 21, 24, 27],
-        };
-
-        // Partially booked time slots per date
-        const partiallyBookedSlots = {
-            '2026-4-9': ['09:00', '14:00'],
-            '2026-4-10': ['10:00', '16:00'],
-            '2026-4-12': ['08:00', '11:00', '15:00'],
-            '2026-4-15': ['09:00', '13:00'],
-            '2026-4-16': ['10:00', '14:00', '17:00'],
-            '2026-4-18': ['08:00', '12:00'],
-            '2026-4-19': ['11:00', '15:00'],
-            '2026-4-22': ['09:00', '13:00', '16:00'],
-            '2026-4-24': ['10:00', '14:00'],
-            '2026-4-25': ['08:00', '11:00'],
-            '2026-4-27': ['09:00', '15:00'],
-            '2026-4-28': ['12:00', '16:00'],
-            '2026-5-2': ['09:00', '14:00'],
-            '2026-5-5': ['10:00', '13:00'],
-            '2026-5-7': ['08:00', '16:00'],
-            '2026-5-8': ['11:00', '15:00'],
-            '2026-5-10': ['09:00', '14:00', '17:00'],
-        };
-
-        // Base time slots in EST (trainer's local time)
-        const baseSlots = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-
-        const tzOffsets = {
-            'America/New_York': 0,
-            'America/Chicago': -1,
-            'America/Denver': -2,
-            'America/Los_Angeles': -3,
-            'Europe/London': 5,
-            'Europe/Berlin': 6,
-            'Europe/Bucharest': 7,
-        };
-
-        const tzLabels = {
-            'America/New_York': 'EST',
-            'America/Chicago': 'CST',
-            'America/Denver': 'MST',
-            'America/Los_Angeles': 'PST',
-            'Europe/London': 'GMT',
-            'Europe/Berlin': 'CET',
-            'Europe/Bucharest': 'EET',
-        };
-
-        function convertTime(estTime, tz) {
-            const [h, m] = estTime.split(':').map(Number);
-            let newH = h + tzOffsets[tz];
-            if (newH < 0) newH += 24;
-            if (newH >= 24) newH -= 24;
-            return `${String(newH).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-        }
-
-        function formatTime12(time24) {
-            const [h, m] = time24.split(':').map(Number);
-            const ampm = h >= 12 ? 'PM' : 'AM';
-            const h12 = h % 12 || 12;
-            return `${h12}:${String(m).padStart(2, '0')} ${ampm}`;
-        }
-
-        // Timezone buttons
-        document.querySelectorAll('.tz-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tz-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                selectedTimezone = btn.dataset.tz;
-                if (selectedDate) renderTimeSlots();
-            });
-        });
-
-        function renderCalendar() {
-            const firstDay = new Date(currentYear, currentMonth, 1);
-            const lastDay = new Date(currentYear, currentMonth + 1, 0);
-            const startDay = (firstDay.getDay() + 6) % 7; // Monday start
-
-            document.getElementById('calendarMonth').textContent = `${monthsLocalized[currentLang][currentMonth]} ${currentYear}`;
-
-            const container = document.getElementById('calendarDays');
-            container.innerHTML = '';
-
-            const today = new Date();
-            const todayStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
-            const bookedKey = `${currentYear}-${currentMonth}`;
-            const bookedList = bookedDates[bookedKey] || [];
-
-            // Empty cells for alignment
-            for (let i = 0; i < startDay; i++) {
-                const empty = document.createElement('div');
-                empty.className = 'calendar-day empty';
-                container.appendChild(empty);
-            }
-
-            for (let day = 1; day <= lastDay.getDate(); day++) {
-                const cell = document.createElement('div');
-                cell.className = 'calendar-day';
-                cell.textContent = day;
-
-                const dateStr = `${currentYear}-${currentMonth}-${day}`;
-                const cellDate = new Date(currentYear, currentMonth, day);
-
-                if (cellDate < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
-                    cell.classList.add('past');
-                } else if (bookedList.includes(day)) {
-                    cell.classList.add('booked');
-                } else {
-                    cell.addEventListener('click', () => selectDate(day));
-                }
-
-                if (dateStr === todayStr) cell.classList.add('today');
-                if (selectedDate && selectedDate.day === day && selectedDate.month === currentMonth && selectedDate.year === currentYear) {
-                    cell.classList.add('selected');
-                }
-
-                container.appendChild(cell);
-            }
-        }
-
-        function selectDate(day) {
-            selectedDate = { day, month: currentMonth, year: currentYear };
-            selectedSlot = null;
-            renderCalendar();
-            renderTimeSlots();
-        }
-
-        function renderTimeSlots() {
-            const container = document.getElementById('timeSlotContent');
-            if (!selectedDate) {
-                container.innerHTML = `
-                    <div class="no-date-message">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        <p>${t('select_date_msg')}</p>
-                    </div>`;
-                return;
-            }
-
-            const dateKey = `${selectedDate.year}-${selectedDate.month}-${selectedDate.day}`;
-            const unavailableEST = partiallyBookedSlots[dateKey] || [];
-
-            const dateObj = new Date(selectedDate.year, selectedDate.month, selectedDate.day);
-            const dayNamesEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const dayNamesBS = ['Nedjelja', 'Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota'];
-            const monthsBS = ['januar', 'februar', 'mart', 'april', 'maj', 'juni', 'juli', 'august', 'septembar', 'oktobar', 'novembar', 'decembar'];
-            const dayName = currentLang === 'bs' ? dayNamesBS[dateObj.getDay()] : dayNamesEN[dateObj.getDay()];
-            const monthName = currentLang === 'bs' ? monthsBS[selectedDate.month] : months[selectedDate.month];
-            const formattedDate = currentLang === 'bs'
-                ? `${dayName}, ${selectedDate.day}. ${monthName} ${selectedDate.year}`
-                : `${dayName}, ${monthName} ${selectedDate.day}, ${selectedDate.year}`;
-
-            let html = `<p class="selected-date-display">${formattedDate}</p>`;
-            html += '<div class="time-slots">';
-
-            baseSlots.forEach(estSlot => {
-                const displayTime = convertTime(estSlot, selectedTimezone);
-                const isUnavailable = unavailableEST.includes(estSlot);
-                const isSelected = selectedSlot === estSlot;
-
-                html += `<div class="time-slot ${isUnavailable ? 'unavailable' : ''} ${isSelected ? 'selected-slot' : ''}"
-                    ${!isUnavailable ? `onclick="selectSlot('${estSlot}')"` : ''}>
-                    <span class="slot-time">${formatTime12(displayTime)}</span>
-                    <span class="slot-tz">${tzLabels[selectedTimezone]}${selectedTimezone !== 'America/New_York' ? ' (' + formatTime12(estSlot) + ' EST)' : ''}</span>
-                </div>`;
-            });
-
-            html += '</div>';
-
-            html += `<div class="booking-form ${selectedSlot ? 'visible' : ''}" id="bookingForm">
-                <input type="text" id="clientName" placeholder="${t('form_name')}" required>
-                <input type="email" id="clientEmail" placeholder="${t('form_email')}" required>
-                <input type="tel" id="clientPhone" placeholder="${t('form_phone')}">
-                <select id="sessionType">
-                    <option value="">${t('form_select_type')}</option>
-                    <option value="discovery">${t('opt_discovery')}</option>
-                    <option value="foundation">${t('opt_foundation')}</option>
-                    <option value="lifestyle">${t('opt_lifestyle')}</option>
-                    <option value="health">${t('opt_health')}</option>
-                    <option value="personal">${t('opt_personal')}</option>
-                    <option value="competition">${t('opt_competition')}</option>
-                </select>
-                <button class="btn btn-primary confirm-btn" onclick="confirmBooking()">${t('form_confirm')}</button>
-            </div>`;
-
-            container.innerHTML = html;
-        }
-
-        function selectSlot(estSlot) {
-            selectedSlot = estSlot;
-            renderTimeSlots();
-        }
-
-        function changeMonth(delta) {
-            currentMonth += delta;
-            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-            renderCalendar();
-        }
-
-        async function confirmBooking() {
-            const name = document.getElementById('clientName').value.trim();
-            const email = document.getElementById('clientEmail').value.trim();
-            const phone = document.getElementById('clientPhone').value.trim();
-            const sessionType = document.getElementById('sessionType').value;
-
-            if (!name || !email || !sessionType) {
-                alert(t('alert_required_fields'));
-                return;
-            }
-
-            const displayTime = convertTime(selectedSlot, selectedTimezone);
-            const formattedDate = currentLang === 'bs'
-                ? `${selectedDate.day}. ${monthsLocalized.bs[selectedDate.month]} ${selectedDate.year}`
-                : `${months[selectedDate.month]} ${selectedDate.day}, ${selectedDate.year}`;
-
-            const sessionLabels = {
-                'discovery': t('opt_discovery').replace(' (30 min)', ''),
-                'foundation': t('opt_foundation'),
-                'lifestyle': t('opt_lifestyle'),
-                'health': t('opt_health'),
-                'personal': currentLang === 'bs' ? '1-na-1 Trening Uživo' : '1-on-1 In-Person Training',
-                'competition': t('extra_2_title'),
-            };
-
-            const confirmBtn = document.querySelector('.confirm-btn');
-            const originalBtnText = confirmBtn.textContent;
-            confirmBtn.textContent = t('booking_sending') || 'Sending...';
-            confirmBtn.disabled = true;
-
-            const templateParams = {
-                client_name: name,
-                client_email: email,
-                client_phone: phone || 'Not provided',
-                session_type: sessionLabels[sessionType],
-                booking_date: formattedDate,
-                booking_time: `${formatTime12(displayTime)} (${tzLabels[selectedTimezone]})`,
-                trainer_email: EMAILJS_CONFIG.trainerEmail,
-                to_email: email
-            };
-
-            // Send emails via EmailJS — silent fallback if not configured
-            if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
-                try {
-                    await Promise.all([
-                        emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.trainerTemplateId, templateParams),
-                        emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.clientTemplateId, templateParams)
-                    ]);
-                } catch (err) {
-                    console.error('EmailJS error:', err);
-                }
-            }
-
-            document.getElementById('bookingDetails').innerHTML = `
-                <p><strong>${t('booking_date')}:</strong> ${formattedDate}</p>
-                <p><strong>${t('booking_time')}:</strong> ${formatTime12(displayTime)} (${tzLabels[selectedTimezone]})</p>
-                <p><strong>${t('booking_session')}:</strong> ${sessionLabels[sessionType]}</p>
-                <p><strong>${t('booking_name')}:</strong> ${name}</p>
-                <p><strong>${t('booking_email')}:</strong> ${email}</p>
-            `;
-
-            confirmBtn.textContent = originalBtnText;
-            confirmBtn.disabled = false;
-            document.getElementById('bookingModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('bookingModal').classList.remove('active');
-        }
-
-        document.getElementById('bookingModal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeModal();
-        });
 
         // ===== LIGHTBOX =====
         const galleryImages = [];
@@ -2629,7 +2577,6 @@
 
         // Init
         applyLang();
-        renderCalendar();
     </script>
 </body>
 </html>
