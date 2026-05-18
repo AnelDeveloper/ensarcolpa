@@ -1114,131 +1114,143 @@
             margin: 0 auto 60px;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .google-reviews-cta {
-            margin-top: 48px;
+        /* Google rating summary */
+        .google-rating-summary {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 22px 28px;
+            gap: 18px;
+            justify-content: center;
+            margin: 0 auto 48px;
+            padding: 20px 28px;
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 6px;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
+            border-radius: 8px;
+            max-width: 460px;
         }
 
-        .google-reviews-logo {
-            flex-shrink: 0;
+        .google-rating-logo {
             background: var(--white);
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
-        .google-reviews-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+        .google-rating-info { display: flex; flex-direction: column; gap: 4px; }
 
-        .google-reviews-text strong {
-            color: var(--white);
-            font-size: 1rem;
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .google-reviews-text span {
-            color: var(--gray-light);
-            font-size: 0.85rem;
-        }
-
-        .google-reviews-cta .btn { flex-shrink: 0; padding: 12px 22px; font-size: 0.85rem; }
-
-        .testimonial-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 36px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '\201C';
-            font-size: 4rem;
-            color: var(--red);
-            font-family: Georgia, serif;
-            position: absolute;
-            top: 16px;
-            left: 24px;
-            opacity: 0.3;
-            line-height: 1;
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 16px;
-        }
-
-        .testimonial-stars svg { width: 16px; height: 16px; color: var(--gold); fill: var(--gold); }
-
-        .testimonial-card p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.7;
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
+        .google-rating-score {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
+        .google-rating-score strong {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .google-rating-stars { display: flex; gap: 2px; }
+        .google-rating-stars svg { width: 18px; height: 18px; fill: #fbbc05; }
+
+        .google-rating-count {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+
+        /* Auto-scrolling reviews marquee */
+        .reviews-marquee {
+            overflow: hidden;
+            position: relative;
+            padding: 8px 0;
+            -webkit-mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scroll-reviews 90s linear infinite;
+        }
+
+        .reviews-marquee:hover .reviews-track { animation-play-state: paused; }
+
+        @keyframes scroll-reviews {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-50% - 10px)); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reviews-track { animation: none; }
+        }
+
+        .review-slide {
+            width: 360px;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-height: 240px;
+        }
+
+        .review-stars { display: flex; gap: 3px; }
+        .review-stars svg { width: 16px; height: 16px; fill: #fbbc05; }
+
+        .review-text {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.82);
+            flex: 1;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .review-avatar {
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--red), var(--gold));
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: var(--font-heading);
-            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
             font-size: 1rem;
-            overflow: hidden;
-            border: 2px solid var(--red);
+            flex-shrink: 0;
         }
 
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .review-meta { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+        .review-meta strong { font-size: 0.88rem; color: var(--white); }
+        .review-meta span { font-size: 0.72rem; color: var(--gray-light); }
+        .review-source { flex-shrink: 0; display: flex; align-items: center; opacity: 0.8; }
+
+        .reviews-cta {
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .testimonial-author-info strong {
-            display: block;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-author-info span {
-            font-size: 0.75rem;
-            color: var(--gray-light);
-        }
+        .reviews-cta .btn { padding: 14px 28px; font-size: 0.85rem; }
 
         /* ===== CTA ===== */
         .cta {
@@ -1518,7 +1530,7 @@
             .services-extras { grid-template-columns: repeat(2, 1fr); }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-            .testimonials-grid { grid-template-columns: 1fr 1fr; }
+            .review-slide { width: 320px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .booking-wrapper { grid-template-columns: 1fr; }
             .trans-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1616,12 +1628,14 @@
             .time-slots-section h3 { font-size: 0.9rem; }
             .booking-form input, .booking-form select { padding: 14px 12px; font-size: 0.9rem; }
 
-            /* Testimonials */
+            /* Testimonials / Google reviews */
             .testimonials { padding: 80px 0; }
-            .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
-            .testimonial-card { padding: 28px 20px; }
-            .google-reviews-cta { flex-direction: column; text-align: center; padding: 20px; gap: 14px; margin-top: 32px; }
-            .google-reviews-cta .btn { width: 100%; }
+            .google-rating-summary { flex-direction: column; gap: 12px; padding: 20px; max-width: 320px; text-align: center; }
+            .google-rating-score { justify-content: center; }
+            .review-slide { width: 280px; padding: 20px 18px; min-height: 220px; }
+            .review-text { font-size: 0.85rem; -webkit-line-clamp: 8; }
+            .reviews-track { animation-duration: 70s; }
+            .reviews-cta .btn { width: 100%; max-width: 320px; }
 
             /* CTA */
             .cta { padding: 70px 0; }
@@ -1770,29 +1784,41 @@
         "name": "Get On Track Fitness",
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5",
+            "ratingValue": "5.0",
             "bestRating": "5",
-            "ratingCount": "3",
-            "reviewCount": "3"
+            "ratingCount": "53",
+            "reviewCount": "53"
         },
         "review": [
             {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Admir Kovačević" },
+                "author": { "@type": "Person", "name": "Amir Turalic" },
                 "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                "reviewBody": "Potpuno mi je promijenio tijelo za 12 sedmica. Svaki trening je detaljno isplaniran, svaki obrok ima smisla."
+                "reviewBody": "One of the best personal trainers in the town! If you want to upgrade your body to top possible level, do definitely contact him. Easy going and no pressure coaching style will make you enjoy every session."
             },
             {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Jovana-Joca" },
+                "author": { "@type": "Person", "name": "Amina Pašović" },
                 "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                "reviewBody": "Najbolja investicija ikad. Online program je toliko detaljan da sam se osjećala kao da imam trenera pored sebe na svakom treningu."
+                "reviewBody": "U posljednjih 15 godina, susrela sam se sa desetak trenerica i trenera. Ensar je neko koga od srca mogu preporučiti jer je jako profesionalan i tačan, jasni su mu ciljevi i rezultati na tijelu su vidljivi."
             },
             {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Jake Mitchell" },
+                "author": { "@type": "Person", "name": "Mirza Bećić" },
                 "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-                "reviewBody": "Working with him remotely from the US has been incredible. The timezone flexibility and weekly check-ins — nothing else compares."
+                "reviewBody": "Za pola godine drugi čovjek. Način življenja, razmišljanja, ishrane i filozofije života totalno promijenjen. Pristup za čistu 10ku."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Elvis Durgut" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                "reviewBody": "Cooperation with Ensar is more than expected. In half a year I managed to lose 15 kg, strengthen and build muscles that did not exist. Most importantly, I learned what healthy habits are."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "ENFA Moda" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                "reviewBody": "After 6 months of online mentoring, I became like new, and I feel like the best version of myself. A version that is energetic and healthy, organized, happy and finally satisfied with its appearance."
             }
         ]
     }
@@ -2124,76 +2150,159 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testimonials" id="testimonials" aria-label="Client testimonials and reviews">
+    <!-- TESTIMONIALS / GOOGLE REVIEWS -->
+    <section class="testimonials" id="testimonials" aria-label="Client testimonials from Google Reviews">
         <div class="container">
             <div class="testimonials-header fade-up">
-                <p class="section-label" data-i18n="testimonials_label">Testimonials</p>
+                <p class="section-label" data-i18n="testimonials_label">Google Reviews</p>
                 <h2 class="section-title" data-i18n-html="testimonials_title">What Clients <span>Say</span></h2>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-up">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <p data-i18n="review_1_text">Skinuo sam 14kg, ali još više od toga — energija mi se vratila, spavam bolje, krvna slika mi je sjajna. Nije ovo bila dijeta, nego promjena cijelog života. Konačno se osjećam dobro u svom tijelu.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Admir Kovačević"></div>
-                        <div class="testimonial-author-info">
-                            <strong>Admir Kovačević</strong>
-                            <span data-i18n="review_1_role">Lifestyle transformacija — Sarajevo, BiH</span>
-                        </div>
-                    </div>
+
+            <div class="google-rating-summary fade-up">
+                <div class="google-rating-logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="38" height="38"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
                 </div>
-                <div class="testimonial-card fade-up">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <p data-i18n="review_2_text">Najbolja investicija ikad. Hormoni su mi se sredili, digestija također, raspoloženje neprepoznatljivo. Naučila sam kako da jedem, kako da treniram, kako da brinem o sebi. Ovo nije program — ovo je novi život.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Jovana Joca"></div>
-                        <div class="testimonial-author-info">
-                            <strong>Jovana-Joca</strong>
-                            <span data-i18n="review_2_role">Health Optimization klijent — Beograd</span>
+                <div class="google-rating-info">
+                    <div class="google-rating-score">
+                        <strong>5.0</strong>
+                        <div class="google-rating-stars" aria-label="5 out of 5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card fade-up">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <p data-i18n="review_3_text">I came in tired, overweight, and burned out. Six months later my blood work looks unrecognizable, I'm sleeping 8 hours straight, and I have energy I haven't had since my 20s. This isn't just training — it's a complete reset.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jake Mitchell"></div>
-                        <div class="testimonial-author-info">
-                            <strong>Jake Mitchell</strong>
-                            <span data-i18n="review_3_role">Health Optimization client — Austin, Texas, USA</span>
-                        </div>
-                    </div>
+                    <span class="google-rating-count" data-i18n="google_rating_count">Based on 53+ verified Google reviews</span>
                 </div>
             </div>
 
-            <div class="google-reviews-cta fade-up">
-                <div class="google-reviews-logo" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <div class="reviews-marquee fade-up" aria-label="Auto-scrolling Google reviews">
+                <div class="reviews-track">
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">One of the best personal trainers in the town! If you want to upgrade your body to top possible level, do definitely contact him. Easy going and "no pressure" coaching style will make you enjoy every session.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Amir Turalic</strong><span>5 years ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">U posljednjih 15 godina, susrela sam se sa desetak trenerica i trenera. Ensar je neko koga od srca mogu preporučiti jer je jako profesionalan i tačan, jasni su mu ciljevi i rezultati na tijelu su vidljivi, a jako je odmjeren u svim aspektima komunikacije. Tople preporuke!</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Amina Pašović</strong><span>6 days ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Za pola godine drugi čovjek. Način življenja, razmišljanja, ishrane i filozofije života totalno promijenjen. Pristup za čistu 10ku.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">M</span>
+                            <div class="review-meta"><strong>Mirza Bećić</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Osim ogromnog znanja i profesionalnosti, ono što Ensara posebno izdvaja jeste njegova životna filozofija, energija i način na koji pristupa klijentima. Kroz cijeli proces pruža osjećaj sigurnosti, razumijevanja i motivacije da nastaviš. Od srca svaka preporuka.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Ada Hasečić</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Sve pohvale za Ensara! Čovjek je hodajuća enciklopedija, ali prije svega prijatelj i podrška. Napredak koji sam postigao uz njega je premašio sva moja očekivanja.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Anes Dumišić</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Odličan trener, profesionalan pristup i vrhunski rezultati. Ensar je maksimalno posvećen klijentu, a motivacija za treninge je uvijek na vrhunskom nivou. Sve preporuke 💪</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Alen Fajković</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Rad sa Ensarom mi je promijenio poglede na navike i ishranu. Sretna sam sa postignutim napretkom i znanjem koje sam dobila od njega. Trener je vrhunski — svima ga preporučujem.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">S</span>
+                            <div class="review-meta"><strong>Selma Hasanbegović</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">In short, after 6 months of online mentoring, I became like new, and I feel like the best version of myself. A version that is energetic and healthy, organized, happy and finally satisfied with its appearance. All recommendations for Ensar.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">E</span>
+                            <div class="review-meta"><strong>ENFA Moda</strong><span>9 months ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Cooperation with Ensar is more than expected. In half a year I managed to lose 15 kg, strengthen and build muscles that did not exist. Most importantly, I learned what healthy habits are and how to eat properly and not regain those 15 kg.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">E</span>
+                            <div class="review-meta"><strong>Elvis Durgut</strong><span>5 years ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
+
+                    <article class="review-slide">
+                        <div class="review-stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="review-text">Rad sa Ensarom mi je potpuno promijenio pristup treningu i ishrani. Nije samo trener koji odradi trening i završi posao, nego osoba koja stvarno prati napredak i zna kako da te gura kad zapneš.</p>
+                        <div class="review-author">
+                            <span class="review-avatar" aria-hidden="true">A</span>
+                            <div class="review-meta"><strong>Amir Rekić</strong><span>1 week ago</span></div>
+                            <span class="review-source" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></span>
+                        </div>
+                    </article>
                 </div>
-                <div class="google-reviews-text">
-                    <strong data-i18n="google_reviews_title">Verified Google Reviews</strong>
-                    <span data-i18n="google_reviews_sub">Read what real clients say on Google.</span>
-                </div>
-                <a href="https://share.google/cciGceQJl836sNsHq" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="google_reviews_btn">See All Reviews</a>
+            </div>
+
+            <div class="reviews-cta fade-up">
+                <a href="https://www.google.com/search?q=ensar+fitness+sarajevo#lrd=0x4758cf19a5763227:0x940b39cde521ea4a,1" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="google_reviews_btn">See All 53+ Reviews on Google</a>
             </div>
         </div>
     </section>
@@ -2356,17 +2465,10 @@
                 contact_ig_sub: 'DM me anytime — fastest way to reach me',
                 contact_ig_btn: 'Message on Instagram',
 
-                // Testimonials
-                testimonials_label: 'Testimonials', testimonials_title: 'What Clients <span>Say</span>',
-                review_1_text: 'I lost 14kg, but more than that — my energy is back, I sleep better, my blood work is excellent. This wasn\'t a diet, it was a complete life change. I finally feel good in my body.',
-                review_1_role: 'Lifestyle Transformation — Sarajevo, BiH',
-                review_2_text: 'Best investment ever. My hormones got sorted, digestion too, my mood is unrecognizable. I learned how to eat, how to train, how to take care of myself. This isn\'t a program — it\'s a new life.',
-                review_2_role: 'Health Optimization client — Belgrade',
-                review_3_text: 'I came in tired, overweight, and burned out. Six months later my blood work looks unrecognizable, I\'m sleeping 8 hours straight, and I have energy I haven\'t had since my 20s. This isn\'t just training — it\'s a complete reset.',
-                review_3_role: 'Health Optimization client — Austin, Texas, USA',
-                google_reviews_title: 'Verified Google Reviews',
-                google_reviews_sub: 'Read what real clients say on Google.',
-                google_reviews_btn: 'See All Reviews',
+                // Testimonials / Google Reviews
+                testimonials_label: 'Google Reviews', testimonials_title: 'What Clients <span>Say</span>',
+                google_rating_count: 'Based on 53+ verified Google reviews',
+                google_reviews_btn: 'See All 53+ Reviews on Google',
 
                 // CTA
                 cta_label: 'Ready?', cta_title: 'Ready To <span style="color: var(--gold);">Get On Track</span>?',
@@ -2451,17 +2553,10 @@
                 contact_ig_sub: 'Pošalji mi DM bilo kada — najbrži način da me uhvatiš',
                 contact_ig_btn: 'Pošalji Poruku na Instagramu',
 
-                // Testimonials
-                testimonials_label: 'Recenzije', testimonials_title: 'Šta Klijenti <span>Kažu</span>',
-                review_1_text: 'Skinuo sam 14kg, ali još više od toga — energija mi se vratila, spavam bolje, krvna slika mi je sjajna. Nije ovo bila dijeta, nego promjena cijelog života. Konačno se osjećam dobro u svom tijelu.',
-                review_1_role: 'Lifestyle transformacija — Sarajevo, BiH',
-                review_2_text: 'Najbolja investicija ikad. Hormoni su mi se sredili, digestija također, raspoloženje neprepoznatljivo. Naučila sam kako da jedem, kako da treniram, kako da brinem o sebi. Ovo nije program — ovo je novi život.',
-                review_2_role: 'Health Optimization klijent — Beograd',
-                review_3_text: 'Došao sam umoran, gojazan i izgorio. Šest mjeseci kasnije moja krvna slika izgleda neprepoznatljivo, spavam 8 sati u komadu, a imam energiju kakvu nisam imao od svojih dvadesetih. Ovo nije samo trening — ovo je kompletan reset.',
-                review_3_role: 'Health Optimization klijent — Austin, Texas, SAD',
-                google_reviews_title: 'Verifikovane Google Recenzije',
-                google_reviews_sub: 'Pročitaj šta stvarni klijenti kažu na Googleu.',
-                google_reviews_btn: 'Pogledaj Sve Recenzije',
+                // Testimonials / Google Reviews
+                testimonials_label: 'Google Recenzije', testimonials_title: 'Šta Klijenti <span>Kažu</span>',
+                google_rating_count: 'Bazirano na 53+ verifikovanih Google recenzija',
+                google_reviews_btn: 'Pogledaj Svih 53+ Recenzija na Googleu',
 
                 // CTA
                 cta_label: 'Spreman/a?', cta_title: 'Vrijeme Je Da <span style="color: var(--gold);">Kreneš</span>?',
@@ -2532,6 +2627,11 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ===== REVIEWS MARQUEE (seamless infinite scroll via 2x clone) =====
+        document.querySelectorAll('.reviews-track').forEach(track => {
+            track.innerHTML += track.innerHTML;
+        });
 
         // ===== LIGHTBOX =====
         const galleryImages = [];
