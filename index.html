@@ -406,6 +406,101 @@
         .about-feature svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--gold); }
         .about-feature span { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; }
 
+        /* ===== ACHIEVEMENTS / COMPETITIONS ===== */
+        .achievements {
+            padding: 120px 0;
+            background: var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .achievements-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .achievement-card {
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+        }
+
+        .achievement-image {
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover .achievement-image img { transform: scale(1.05); }
+
+        .achievement-medal {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, var(--gold), #b8861b);
+            color: var(--dark);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 7px 12px;
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .achievement-medal.bronze { background: linear-gradient(135deg, #cd7f32, #8c5520); color: var(--white); }
+
+        .achievement-body {
+            padding: 20px 22px 24px;
+        }
+
+        .achievement-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            color: var(--white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .achievement-meta {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .achievement-desc {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
         /* ===== SERVICES ===== */
         .services { padding: 120px 0; }
 
@@ -749,6 +844,120 @@
             padding: 6px 10px;
             border-radius: 2px;
         }
+
+        /* ===== APPLY FORM ===== */
+        .apply {
+            padding: 120px 0;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .apply::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center top, rgba(196,30,30,0.10), transparent 60%);
+            pointer-events: none;
+        }
+
+        .apply-wrapper {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .apply-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .apply-form {
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 36px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .apply-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .apply-field { display: flex; flex-direction: column; gap: 6px; }
+
+        .apply-field label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .apply-field input,
+        .apply-field select,
+        .apply-field textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.92rem;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .apply-field textarea {
+            resize: vertical;
+            min-height: 110px;
+            font-family: var(--font-body);
+        }
+
+        .apply-field input::placeholder,
+        .apply-field textarea::placeholder { color: rgba(255,255,255,0.35); }
+
+        .apply-field input:focus,
+        .apply-field select:focus,
+        .apply-field textarea:focus {
+            border-color: var(--red);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .apply-field select option { background: var(--dark); color: var(--white); }
+
+        .apply-submit {
+            margin-top: 8px;
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 0.95rem;
+        }
+
+        .apply-disclaimer {
+            font-size: 0.78rem;
+            color: var(--gray-light);
+            text-align: center;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .apply-success {
+            display: none;
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--dark-light);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+        }
+
+        .apply-success.visible { display: block; }
+
+        .apply-success svg { width: 56px; height: 56px; color: var(--gold); margin-bottom: 16px; }
+        .apply-success h3 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--white); margin-bottom: 12px; letter-spacing: 1px; }
+        .apply-success p { color: var(--gray-light); line-height: 1.6; }
 
         /* ===== CONTACT ===== */
         .contact { padding: 120px 0; background: var(--dark-light); }
@@ -1187,6 +1396,7 @@
             .review-slide { width: 320px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .trans-grid { grid-template-columns: repeat(2, 1fr); }
+            .achievements-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
         }
 
         @media (max-width: 768px) {
@@ -1265,6 +1475,22 @@
             .contact-card { padding: 28px 18px; }
             .contact-card .contact-value { font-size: 1.05rem; }
             .contact-card .btn { max-width: 100%; padding: 14px 18px; font-size: 0.85rem; }
+
+            /* Achievements */
+            .achievements { padding: 80px 0; }
+            .achievements-grid { grid-template-columns: 1fr; gap: 18px; }
+            .achievement-image { aspect-ratio: 4 / 5; }
+            .achievement-body { padding: 18px 18px 22px; }
+            .achievement-title { font-size: 1.05rem; }
+
+            /* Apply form */
+            .apply { padding: 80px 0; }
+            .apply-form { padding: 24px 18px; gap: 14px; border-radius: 6px; }
+            .apply-row { grid-template-columns: 1fr; gap: 14px; }
+            .apply-field input, .apply-field select, .apply-field textarea { padding: 12px 14px; font-size: 0.9rem; }
+            .apply-field label { font-size: 0.68rem; }
+            .apply-submit { padding: 16px 20px; font-size: 0.9rem; }
+            .apply-success { padding: 36px 22px; }
 
             /* Testimonials / Google reviews */
             .testimonials { padding: 80px 0; }
@@ -1515,11 +1741,11 @@
             <a href="#" class="logo">GET ON<span>TRACK</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#achievements" data-i18n="nav_achievements">Achievements</a></li>
                 <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
                 <li><a href="#transformations" data-i18n="nav_transformations">Transformations</a></li>
-                <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
                 <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
-                <li><a href="#contact" class="nav-book-btn" data-i18n="nav_contact_btn">Contact</a></li>
+                <li><a href="#apply" class="nav-book-btn" data-i18n="nav_apply_btn">Apply Now</a></li>
                 <li><button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
                     <span id="langCurrent">EN</span>
                 </button></li>
@@ -1548,7 +1774,7 @@
                 <h1 data-i18n-html="hero_title">Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span></h1>
                 <p data-i18n="hero_desc">Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_primary">Contact Me</a>
+                    <a href="#apply" class="btn btn-primary" data-i18n="hero_cta_primary">Apply Now</a>
                     <a href="#services" class="btn btn-outline" data-i18n="hero_cta_secondary">View Programs</a>
                 </div>
                 <div class="hero-stats">
@@ -1612,6 +1838,55 @@
         </div>
     </section>
 
+    <!-- ACHIEVEMENTS / COMPETITIONS -->
+    <section class="achievements" id="achievements" aria-label="Competition achievements">
+        <div class="container">
+            <div class="achievements-header fade-up">
+                <p class="section-label" data-i18n="achievements_label">Competitive Career</p>
+                <h2 class="section-title" data-i18n-html="achievements_title">Stage <span>Achievements</span></h2>
+                <p data-i18n="achievements_desc">A decade of training the right way — proven on the biggest stages in bodybuilding. This is the experience your coaching is built on.</p>
+            </div>
+
+            <div class="achievements-grid fade-up">
+                <article class="achievement-card">
+                    <div class="achievement-image">
+                        <span class="achievement-medal bronze" data-i18n="achv_arnold_medal">Top 3</span>
+                        <img src="images/arnold_medal.png" alt="Ensar Colpa Top 3 at the Arnold Classic" loading="lazy">
+                    </div>
+                    <div class="achievement-body">
+                        <h3 class="achievement-title">Arnold Classic</h3>
+                        <p class="achievement-meta" data-i18n="achv_arnold_meta">Top 3 Finish</p>
+                        <p class="achievement-desc" data-i18n="achv_arnold_desc">One of the most prestigious bodybuilding stages in the world — a top 3 finish among elite international competitors.</p>
+                    </div>
+                </article>
+
+                <article class="achievement-card">
+                    <div class="achievement-image">
+                        <span class="achievement-medal" data-i18n="achv_gold">Gold</span>
+                        <img src="images/jagodina_medal.png" alt="Ensar Colpa Gold medal in Jagodina" loading="lazy">
+                    </div>
+                    <div class="achievement-body">
+                        <h3 class="achievement-title">Jagodina Open</h3>
+                        <p class="achievement-meta" data-i18n="achv_jagodina_meta">1st Place — Gold</p>
+                        <p class="achievement-desc" data-i18n="achv_jagodina_desc">First place at the Jagodina Open bodybuilding championship — gold medal in his category.</p>
+                    </div>
+                </article>
+
+                <article class="achievement-card">
+                    <div class="achievement-image">
+                        <span class="achievement-medal" data-i18n="achv_gold">Gold</span>
+                        <img src="images/obrenovac_medal.png" alt="Ensar Colpa Gold medal in Obrenovac" loading="lazy">
+                    </div>
+                    <div class="achievement-body">
+                        <h3 class="achievement-title">Obrenovac Cup</h3>
+                        <p class="achievement-meta" data-i18n="achv_obrenovac_meta">1st Place — Gold</p>
+                        <p class="achievement-desc" data-i18n="achv_obrenovac_desc">First place at the Obrenovac Cup — another gold medal proving consistency on the regional bodybuilding scene.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICES -->
     <section class="services" id="services" aria-label="Training programs and pricing">
         <div class="container">
@@ -1635,7 +1910,7 @@
                         <li data-i18n="tier_1_f4">Supplement recommendations</li>
                         <li data-i18n="tier_1_f5">Web & app access</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
                 </div>
 
                 <div class="service-card service-card-featured fade-up">
@@ -1653,7 +1928,7 @@
                         <li data-i18n="tier_2_f4">Sleep & stress optimization</li>
                         <li data-i18n="tier_2_f5">Adjustments based on progress</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
                 </div>
 
                 <div class="service-card service-card-premium fade-up">
@@ -1671,11 +1946,11 @@
                         <li data-i18n="tier_3_f5">Personalized supplementation</li>
                         <li data-i18n="tier_3_f6">Monthly 1-on-1 video consultations</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
                 </div>
             </div>
 
-            <p class="pricing-note fade-up" data-i18n="pricing_note">Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €30. Full coaching packages are scoped after our discovery call.</p>
+            <p class="pricing-note fade-up" data-i18n="pricing_note">Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €60. Full coaching packages are scoped after our discovery call.</p>
 
             <div class="services-extras">
                 <div class="service-card service-card-small fade-up">
@@ -1684,7 +1959,7 @@
                     </div>
                     <h3 data-i18n="extra_1_title">1-on-1 In-Person Training</h3>
                     <p data-i18n="extra_1_desc">Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.</p>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €30 <small data-i18n="per_session">/ session</small></div>
+                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_session">/ session</small></div>
                 </div>
                 <div class="service-card service-card-small fade-up">
                     <div class="service-icon">
@@ -1740,6 +2015,22 @@
                         <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
                         <img src="images/trans3_man.jpg" alt="Male client body transformation — before and after" loading="lazy">
                     </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans4_man.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans5_man.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans6_man.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans7_man.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
                 </div>
             </div>
 
@@ -1757,8 +2048,91 @@
                     </div>
                     <div class="trans-item">
                         <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
-                        <img src="images/trans3_women.jpg" alt="Female client body transformation — before and after" loading="lazy">
+                        <img src="images/trans3_women.png" alt="Female client body transformation — before and after" loading="lazy">
                     </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans4_women.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans5_women.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/trans6_women.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLY FOR COACHING -->
+    <section class="apply" id="apply" aria-label="Apply for coaching">
+        <div class="container">
+            <div class="apply-wrapper fade-up">
+                <div class="apply-header">
+                    <p class="section-label" data-i18n="apply_label">Get Started</p>
+                    <h2 class="section-title" data-i18n-html="apply_title">Apply For <span>Coaching</span></h2>
+                    <p data-i18n="apply_desc">Fill out the form below and I'll get back to you within 24 hours to discuss your goals and the right program for you.</p>
+                </div>
+
+                <form class="apply-form" id="applyForm" action="https://formsubmit.co/ensarcolpa@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New coaching application from website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://getontrack.com/?applied=1">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="apply-row">
+                        <div class="apply-field">
+                            <label for="apply-name" data-i18n="apply_field_name">Full Name</label>
+                            <input id="apply-name" name="name" type="text" required placeholder="John Doe">
+                        </div>
+                        <div class="apply-field">
+                            <label for="apply-age" data-i18n="apply_field_age">Age</label>
+                            <input id="apply-age" name="age" type="number" min="14" max="99" placeholder="28">
+                        </div>
+                    </div>
+
+                    <div class="apply-row">
+                        <div class="apply-field">
+                            <label for="apply-email" data-i18n="apply_field_email">Email</label>
+                            <input id="apply-email" name="email" type="email" required placeholder="you@email.com">
+                        </div>
+                        <div class="apply-field">
+                            <label for="apply-phone" data-i18n="apply_field_phone">Phone / WhatsApp</label>
+                            <input id="apply-phone" name="phone" type="tel" placeholder="+387 …">
+                        </div>
+                    </div>
+
+                    <div class="apply-field">
+                        <label for="apply-program" data-i18n="apply_field_program">Which program are you interested in?</label>
+                        <select id="apply-program" name="program" required>
+                            <option value="" data-i18n="apply_opt_choose">— Choose a program —</option>
+                            <option value="Foundation Program (online)" data-i18n="apply_opt_foundation">Foundation Program (online)</option>
+                            <option value="Lifestyle Transformation" data-i18n="apply_opt_lifestyle">Lifestyle Transformation</option>
+                            <option value="Health Optimization" data-i18n="apply_opt_health">Health Optimization</option>
+                            <option value="1-on-1 In-Person Training (Sarajevo)" data-i18n="apply_opt_inperson">1-on-1 In-Person Training (Sarajevo)</option>
+                            <option value="Just a meal plan" data-i18n="apply_opt_mealplan">Just a meal plan</option>
+                            <option value="Just a training program" data-i18n="apply_opt_trainingonly">Just a training program</option>
+                            <option value="Not sure — recommend something" data-i18n="apply_opt_unsure">Not sure — recommend something</option>
+                        </select>
+                    </div>
+
+                    <div class="apply-field">
+                        <label for="apply-goal" data-i18n="apply_field_goal">Your goal & current situation</label>
+                        <textarea id="apply-goal" name="goal" required placeholder="Briefly: where you are now, where you want to get, and any injuries or constraints…"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary apply-submit" data-i18n="apply_submit">Send My Application</button>
+                    <p class="apply-disclaimer" data-i18n="apply_disclaimer">I'll personally reply within 24 hours. Your info is private and never shared.</p>
+                </form>
+
+                <div class="apply-success" id="applySuccess">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <h3 data-i18n="apply_success_title">Application Sent!</h3>
+                    <p data-i18n="apply_success_desc">Thanks — I'll get back to you within 24 hours.</p>
                 </div>
             </div>
         </div>
@@ -1960,7 +2334,7 @@
             <p class="section-label" data-i18n="cta_label">Ready?</p>
             <h2 data-i18n-html="cta_title">Ready To <span style="color: var(--gold);">Get On Track</span>?</h2>
             <p data-i18n="cta_desc">Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.</p>
-            <a href="#contact" class="btn btn-primary" data-i18n="cta_btn">Contact Me Now</a>
+            <a href="#apply" class="btn btn-primary" data-i18n="cta_btn">Apply For Coaching</a>
         </div>
     </section>
 
@@ -1977,9 +2351,10 @@
                     <h4 data-i18n="footer_quicklinks">Quick Links</h4>
                     <ul>
                         <li><a href="#about" data-i18n="nav_about">About</a></li>
+                        <li><a href="#achievements" data-i18n="nav_achievements">Achievements</a></li>
                         <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
                         <li><a href="#transformations" data-i18n="nav_transformations">Transformations</a></li>
-                        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                        <li><a href="#apply" data-i18n="nav_apply_btn">Apply Now</a></li>
                         <li><a href="#contact" data-i18n="nav_contact_btn">Contact</a></li>
                     </ul>
                 </div>
@@ -2041,15 +2416,48 @@
         const translations = {
             en: {
                 // Navigation
-                nav_about: 'About', nav_programs: 'Programs', nav_gallery: 'Gallery',
-                nav_transformations: 'Transformations', nav_reviews: 'Reviews', nav_contact_btn: 'Contact',
+                nav_about: 'About', nav_achievements: 'Achievements', nav_programs: 'Programs', nav_gallery: 'Gallery',
+                nav_transformations: 'Transformations', nav_reviews: 'Reviews', nav_contact_btn: 'Contact', nav_apply_btn: 'Apply Now',
 
                 // Hero
                 hero_badge: 'Health & Lifestyle Coach',
                 hero_title: 'Look Better. <span class="highlight-red">Feel Better.</span> <span class="highlight-gold">Live Better.</span>',
                 hero_desc: "Sustainable transformation through smart nutrition, structured training, and habits that actually stick. Optimize your health, energy, sleep, and mindset — with a coach who's been doing this for over a decade.",
-                hero_cta_primary: 'Contact Me', hero_cta_secondary: 'View Programs',
+                hero_cta_primary: 'Apply Now', hero_cta_secondary: 'View Programs',
                 stat_experience: 'Years Experience', stat_lives: 'Transformations', stat_personal: 'Personalized Approach',
+
+                // Achievements
+                achievements_label: 'Competitive Career',
+                achievements_title: 'Stage <span>Achievements</span>',
+                achievements_desc: 'A decade of training the right way — proven on the biggest stages in bodybuilding. This is the experience your coaching is built on.',
+                achv_gold: 'Gold', achv_arnold_medal: 'Top 3',
+                achv_arnold_meta: 'Top 3 Finish',
+                achv_arnold_desc: 'One of the most prestigious bodybuilding stages in the world — a top 3 finish among elite international competitors.',
+                achv_jagodina_meta: '1st Place — Gold',
+                achv_jagodina_desc: 'First place at the Jagodina Open bodybuilding championship — gold medal in his category.',
+                achv_obrenovac_meta: '1st Place — Gold',
+                achv_obrenovac_desc: 'First place at the Obrenovac Cup — another gold medal proving consistency on the regional bodybuilding scene.',
+
+                // Apply form
+                apply_label: 'Get Started',
+                apply_title: 'Apply For <span>Coaching</span>',
+                apply_desc: "Fill out the form below and I'll get back to you within 24 hours to discuss your goals and the right program for you.",
+                apply_field_name: 'Full Name', apply_field_age: 'Age',
+                apply_field_email: 'Email', apply_field_phone: 'Phone / WhatsApp',
+                apply_field_program: 'Which program are you interested in?',
+                apply_opt_choose: '— Choose a program —',
+                apply_opt_foundation: 'Foundation Program (online)',
+                apply_opt_lifestyle: 'Lifestyle Transformation',
+                apply_opt_health: 'Health Optimization',
+                apply_opt_inperson: '1-on-1 In-Person Training (Sarajevo)',
+                apply_opt_mealplan: 'Just a meal plan',
+                apply_opt_trainingonly: 'Just a training program',
+                apply_opt_unsure: 'Not sure — recommend something',
+                apply_field_goal: 'Your goal & current situation',
+                apply_submit: 'Send My Application',
+                apply_disclaimer: "I'll personally reply within 24 hours. Your info is private and never shared.",
+                apply_success_title: 'Application Sent!',
+                apply_success_desc: "Thanks — I'll get back to you within 24 hours.",
 
                 // About
                 about_label: 'About Me',
@@ -2086,7 +2494,7 @@
                 extra_3_title: 'Free Discovery Call',
                 extra_3_desc: '30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.',
                 price_from: 'From',
-                pricing_note: 'Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €30. Full coaching packages are scoped after our discovery call.',
+                pricing_note: 'Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €60. Full coaching packages are scoped after our discovery call.',
 
                 // Gallery
                 gallery_label: 'Gallery', gallery_title: 'In The <span>Gym</span>',
@@ -2120,7 +2528,7 @@
                 // CTA
                 cta_label: 'Ready?', cta_title: 'Ready To <span style="color: var(--gold);">Get On Track</span>?',
                 cta_desc: 'Your first call is free. No commitment, no pressure — just an honest conversation about where you are, where you want to go, and the right program to get you there.',
-                cta_btn: 'Contact Me Now',
+                cta_btn: 'Apply For Coaching',
 
                 // Footer
                 footer_about: 'Get On Track — holistic health and lifestyle coaching for anyone serious about looking better, feeling better, and living better. Available worldwide — in person and online.',
@@ -2129,15 +2537,48 @@
             },
             bs: {
                 // Navigation
-                nav_about: 'O Meni', nav_programs: 'Programi', nav_gallery: 'Galerija',
-                nav_transformations: 'Transformacije', nav_reviews: 'Recenzije', nav_contact_btn: 'Kontakt',
+                nav_about: 'O Meni', nav_achievements: 'Uspjesi', nav_programs: 'Programi', nav_gallery: 'Galerija',
+                nav_transformations: 'Transformacije', nav_reviews: 'Recenzije', nav_contact_btn: 'Kontakt', nav_apply_btn: 'Prijavi Se',
 
                 // Hero
                 hero_badge: 'Coach za Zdravlje i Lifestyle',
                 hero_title: 'Bolji Izgled. <span class="highlight-red">Bolje Zdravlje.</span> <span class="highlight-gold">Bolji Život.</span>',
                 hero_desc: 'Održiva transformacija kroz pametnu ishranu, strukturirani trening i navike koje stvarno traju. Optimizuj svoje zdravlje, energiju, san i način razmišljanja — sa coachem koji ovo radi više od deset godina.',
-                hero_cta_primary: 'Kontaktiraj Me', hero_cta_secondary: 'Pogledaj Programe',
+                hero_cta_primary: 'Prijavi Se', hero_cta_secondary: 'Pogledaj Programe',
                 stat_experience: 'Godina Iskustva', stat_lives: 'Transformacija', stat_personal: 'Personalizovan Pristup',
+
+                // Achievements
+                achievements_label: 'Takmičarska Karijera',
+                achievements_title: 'Takmičarski <span>Uspjesi</span>',
+                achievements_desc: 'Decenija ozbiljnog treninga — dokazana na najvećim bodybuilding bina­ma. Iskustvo na kojem je sagrađen tvoj coaching.',
+                achv_gold: 'Zlato', achv_arnold_medal: 'Top 3',
+                achv_arnold_meta: 'Top 3 Plasman',
+                achv_arnold_desc: 'Jedna od najprestižnijih bodybuilding scena na svijetu — top 3 plasman među elitnim međunarodnim takmičarima.',
+                achv_jagodina_meta: '1. Mjesto — Zlato',
+                achv_jagodina_desc: 'Prvo mjesto na bodybuilding takmičenju Jagodina Open — zlatna medalja u kategoriji.',
+                achv_obrenovac_meta: '1. Mjesto — Zlato',
+                achv_obrenovac_desc: 'Prvo mjesto na Obrenovac Cup-u — još jedna zlatna medalja kao dokaz konzistencije na regionalnoj bodybuilding sceni.',
+
+                // Apply form
+                apply_label: 'Kreni',
+                apply_title: 'Prijavi Se Za <span>Coaching</span>',
+                apply_desc: 'Popuni formu i javit ću ti se u roku od 24 sata da razgovaramo o ciljevima i programu koji ti najbolje odgovara.',
+                apply_field_name: 'Ime i Prezime', apply_field_age: 'Godine',
+                apply_field_email: 'Email', apply_field_phone: 'Telefon / WhatsApp',
+                apply_field_program: 'Za koji program si zainteresovan/a?',
+                apply_opt_choose: '— Odaberi program —',
+                apply_opt_foundation: 'Foundation Program (online)',
+                apply_opt_lifestyle: 'Lifestyle Transformacija',
+                apply_opt_health: 'Health Optimization',
+                apply_opt_inperson: '1-na-1 Trening Uživo (Sarajevo)',
+                apply_opt_mealplan: 'Samo jelovnik',
+                apply_opt_trainingonly: 'Samo trening program',
+                apply_opt_unsure: 'Nisam siguran/na — preporuči nešto',
+                apply_field_goal: 'Tvoj cilj i trenutna situacija',
+                apply_submit: 'Pošalji Prijavu',
+                apply_disclaimer: 'Javit ću ti se lično u roku od 24 sata. Tvoji podaci ostaju privatni.',
+                apply_success_title: 'Prijava Poslana!',
+                apply_success_desc: 'Hvala — javit ću ti se u roku od 24 sata.',
 
                 // About
                 about_label: 'O Meni',
@@ -2153,7 +2594,7 @@
                 programs_intro: 'Tri nivoa napravljena za prave rezultate — od osnovnih navika do potpune optimizacije zdravlja. Odaberi ono što ti odgovara.',
                 most_popular: 'Najpopularniji', per_month: '/ mjesec', per_session: '/ sesija', free: 'Besplatno',
                 price_from: 'Od',
-                pricing_note: 'Cijene su potpuno prilagođene tvojim potrebama. Jednostavni planovi — samo trening program ili samo jelovnik — kreću od €30. Kompletni coaching paketi se dogovaraju nakon besplatnog razgovora.',
+                pricing_note: 'Cijene su potpuno prilagođene tvojim potrebama. Jednostavni planovi — samo trening program ili samo jelovnik — kreću od €60. Kompletni coaching paketi se dogovaraju nakon besplatnog razgovora.',
 
                 tier_1_label: 'Nivo 1 · Foundation', tier_1_title: 'Foundation Program',
                 tier_1_desc: 'Tvoja polazna tačka. Strukturiran plan ishrane, trening program, dnevne navike i preporuke za suplementaciju — sve kroz aplikaciju.',
@@ -2208,7 +2649,7 @@
                 // CTA
                 cta_label: 'Spreman/a?', cta_title: 'Vrijeme Je Da <span style="color: var(--gold);">Kreneš</span>?',
                 cta_desc: 'Tvoj prvi razgovor je besplatan. Bez obaveze, bez pritiska — samo iskren razgovor o tome gdje si, kuda želiš ići i koji program te najbolje vodi tamo.',
-                cta_btn: 'Kontaktiraj Me Sada',
+                cta_btn: 'Prijavi Se Za Coaching',
 
                 // Footer
                 footer_about: 'Get On Track — holistički coaching zdravlja i lifestylea za sve koji ozbiljno žele bolji izgled, bolje zdravlje i bolji život. Dostupno svuda — uživo i online.',
@@ -2279,6 +2720,17 @@
         document.querySelectorAll('.reviews-track').forEach(track => {
             track.innerHTML += track.innerHTML;
         });
+
+        // ===== APPLY FORM: show success state on ?applied=1 redirect =====
+        if (new URLSearchParams(window.location.search).get('applied') === '1') {
+            const form = document.getElementById('applyForm');
+            const success = document.getElementById('applySuccess');
+            if (form && success) {
+                form.style.display = 'none';
+                success.classList.add('visible');
+                document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
 
         // ===== LIGHTBOX =====
         const galleryImages = [];
