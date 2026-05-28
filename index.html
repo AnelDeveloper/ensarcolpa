@@ -1397,6 +1397,8 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .trans-grid { grid-template-columns: repeat(2, 1fr); }
             .achievements-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .nav-links { gap: 20px; }
+            .nav-links a { font-size: 0.82rem; letter-spacing: 1.5px; }
         }
 
         @media (max-width: 768px) {
@@ -1487,10 +1489,12 @@
             .apply { padding: 80px 0; }
             .apply-form { padding: 24px 18px; gap: 14px; border-radius: 6px; }
             .apply-row { grid-template-columns: 1fr; gap: 14px; }
-            .apply-field input, .apply-field select, .apply-field textarea { padding: 12px 14px; font-size: 0.9rem; }
+            .apply-field input, .apply-field select, .apply-field textarea { padding: 12px 14px; font-size: 16px; min-height: 48px; }
+            .apply-field textarea { min-height: 120px; }
             .apply-field label { font-size: 0.68rem; }
-            .apply-submit { padding: 16px 20px; font-size: 0.9rem; }
+            .apply-submit { padding: 16px 20px; font-size: 0.95rem; min-height: 52px; }
             .apply-success { padding: 36px 22px; }
+            .apply-disclaimer { font-size: 0.75rem; }
 
             /* Testimonials / Google reviews */
             .testimonials { padding: 80px 0; }
@@ -1534,6 +1538,12 @@
             .contact-card { padding: 24px 16px; }
             .contact-card h3 { font-size: 1.2rem; }
             .contact-card .contact-value { font-size: 0.95rem; }
+            .achievement-body { padding: 16px 16px 20px; }
+            .achievement-title { font-size: 1rem; }
+            .achievement-desc { font-size: 0.8rem; }
+            .achievement-medal { font-size: 0.62rem; padding: 6px 9px; top: 10px; right: 10px; }
+            .apply-form { padding: 20px 14px; }
+            .apply-field input, .apply-field select, .apply-field textarea { padding: 11px 12px; }
         }
 
         /* ===== ANIMATIONS ===== */
