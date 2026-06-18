@@ -1557,6 +1557,109 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ===== CONTACT POPUP ===== */
+        .contact-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .contact-popup-overlay.active { opacity: 1; visibility: visible; }
+        .contact-popup {
+            position: relative;
+            background: linear-gradient(160deg, var(--dark-light), var(--dark));
+            border: 1px solid rgba(196, 30, 30, 0.45);
+            border-radius: 16px;
+            max-width: 440px;
+            width: 100%;
+            padding: 46px 32px 36px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            transform: translateY(24px) scale(0.96);
+            transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .contact-popup-overlay.active .contact-popup { transform: translateY(0) scale(1); }
+        .contact-popup-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--gray-light);
+            font-size: 1.9rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .contact-popup-close:hover { color: var(--red-light); }
+        .contact-popup-icon {
+            width: 66px;
+            height: 66px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 28px rgba(196, 30, 30, 0.45);
+        }
+        .contact-popup-icon svg { width: 32px; height: 32px; stroke: var(--white); fill: none; }
+        .contact-popup h3 {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .contact-popup p {
+            color: var(--off-white);
+            font-size: 1.02rem;
+            margin-bottom: 26px;
+            line-height: 1.55;
+        }
+        .contact-popup-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-popup-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-popup-btn:hover { transform: translateY(-2px); }
+        .contact-popup-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+        .contact-popup-wa { background: #25D366; color: #062b18; }
+        .contact-popup-wa:hover { box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4); }
+        .contact-popup-ig {
+            background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #F77737);
+            color: var(--white);
+        }
+        .contact-popup-ig:hover { box-shadow: 0 8px 22px rgba(193, 53, 132, 0.45); }
+        @media (max-width: 480px) {
+            .contact-popup { padding: 40px 22px 30px; }
+            .contact-popup h3 { font-size: 1.42rem; }
+            .contact-popup p { font-size: 0.95rem; }
+        }
     </style>
 
     <!-- Structured Data: LocalBusiness -->
@@ -1583,7 +1686,7 @@
             { "@type": "Continent", "name": "Europe" }
         ],
         "sameAs": [
-            "https://www.instagram.com/ensar_colpa_fitness/"
+            "https://www.instagram.com/ensar.colpa.fitness/"
         ],
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -1605,7 +1708,7 @@
         "url": "https://getontrack.com",
         "image": "https://getontrack.com/images/1-7.jpeg",
         "sameAs": [
-            "https://www.instagram.com/ensar_colpa_fitness/"
+            "https://www.instagram.com/ensar.colpa.fitness/"
         ],
         "knowsAbout": ["Personal Training", "Nutrition Planning", "Body Transformation", "Strength Training", "Online Coaching", "Lifestyle Coaching"]
     }
@@ -1873,7 +1976,7 @@
                 <article class="achievement-card">
                     <div class="achievement-image">
                         <span class="achievement-medal" data-i18n="achv_gold">Gold</span>
-                        <img src="images/jagodina_medal.png" alt="Ensar Colpa Gold medal in Jagodina" loading="lazy">
+                        <img src="images/jagodina_medal2.png" alt="Ensar Colpa Gold medal in Jagodina" loading="lazy">
                     </div>
                     <div class="achievement-body">
                         <h3 class="achievement-title">Jagodina Open</h3>
@@ -1885,7 +1988,7 @@
                 <article class="achievement-card">
                     <div class="achievement-image">
                         <span class="achievement-medal" data-i18n="achv_gold">Gold</span>
-                        <img src="images/obrenovac_medal.png" alt="Ensar Colpa Gold medal in Obrenovac" loading="lazy">
+                        <img src="images/obrenovac_medal2.png" alt="Ensar Colpa Gold medal in Obrenovac" loading="lazy">
                     </div>
                     <div class="achievement-body">
                         <h3 class="achievement-title">Obrenovac Cup</h3>
@@ -1983,23 +2086,6 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery" id="gallery" aria-label="Photo gallery">
-        <div class="container">
-            <div class="gallery-header fade-up">
-                <p class="section-label" data-i18n="gallery_label">Gallery</p>
-                <h2 class="section-title" data-i18n-html="gallery_title">In The <span>Gym</span></h2>
-            </div>
-            <div class="gallery-grid fade-up">
-                <div class="gallery-item"><img src="images/1-1.jpeg" alt="Personal trainer doing cable crossover exercise in the gym" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/1-3.jpeg" alt="Coach performing dumbbell press during strength training session" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/1-4.jpeg" alt="Fitness trainer posing at bodybuilding competition on stage" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/1.jpeg" alt="Competition stage physique presentation at bodybuilding event" loading="lazy"></div>
-                <div class="gallery-item"><img src="images/1-5.jpeg" alt="Trainer demonstrating hanging leg raise exercise for core strength" loading="lazy"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- TRANSFORMATIONS -->
     <section class="transformations" id="transformations" aria-label="Client transformations">
         <div class="container">
@@ -2041,6 +2127,26 @@
                         <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
                         <img src="images/trans7_man.png" alt="Male client body transformation — before and after" loading="lazy">
                     </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/man1.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/man2.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/man3.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/man4.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/man5.png" alt="Male client body transformation — before and after" loading="lazy">
+                    </div>
                 </div>
             </div>
 
@@ -2072,6 +2178,18 @@
                         <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
                         <img src="images/trans6_women.png" alt="Female client body transformation — before and after" loading="lazy">
                     </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/women1.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/women2.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
+                    <div class="trans-item">
+                        <span class="trans-badge" data-i18n="trans_before_after">Before / After</span>
+                        <img src="images/women3.png" alt="Female client body transformation — before and after" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
@@ -2091,7 +2209,6 @@
                     <input type="hidden" name="_subject" value="New coaching application from website">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://getontrack.com/?applied=1">
                     <input type="text" name="_honey" style="display:none">
 
                     <div class="apply-row">
@@ -2173,9 +2290,9 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </div>
                     <h3 data-i18n="contact_ig_title">Instagram DM</h3>
-                    <span class="contact-value">@ensar_colpa_fitness</span>
+                    <span class="contact-value">@ensar.colpa.fitness</span>
                     <p data-i18n="contact_ig_sub">DM me anytime — fastest way to reach me</p>
-                    <a href="https://www.instagram.com/ensar_colpa_fitness/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="contact_ig_btn">Message on Instagram</a>
+                    <a href="https://www.instagram.com/ensar.colpa.fitness/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="contact_ig_btn">Message on Instagram</a>
                 </div>
             </div>
         </div>
@@ -2398,7 +2515,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Get On Track. <span data-i18n="rights_reserved">All rights reserved.</span></p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/ensar_colpa_fitness/" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/ensar.colpa.fitness/" target="_blank" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
                     <a href="#" aria-label="YouTube">
@@ -2412,13 +2529,26 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8592;</button>
-        <img id="lightboxImg" src="" alt="Gallery photo">
-        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8594;</button>
-        <div class="lightbox-counter" id="lightboxCounter"></div>
+    <!-- CONTACT POPUP -->
+    <div class="contact-popup-overlay" id="contactPopup" role="dialog" aria-modal="true" aria-labelledby="contactPopupTitle">
+        <div class="contact-popup">
+            <button class="contact-popup-close" id="contactPopupClose" aria-label="Close">&times;</button>
+            <div class="contact-popup-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3 id="contactPopupTitle" data-i18n="popup_title">Ready For A Change?</h3>
+            <p data-i18n="popup_desc">Message me now — let's start your transformation!</p>
+            <div class="contact-popup-actions">
+                <a href="https://wa.me/38762321113?text=Zdravo%20Ensar!%20Zainteresovan%2Fa%20sam%20za%20coaching%20i%20transformaciju." target="_blank" rel="noopener" class="contact-popup-btn contact-popup-wa">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    <span data-i18n="popup_wa">WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/ensar.colpa.fitness/" target="_blank" rel="noopener" class="contact-popup-btn contact-popup-ig">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    <span data-i18n="popup_ig">Instagram</span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -2426,7 +2556,7 @@
         const translations = {
             en: {
                 // Navigation
-                nav_about: 'About', nav_achievements: 'Achievements', nav_programs: 'Programs', nav_gallery: 'Gallery',
+                nav_about: 'About', nav_achievements: 'Achievements', nav_programs: 'Programs',
                 nav_transformations: 'Transformations', nav_reviews: 'Reviews', nav_contact_btn: 'Contact', nav_apply_btn: 'Apply Now',
 
                 // Hero
@@ -2506,8 +2636,6 @@
                 price_from: 'From',
                 pricing_note: 'Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €60. Full coaching packages are scoped after our discovery call.',
 
-                // Gallery
-                gallery_label: 'Gallery', gallery_title: 'In The <span>Gym</span>',
 
                 // Transformations
                 trans_label: 'Results',
@@ -2543,11 +2671,16 @@
                 // Footer
                 footer_about: 'Get On Track — holistic health and lifestyle coaching for anyone serious about looking better, feeling better, and living better. Available worldwide — in person and online.',
                 footer_quicklinks: 'Quick Links', footer_programs: 'Programs', footer_contact: 'Contact',
-                available_worldwide: 'Available Worldwide', rights_reserved: 'All rights reserved.'
+                available_worldwide: 'Available Worldwide', rights_reserved: 'All rights reserved.',
+
+                // Contact popup
+                popup_title: 'Ready For A Change?',
+                popup_desc: "Message me now — let's start your transformation!",
+                popup_wa: 'WhatsApp', popup_ig: 'Instagram'
             },
             bs: {
                 // Navigation
-                nav_about: 'O Meni', nav_achievements: 'Uspjesi', nav_programs: 'Programi', nav_gallery: 'Galerija',
+                nav_about: 'O Meni', nav_achievements: 'Uspjesi', nav_programs: 'Programi',
                 nav_transformations: 'Transformacije', nav_reviews: 'Recenzije', nav_contact_btn: 'Kontakt', nav_apply_btn: 'Prijavi Se',
 
                 // Hero
@@ -2627,8 +2760,6 @@
                 extra_3_title: 'Besplatan Razgovor',
                 extra_3_desc: 'Razgovor od 30 minuta bez obaveze. Razgovaramo o ciljevima, gdje si trenutno i koji program ti odgovara.',
 
-                // Gallery
-                gallery_label: 'Galerija', gallery_title: 'U <span>Teretani</span>',
 
                 // Transformations
                 trans_label: 'Rezultati',
@@ -2664,7 +2795,12 @@
                 // Footer
                 footer_about: 'Get On Track — holistički coaching zdravlja i lifestylea za sve koji ozbiljno žele bolji izgled, bolje zdravlje i bolji život. Dostupno svuda — uživo i online.',
                 footer_quicklinks: 'Brzi Linkovi', footer_programs: 'Programi', footer_contact: 'Kontakt',
-                available_worldwide: 'Dostupno Svuda', rights_reserved: 'Sva prava zadržana.'
+                available_worldwide: 'Dostupno Svuda', rights_reserved: 'Sva prava zadržana.',
+
+                // Contact popup
+                popup_title: 'Spreman/a Za Promjenu?',
+                popup_desc: 'Javi mi se odmah, da počnemo tvoju transformaciju!',
+                popup_wa: 'WhatsApp', popup_ig: 'Instagram'
             }
         };
 
@@ -2731,58 +2867,69 @@
             track.innerHTML += track.innerHTML;
         });
 
-        // ===== APPLY FORM: show success state on ?applied=1 redirect =====
-        if (new URLSearchParams(window.location.search).get('applied') === '1') {
+        // ===== APPLY FORM: submit via FormSubmit AJAX, show success in-place =====
+        (function () {
             const form = document.getElementById('applyForm');
             const success = document.getElementById('applySuccess');
-            if (form && success) {
-                form.style.display = 'none';
-                success.classList.add('visible');
-                document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (!form || !success) return;
+
+            // Build the AJAX endpoint from the form's action (https://formsubmit.co/EMAIL -> .../ajax/EMAIL)
+            const ajaxUrl = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+
+                try {
+                    const res = await fetch(ajaxUrl, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: new FormData(form)
+                    });
+                    const data = await res.json().catch(() => ({}));
+
+                    if (res.ok && String(data.success) === 'true') {
+                        form.style.display = 'none';
+                        success.classList.add('visible');
+                        document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        alert(data.message || 'Something went wrong. Please try again, or contact me directly on Instagram.');
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
+                    }
+                } catch (err) {
+                    alert('Network error. Please check your connection and try again.');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
+                }
+            });
+        })();
+
+        // ===== CONTACT POPUP (shows once per browser session, shortly after load) =====
+        (function () {
+            const popup = document.getElementById('contactPopup');
+            if (!popup) return;
+            const closeBtn = document.getElementById('contactPopupClose');
+
+            function closePopup() {
+                popup.classList.remove('active');
+                document.body.style.overflow = '';
             }
-        }
+            function openPopup() {
+                if (sessionStorage.getItem('contactPopupSeen')) return;
+                popup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                sessionStorage.setItem('contactPopupSeen', '1');
+            }
 
-        // ===== LIGHTBOX =====
-        const galleryImages = [];
-        let currentLightboxIndex = 0;
+            closeBtn?.addEventListener('click', closePopup);
+            popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+            });
+            popup.querySelectorAll('a').forEach(a => a.addEventListener('click', closePopup));
 
-        document.querySelectorAll('.gallery-item').forEach((item, i) => {
-            const img = item.querySelector('img');
-            galleryImages.push(img.src);
-            item.addEventListener('click', () => openLightbox(i));
-        });
-
-        function openLightbox(index) {
-            currentLightboxIndex = index;
-            const lb = document.getElementById('lightbox');
-            document.getElementById('lightboxImg').src = galleryImages[index];
-            document.getElementById('lightboxCounter').textContent = `${index + 1} / ${galleryImages.length}`;
-            lb.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function navigateLightbox(dir) {
-            currentLightboxIndex = (currentLightboxIndex + dir + galleryImages.length) % galleryImages.length;
-            document.getElementById('lightboxImg').src = galleryImages[currentLightboxIndex];
-            document.getElementById('lightboxCounter').textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
-        }
-
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeLightbox();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            const lb = document.getElementById('lightbox');
-            if (!lb.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navigateLightbox(-1);
-            if (e.key === 'ArrowRight') navigateLightbox(1);
-        });
+            setTimeout(openPopup, 3000);
+        })();
 
         // Init
         applyLang();
