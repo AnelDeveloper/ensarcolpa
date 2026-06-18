@@ -2904,21 +2904,27 @@
             });
         })();
 
-        // ===== CONTACT POPUP (shows once per browser session, shortly after load) =====
+        // ===== CONTACT POPUP (first shows shortly after load, then every 40s after each close) =====
         (function () {
             const popup = document.getElementById('contactPopup');
             if (!popup) return;
             const closeBtn = document.getElementById('contactPopupClose');
+            const REPEAT_MS = 40000;
+            let popupTimer = null;
 
+            function scheduleNext() {
+                clearTimeout(popupTimer);
+                popupTimer = setTimeout(openPopup, REPEAT_MS);
+            }
             function closePopup() {
                 popup.classList.remove('active');
                 document.body.style.overflow = '';
+                scheduleNext();
             }
             function openPopup() {
-                if (sessionStorage.getItem('contactPopupSeen')) return;
+                if (popup.classList.contains('active')) { scheduleNext(); return; }
                 popup.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                sessionStorage.setItem('contactPopupSeen', '1');
             }
 
             closeBtn?.addEventListener('click', closePopup);
