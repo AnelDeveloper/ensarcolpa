@@ -218,16 +218,26 @@
         }
 
         .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.15);
             color: var(--white);
-            padding: 6px 12px;
+            padding: 6px 14px;
             font-family: var(--font-heading);
             font-size: 0.8rem;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
             cursor: pointer;
             transition: all 0.3s;
-            min-width: 50px;
+        }
+
+        .lang-toggle .lang-globe {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
         }
 
         .lang-toggle:hover {
@@ -236,9 +246,12 @@
         }
 
         .lang-toggle-mobile {
-            padding: 6px 10px;
-            font-size: 0.75rem;
+            padding: 6px 11px;
+            font-size: 0.72rem;
+            gap: 6px;
         }
+
+        .lang-toggle-mobile .lang-globe { width: 14px; height: 14px; }
 
         /* Touch-friendly tap targets */
         @media (pointer: coarse) {
@@ -1860,12 +1873,14 @@
                 <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
                 <li><a href="#apply" class="nav-book-btn" data-i18n="nav_apply_btn">Apply Now</a></li>
                 <li><button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
-                    <span id="langCurrent">EN</span>
+                    <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="langCurrent">English</span>
                 </button></li>
             </ul>
             <div class="nav-mobile-controls">
                 <button class="lang-toggle lang-toggle-mobile" onclick="toggleLang()" aria-label="Switch language">
-                    <span id="langCurrentMobile">EN</span>
+                    <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="langCurrentMobile">English</span>
                 </button>
                 <div class="hamburger" id="hamburger" onclick="toggleNav()">
                     <span></span><span></span><span></span>
@@ -2820,11 +2835,12 @@
                 const key = el.getAttribute('data-i18n-html');
                 if (translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
             });
-            const display = currentLang.toUpperCase();
+            // Show the language the user will switch TO (not the current one)
+            const targetName = currentLang === 'en' ? 'Bosanski' : 'English';
             const lc = document.getElementById('langCurrent');
             const lcm = document.getElementById('langCurrentMobile');
-            if (lc) lc.textContent = display;
-            if (lcm) lcm.textContent = display;
+            if (lc) lc.textContent = targetName;
+            if (lcm) lcm.textContent = targetName;
         }
 
         function toggleLang() {
