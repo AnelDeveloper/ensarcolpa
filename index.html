@@ -514,8 +514,226 @@
             line-height: 1.6;
         }
 
+        /* ===== MY STORY ===== */
+        .story {
+            padding: 120px 0;
+            background: var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .story-text .story-quote {
+            margin-top: 28px;
+            padding: 20px 24px;
+            border-left: 3px solid var(--gold);
+            background: rgba(245,166,35,0.06);
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            color: var(--white);
+        }
+
+        .story-image { position: relative; }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            left: 15px;
+            bottom: 15px;
+            border: 2px solid var(--gold);
+            z-index: 0;
+        }
+
+        .story-image img {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* ===== HOLISTIC ===== */
+        .holistic {
+            padding: 120px 0;
+            background: var(--dark-light);
+        }
+
+        .holistic-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 56px;
+        }
+
+        .holistic-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .holistic-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .holistic-pillar {
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 28px 20px;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .holistic-pillar:hover { border-color: var(--gold); transform: translateY(-4px); }
+        .holistic-pillar svg { width: 32px; height: 32px; color: var(--gold); margin-bottom: 12px; }
+        .holistic-pillar h3 { font-size: 1rem; letter-spacing: 1.5px; }
+
+        .holistic-statement {
+            max-width: 760px;
+            margin: 48px auto 0;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .holistic-statement span { color: var(--gold); }
+
+        /* ===== MENTORSHIP SPOTLIGHT ===== */
+        .mentorship {
+            padding: 120px 0;
+            background: radial-gradient(ellipse at top left, rgba(196,30,30,0.12), transparent 55%), var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .mentorship-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        .mentorship-subtitle {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .mentorship-intro p.mentorship-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .mentorship-price {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 28px 0 8px;
+        }
+
+        .mentorship-price strong {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .mentorship-price span { color: var(--gray-light); font-size: 0.9rem; }
+
+        .mentorship-continue {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+
+        .mentorship-box {
+            background: var(--dark-light);
+            border: 1px solid rgba(196,30,30,0.35);
+            padding: 36px 32px;
+            position: relative;
+        }
+
+        .mentorship-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+        }
+
+        .mentorship-box h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .mentorship-box .service-features { margin: 0; }
+
+        .mentorship-goal {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1024px) {
+            .holistic-pillars { grid-template-columns: repeat(2, 1fr); }
+            .mentorship-grid { grid-template-columns: 1fr; gap: 40px; }
+            .story-grid { gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .story, .holistic, .mentorship { padding: 80px 0; }
+            .story-grid { grid-template-columns: 1fr; gap: 32px; }
+            .story-image { order: -1; }
+            .story-image img { height: 340px; }
+            .story-image::before { top: -10px; right: -10px; left: 10px; bottom: 10px; }
+            .holistic-pillars { gap: 12px; }
+            .holistic-pillar { padding: 20px 14px; }
+            .mentorship-box { padding: 28px 20px; }
+            .mentorship-price strong { font-size: 2.2rem; }
+        }
+
         /* ===== SERVICES ===== */
         .services { padding: 120px 0; }
+
+        .service-card .service-excluded {
+            font-size: 0.78rem;
+            font-style: italic;
+            color: var(--gray-light);
+            margin: -6px 0 20px;
+        }
+
+        .service-card .service-continuation {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            margin: 8px 0 0;
+        }
+
+        .service-price-request { font-size: 1.2rem; }
 
         .services-header {
             text-align: center;
@@ -1744,31 +1962,19 @@
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Foundation Program — nutrition, training, habits, supplements" },
-                    "price": "109.00",
-                    "priceCurrency": "EUR",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
+                    "itemOffered": { "@type": "Service", "name": "Start — Individual training and nutrition plan (8 weeks)" },
+                    "price": "199.00",
+                    "priceCurrency": "BAM"
                 },
                 {
                     "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Lifestyle Transformation — coaching with weekly check-ins" },
-                    "price": "229.00",
-                    "priceCurrency": "EUR",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
+                    "itemOffered": { "@type": "Service", "name": "Online Mentorship 1-on-1 — holistic approach (8 weeks)" },
+                    "price": "500.00",
+                    "priceCurrency": "BAM"
                 },
                 {
                     "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "Health Optimization — blood work, hormones, gut, sleep" },
-                    "price": "459.00",
-                    "priceCurrency": "EUR",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "month" }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": { "@type": "Service", "name": "1-on-1 In-Person Training" },
-                    "price": "79.00",
-                    "priceCurrency": "EUR",
-                    "priceSpecification": { "@type": "UnitPriceSpecification", "unitText": "session" }
+                    "itemOffered": { "@type": "Service", "name": "Personal Training In Person — 1-on-1 or small group (2–3 people)" }
                 }
             ]
         }
@@ -1834,7 +2040,7 @@
                 "name": "What does Get On Track coaching include?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Three tiers: Foundation (€109/mo) covers nutrition, training, habits, and supplements. Lifestyle Transformation (€229/mo) adds weekly check-ins and mindset coaching. Health Optimization (€459/mo) is the premium tier with blood work analysis, hormone protocols, gut health, and monthly video consultations."
+                    "text": "Three packages: Start (199 KM / 8 weeks) is an individual training and nutrition plan you follow on your own. Online Mentorship 1-on-1 (500 KM for the first 8 weeks, 400 KM for each following 8 weeks) adds unlimited written consultations, video consultations, technique control, and ongoing plan adjustments. Personal Training In Person is 1-on-1 or small-group training in the gym, price on request."
                 }
             },
             {
@@ -1868,7 +2074,8 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-i18n="nav_about">About</a></li>
                 <li><a href="#achievements" data-i18n="nav_achievements">Achievements</a></li>
-                <li><a href="#services" data-i18n="nav_programs">Programs</a></li>
+                <li><a href="#mentorship" data-i18n="nav_mentorship">Mentorship</a></li>
+                <li><a href="#services" data-i18n="nav_programs">Packages</a></li>
                 <li><a href="#transformations" data-i18n="nav_transformations">Transformations</a></li>
                 <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
                 <li><a href="#apply" class="nav-book-btn" data-i18n="nav_apply_btn">Apply Now</a></li>
@@ -1966,6 +2173,73 @@
         </div>
     </section>
 
+    <!-- MY STORY -->
+    <section class="story" id="story" aria-label="My personal health story">
+        <div class="container">
+            <div class="story-grid fade-up">
+                <div class="story-text">
+                    <p class="section-label" data-i18n="story_label">My Story</p>
+                    <h2 class="section-title" data-i18n-html="story_title">My Experience Changed My <span>Approach To Health</span></h2>
+                    <p data-i18n="story_p1">I didn't start studying health just to train others better. I started because I was searching for answers myself.</p>
+                    <p data-i18n="story_p2">Facing an autoimmune health condition, and years of searching for a solution, changed the way I see the human body. The approaches and therapies I tried didn't give me the answers I was looking for, and abroad I was even offered biological therapies, which I decided not to accept.</p>
+                    <p data-i18n="story_p3">That led me to study nutrition, digestion, stress, sleep, supplementation, and the connection between lifestyle and health much more deeply.</p>
+                    <p data-i18n="story_p4">Through my own experience and continuous learning, I developed the holistic approach I now use with my clients — built on individualization, tracking results, and understanding the person as a whole, not just their physical appearance.</p>
+                    <p class="story-quote" data-i18n="story_quote">My experience taught me that health requires the bigger picture, patience, and a willingness to ask the right questions.</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/1-6.jpeg" alt="Ensar Colpa — health and lifestyle coach" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOLISTIC APPROACH -->
+    <section class="holistic" id="holistic" aria-label="What a holistic approach means">
+        <div class="container">
+            <div class="holistic-header fade-up">
+                <p class="section-label" data-i18n="holistic_label">Holistic Approach</p>
+                <h2 class="section-title" data-i18n-html="holistic_title">Health Is More Than What We <span>See In The Mirror</span></h2>
+                <p data-i18n="holistic_p1">Our health doesn't depend only on training and nutrition. It's also shaped by sleep quality, stress levels, digestion, daily movement, recovery, and the habits we repeat day after day.</p>
+                <p data-i18n="holistic_p2">That's why I look at every client individually and connect these factors into an approach tailored to their needs and goals.</p>
+            </div>
+            <div class="holistic-pillars fade-up">
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7c-1.5-2-4.5-2.5-6-1C4 8 4.5 12 6 15s3.5 5 6 5 4.5-2 6-5 2-7 0-9c-1.5-1.5-4.5-1-6 1z"/><path d="M12 7c0-2 1-3.5 3-4"/></svg>
+                    <h3 data-i18n="pillar_nutrition">Nutrition</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/></svg>
+                    <h3 data-i18n="pillar_training">Training</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <h3 data-i18n="pillar_sleep">Sleep</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                    <h3 data-i18n="pillar_stress">Stress</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    <h3 data-i18n="pillar_digestion">Digestion</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    <h3 data-i18n="pillar_movement">Daily Movement</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg>
+                    <h3 data-i18n="pillar_recovery">Recovery</h3>
+                </div>
+                <div class="holistic-pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                    <h3 data-i18n="pillar_habits">Habits</h3>
+                </div>
+            </div>
+            <p class="holistic-statement fade-up" data-i18n-html="holistic_statement">We don't just work on helping you look better. We work on helping you <span>feel better, function better</span>, and build habits that make sense for life.</p>
+        </div>
+    </section>
+
     <!-- ACHIEVEMENTS / COMPETITIONS -->
     <section class="achievements" id="achievements" aria-label="Competition achievements">
         <div class="container">
@@ -1979,7 +2253,7 @@
                 <article class="achievement-card">
                     <div class="achievement-image">
                         <span class="achievement-medal bronze" data-i18n="achv_arnold_medal">Top 3</span>
-                        <img src="images/arnold_medal.png" alt="Ensar Colpa Top 3 at the Arnold Classic" loading="lazy">
+                        <img src="images/1-4.jpeg" alt="Ensar Colpa on stage at the Arnold Classic — Top 3" loading="lazy" style="object-position: center top;">
                     </div>
                     <div class="achievement-body">
                         <h3 class="achievement-title">Arnold Classic</h3>
@@ -2015,89 +2289,106 @@
         </div>
     </section>
 
+    <!-- ONLINE MENTORSHIP SPOTLIGHT -->
+    <section class="mentorship" id="mentorship" aria-label="Online mentorship — 8 weeks">
+        <div class="container">
+            <div class="mentorship-grid fade-up">
+                <div class="mentorship-intro">
+                    <p class="section-label" data-i18n="ment_label">Online Mentorship — 8 Weeks</p>
+                    <h2 class="section-title" data-i18n-html="ment_title">More Than Training <span>And Nutrition</span></h2>
+                    <p class="mentorship-subtitle" data-i18n="ment_subtitle">A system for improving your appearance, health, and everyday habits.</p>
+                    <p class="mentorship-desc" data-i18n="ment_desc">An individual program tailored to your goals, health condition, abilities, and daily life. With continuous tracking and direct support, we work on changes you can maintain long-term.</p>
+                    <div class="mentorship-price">
+                        <strong>500 KM</strong>
+                        <span data-i18n="ment_price_period">/ 8 weeks</span>
+                    </div>
+                    <p class="mentorship-continue" data-i18n-html="ment_continue">Continued coaching: <strong>400 KM</strong> for every following 8 weeks.</p>
+                    <a href="#apply" class="btn btn-primary" data-i18n="ment_cta" onclick="var s=document.getElementById('apply-program'); if(s) s.value='Online Mentorship 1-on-1';">Start Mentorship</a>
+                </div>
+                <div class="mentorship-box">
+                    <h3 data-i18n="ment_includes">What's Included?</h3>
+                    <ul class="service-features">
+                        <li data-i18n="ment_f1">Individual nutrition plan with precise portions and food alternatives</li>
+                        <li data-i18n="ment_f2">Personalized training plan with demonstrations, sets, reps, and intensity</li>
+                        <li data-i18n="ment_f3">Supplementation guidelines and nutritional needs</li>
+                        <li data-i18n="ment_f4">Work on sleep, recovery, digestion, stress, and daily habits</li>
+                        <li data-i18n="ment_f5">Exercise technique correction via video</li>
+                        <li data-i18n="ment_f6">Tracking of nutrition, body measurements, photos, and progress</li>
+                        <li data-i18n="ment_f7">Unlimited written consultations and 1–2 video consultations during the program</li>
+                        <li data-i18n="ment_f8">Individual plan adjustments based on progress and feedback</li>
+                    </ul>
+                    <p class="mentorship-goal" data-i18n="ment_goal">Your goal isn't just to change your body — it's to learn how to keep it healthy and functional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICES -->
     <section class="services" id="services" aria-label="Training programs and pricing">
         <div class="container">
             <div class="services-header fade-up">
-                <p class="section-label" data-i18n="programs_label">Programs</p>
-                <h2 class="section-title" data-i18n-html="programs_title">Coaching <span>Programs</span></h2>
-                <p style="color: var(--gray-light); margin-top: 12px; font-size: 0.95rem;" data-i18n="programs_intro">Three tiers built for real results — from foundational habits to full health optimization. Pick what fits where you are.</p>
+                <p class="section-label" data-i18n="programs_label">Packages</p>
+                <h2 class="section-title" data-i18n-html="programs_title">Ways To <span>Work With Me</span></h2>
+                <p style="color: var(--gray-light); margin-top: 12px; font-size: 0.95rem;" data-i18n="programs_intro">From a stand-alone individual plan to full 1-on-1 guidance — pick what fits where you are.</p>
             </div>
             <div class="services-grid services-grid-tiers">
                 <div class="service-card fade-up">
-                    <div class="service-tier-label" data-i18n="tier_1_label">Tier 1 · Foundation</div>
+                    <div class="service-tier-label" data-i18n="tier_1_label">Package 1 · Start</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                     </div>
-                    <h3 data-i18n="tier_1_title">Foundation Program</h3>
-                    <p data-i18n="tier_1_desc">Your starting point. Structured nutrition plan, training program, daily habits, and supplement guidance — all delivered through the app.</p>
+                    <h3 data-i18n="tier_1_title">Individual Plan</h3>
+                    <p data-i18n="tier_1_desc">For people who want structure and can follow the plan on their own.</p>
                     <ul class="service-features">
-                        <li data-i18n="tier_1_f1">Personalized nutrition plan</li>
-                        <li data-i18n="tier_1_f2">Custom training program</li>
-                        <li data-i18n="tier_1_f3">Habit tracking & guidance</li>
-                        <li data-i18n="tier_1_f4">Supplement recommendations</li>
-                        <li data-i18n="tier_1_f5">Web & app access</li>
+                        <li data-i18n="tier_1_f1">Individual training plan</li>
+                        <li data-i18n="tier_1_f2">Individual nutrition plan with food alternatives</li>
+                        <li data-i18n="tier_1_f3">Supplementation and basic lifestyle guidelines</li>
+                        <li data-i18n="tier_1_f4">Initial questionnaire and instructions for following the plan</li>
+                        <li data-i18n="tier_1_f5">One written progress check after four weeks</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
+                    <p class="service-excluded" data-i18n="tier_1_excluded">Does not include unlimited consultations, regular adjustments, or ongoing technique control.</p>
+                    <div class="service-price">199 KM <small data-i18n="per_8_weeks">/ 8 weeks</small></div>
                 </div>
 
                 <div class="service-card service-card-featured fade-up">
                     <div class="service-featured-badge" data-i18n="most_popular">Most Popular</div>
-                    <div class="service-tier-label" data-i18n="tier_2_label">Tier 2 · Lifestyle</div>
+                    <div class="service-tier-label" data-i18n="tier_2_label">Package 2 · Holistic Approach</div>
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
-                    <h3 data-i18n="tier_2_title">Lifestyle Transformation</h3>
-                    <p data-i18n="tier_2_desc">For sustainable change. Everything in Foundation plus mindset coaching, weekly check-ins, and lifestyle audits to make your habits stick for life.</p>
+                    <h3 data-i18n="tier_2_title">Online Mentorship 1-on-1</h3>
+                    <p data-i18n="tier_2_desc">Individual work with me, wherever you are. For people who want individual guidance, support, and an adaptive program.</p>
                     <ul class="service-features">
-                        <li data-i18n="tier_2_f1">Everything in Foundation</li>
-                        <li data-i18n="tier_2_f2">Weekly video check-ins</li>
-                        <li data-i18n="tier_2_f3">Mindset & belief coaching</li>
-                        <li data-i18n="tier_2_f4">Sleep & stress optimization</li>
-                        <li data-i18n="tier_2_f5">Adjustments based on progress</li>
+                        <li data-i18n="tier_2_f1">Comprehensive individual training and nutrition plan</li>
+                        <li data-i18n="tier_2_f2">Technique control via video and meal tracking</li>
+                        <li data-i18n="tier_2_f3">Unlimited written consultations</li>
+                        <li data-i18n="tier_2_f4">One to two video consultations</li>
+                        <li data-i18n="tier_2_f5">Tracking of measurements, photos, weight, energy, sleep, and digestion</li>
+                        <li data-i18n="tier_2_f6">Individual plan adjustments and work on sustainable habits</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price">500 KM <small data-i18n="per_first_8_weeks">/ first 8 weeks</small></div>
+                    <p class="service-continuation" data-i18n="tier_2_continue">Continued coaching: 400 KM for the following eight weeks.</p>
                 </div>
 
                 <div class="service-card service-card-premium fade-up">
-                    <div class="service-tier-label" data-i18n="tier_3_label">Tier 3 · Premium</div>
+                    <div class="service-tier-label" data-i18n="tier_3_label">Package 3 · In Person</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/></svg>
                     </div>
-                    <h3 data-i18n="tier_3_title">Health Optimization</h3>
-                    <p data-i18n="tier_3_desc">The complete package. Deep analysis of your blood work, hormones, and lifestyle markers — with a fully personalized protocol to fix them at the root.</p>
+                    <h3 data-i18n="tier_3_title">Personal Training In Person</h3>
+                    <p data-i18n="tier_3_desc">Individual work in the gym — 1-on-1 training, or in a group of 2–3 people.</p>
                     <ul class="service-features">
-                        <li data-i18n="tier_3_f1">Everything in Lifestyle</li>
-                        <li data-i18n="tier_3_f2">Blood work & lipid panel analysis</li>
-                        <li data-i18n="tier_3_f3">Hormone optimization protocol</li>
-                        <li data-i18n="tier_3_f4">Gut health & digestion plan</li>
-                        <li data-i18n="tier_3_f5">Personalized supplementation</li>
-                        <li data-i18n="tier_3_f6">Monthly 1-on-1 video consultations</li>
+                        <li data-i18n="tier_3_f1">Direct supervision during every session</li>
+                        <li data-i18n="tier_3_f2">Technique correction</li>
+                        <li data-i18n="tier_3_f3">Load adjustment and progress tracking</li>
+                        <li data-i18n="tier_3_f4">Individual nutrition and habit plans</li>
+                        <li data-i18n="tier_3_f5">Consultations</li>
                     </ul>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_month">/ month</small></div>
+                    <div class="service-price service-price-request" data-i18n="price_on_request">Price on request</div>
                 </div>
             </div>
 
-            <p class="pricing-note fade-up" data-i18n="pricing_note">Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €60. Full coaching packages are scoped after our discovery call.</p>
-
-            <div class="services-extras">
-                <div class="service-card service-card-small fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3 data-i18n="extra_1_title">1-on-1 In-Person Training</h3>
-                    <p data-i18n="extra_1_desc">Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.</p>
-                    <div class="service-price"><span data-i18n="price_from">From</span> €60 <small data-i18n="per_session">/ session</small></div>
-                </div>
-                <div class="service-card service-card-small fade-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
-                    <h3 data-i18n="extra_3_title">Free Discovery Call</h3>
-                    <p data-i18n="extra_3_desc">30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.</p>
-                    <div class="service-price" data-i18n="free">Free</div>
-                </div>
-            </div>
+            <p class="pricing-note fade-up" data-i18n="pricing_note">Not sure which package is right for you? Get in touch — the first conversation is free and we'll pick the right one together.</p>
         </div>
     </section>
 
@@ -2252,12 +2543,9 @@
                         <label for="apply-program" data-i18n="apply_field_program">Which program are you interested in?</label>
                         <select id="apply-program" name="program" required>
                             <option value="" data-i18n="apply_opt_choose">— Choose a program —</option>
-                            <option value="Foundation Program (online)" data-i18n="apply_opt_foundation">Foundation Program (online)</option>
-                            <option value="Lifestyle Transformation" data-i18n="apply_opt_lifestyle">Lifestyle Transformation</option>
-                            <option value="Health Optimization" data-i18n="apply_opt_health">Health Optimization</option>
-                            <option value="1-on-1 In-Person Training (Sarajevo)" data-i18n="apply_opt_inperson">1-on-1 In-Person Training (Sarajevo)</option>
-                            <option value="Just a meal plan" data-i18n="apply_opt_mealplan">Just a meal plan</option>
-                            <option value="Just a training program" data-i18n="apply_opt_trainingonly">Just a training program</option>
+                            <option value="Start — Individual Plan (199 KM)" data-i18n="apply_opt_start">Start — Individual Plan (199 KM / 8 weeks)</option>
+                            <option value="Online Mentorship 1-on-1" data-i18n="apply_opt_mentorship">Online Mentorship 1-on-1 (500 KM / 8 weeks)</option>
+                            <option value="Personal Training In Person (Sarajevo)" data-i18n="apply_opt_inperson">Personal Training In Person (Sarajevo)</option>
                             <option value="Not sure — recommend something" data-i18n="apply_opt_unsure">Not sure — recommend something</option>
                         </select>
                     </div>
@@ -2503,10 +2791,9 @@
                 <div>
                     <h4 data-i18n="footer_programs">Programs</h4>
                     <ul>
-                        <li><a href="#services" data-i18n="tier_1_title">Foundation Program</a></li>
-                        <li><a href="#services" data-i18n="tier_2_title">Lifestyle Transformation</a></li>
-                        <li><a href="#services" data-i18n="tier_3_title">Health Optimization</a></li>
-                        <li><a href="#services" data-i18n="extra_1_title">In-Person Training</a></li>
+                        <li><a href="#services" data-i18n="tier_1_title">Individual Plan</a></li>
+                        <li><a href="#mentorship" data-i18n="tier_2_title">Online Mentorship 1-on-1</a></li>
+                        <li><a href="#services" data-i18n="tier_3_title">Personal Training In Person</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2571,7 +2858,7 @@
         const translations = {
             en: {
                 // Navigation
-                nav_about: 'About', nav_achievements: 'Achievements', nav_programs: 'Programs',
+                nav_about: 'About', nav_achievements: 'Achievements', nav_mentorship: 'Mentorship', nav_programs: 'Packages',
                 nav_transformations: 'Transformations', nav_reviews: 'Reviews', nav_contact_btn: 'Contact', nav_apply_btn: 'Apply Now',
 
                 // Hero
@@ -2601,12 +2888,9 @@
                 apply_field_email: 'Email', apply_field_phone: 'Phone / WhatsApp',
                 apply_field_program: 'Which program are you interested in?',
                 apply_opt_choose: '— Choose a program —',
-                apply_opt_foundation: 'Foundation Program (online)',
-                apply_opt_lifestyle: 'Lifestyle Transformation',
-                apply_opt_health: 'Health Optimization',
-                apply_opt_inperson: '1-on-1 In-Person Training (Sarajevo)',
-                apply_opt_mealplan: 'Just a meal plan',
-                apply_opt_trainingonly: 'Just a training program',
+                apply_opt_start: 'Start — Individual Plan (199 KM / 8 weeks)',
+                apply_opt_mentorship: 'Online Mentorship 1-on-1 (500 KM / 8 weeks)',
+                apply_opt_inperson: 'Personal Training In Person (Sarajevo)',
                 apply_opt_unsure: 'Not sure — recommend something',
                 apply_field_goal: 'Your goal & current situation',
                 apply_submit: 'Send My Application',
@@ -2622,34 +2906,71 @@
                 about_feat_1: 'FASTO Graduate', about_feat_2: 'Health & Lifestyle', about_feat_3: 'Custom Nutrition',
                 about_feat_4: 'Mindset Coaching', about_feat_5: 'Sleep & Recovery', about_feat_6: 'Online & In-Person',
 
-                // Programs
-                programs_label: 'Programs',
-                programs_title: 'Coaching <span>Programs</span>',
-                programs_intro: 'Three tiers built for real results — from foundational habits to full health optimization. Pick what fits where you are.',
-                most_popular: 'Most Popular', per_month: '/ month', per_session: '/ session', free: 'Free',
+                // My story
+                story_label: 'My Story',
+                story_title: 'My Experience Changed My <span>Approach To Health</span>',
+                story_p1: "I didn't start studying health just to train others better. I started because I was searching for answers myself.",
+                story_p2: "Facing an autoimmune health condition, and years of searching for a solution, changed the way I see the human body. The approaches and therapies I tried didn't give me the answers I was looking for, and abroad I was even offered biological therapies, which I decided not to accept.",
+                story_p3: 'That led me to study nutrition, digestion, stress, sleep, supplementation, and the connection between lifestyle and health much more deeply.',
+                story_p4: 'Through my own experience and continuous learning, I developed the holistic approach I now use with my clients — built on individualization, tracking results, and understanding the person as a whole, not just their physical appearance.',
+                story_quote: 'My experience taught me that health requires the bigger picture, patience, and a willingness to ask the right questions.',
 
-                tier_1_label: 'Tier 1 · Foundation', tier_1_title: 'Foundation Program',
-                tier_1_desc: 'Your starting point. Structured nutrition plan, training program, daily habits, and supplement guidance — all delivered through the app.',
-                tier_1_f1: 'Personalized nutrition plan', tier_1_f2: 'Custom training program',
-                tier_1_f3: 'Habit tracking & guidance', tier_1_f4: 'Supplement recommendations', tier_1_f5: 'Web & app access',
+                // Holistic approach
+                holistic_label: 'Holistic Approach',
+                holistic_title: 'Health Is More Than What We <span>See In The Mirror</span>',
+                holistic_p1: "Our health doesn't depend only on training and nutrition. It's also shaped by sleep quality, stress levels, digestion, daily movement, recovery, and the habits we repeat day after day.",
+                holistic_p2: "That's why I look at every client individually and connect these factors into an approach tailored to their needs and goals.",
+                holistic_statement: "We don't just work on helping you look better. We work on helping you <span>feel better, function better</span>, and build habits that make sense for life.",
+                pillar_nutrition: 'Nutrition', pillar_training: 'Training', pillar_sleep: 'Sleep', pillar_stress: 'Stress',
+                pillar_digestion: 'Digestion', pillar_movement: 'Daily Movement', pillar_recovery: 'Recovery', pillar_habits: 'Habits',
 
-                tier_2_label: 'Tier 2 · Lifestyle', tier_2_title: 'Lifestyle Transformation',
-                tier_2_desc: 'For sustainable change. Everything in Foundation plus mindset coaching, weekly check-ins, and lifestyle audits to make your habits stick for life.',
-                tier_2_f1: 'Everything in Foundation', tier_2_f2: 'Weekly video check-ins',
-                tier_2_f3: 'Mindset & belief coaching', tier_2_f4: 'Sleep & stress optimization', tier_2_f5: 'Adjustments based on progress',
+                // Online mentorship spotlight
+                ment_label: 'Online Mentorship — 8 Weeks',
+                ment_title: 'More Than Training <span>And Nutrition</span>',
+                ment_subtitle: 'A system for improving your appearance, health, and everyday habits.',
+                ment_desc: 'An individual program tailored to your goals, health condition, abilities, and daily life. With continuous tracking and direct support, we work on changes you can maintain long-term.',
+                ment_price_period: '/ 8 weeks',
+                ment_continue: 'Continued coaching: <strong>400 KM</strong> for every following 8 weeks.',
+                ment_cta: 'Start Mentorship',
+                ment_includes: "What's Included?",
+                ment_f1: 'Individual nutrition plan with precise portions and food alternatives',
+                ment_f2: 'Personalized training plan with demonstrations, sets, reps, and intensity',
+                ment_f3: 'Supplementation guidelines and nutritional needs',
+                ment_f4: 'Work on sleep, recovery, digestion, stress, and daily habits',
+                ment_f5: 'Exercise technique correction via video',
+                ment_f6: 'Tracking of nutrition, body measurements, photos, and progress',
+                ment_f7: 'Unlimited written consultations and 1–2 video consultations during the program',
+                ment_f8: 'Individual plan adjustments based on progress and feedback',
+                ment_goal: "Your goal isn't just to change your body — it's to learn how to keep it healthy and functional.",
 
-                tier_3_label: 'Tier 3 · Premium', tier_3_title: 'Health Optimization',
-                tier_3_desc: 'The complete package. Deep analysis of your blood work, hormones, and lifestyle markers — with a fully personalized protocol to fix them at the root.',
-                tier_3_f1: 'Everything in Lifestyle', tier_3_f2: 'Blood work & lipid panel analysis',
-                tier_3_f3: 'Hormone optimization protocol', tier_3_f4: 'Gut health & digestion plan',
-                tier_3_f5: 'Personalized supplementation', tier_3_f6: 'Monthly 1-on-1 video consultations',
+                // Packages
+                programs_label: 'Packages',
+                programs_title: 'Ways To <span>Work With Me</span>',
+                programs_intro: 'From a stand-alone individual plan to full 1-on-1 guidance — pick what fits where you are.',
+                most_popular: 'Most Popular', per_8_weeks: '/ 8 weeks', per_first_8_weeks: '/ first 8 weeks', price_on_request: 'Price on request',
 
-                extra_1_title: '1-on-1 In-Person Training',
-                extra_1_desc: 'Hands-on coaching with real-time form correction. Perfect for local clients who want direct guidance.',
-                extra_3_title: 'Free Discovery Call',
-                extra_3_desc: '30-minute no-commitment call. Discuss your goals, assess where you are, and pick the right program for you.',
-                price_from: 'From',
-                pricing_note: 'Pricing is fully custom and depends on what you need. Simple plans like a stand-alone training program or meal plan start at €60. Full coaching packages are scoped after our discovery call.',
+                tier_1_label: 'Package 1 · Start', tier_1_title: 'Individual Plan',
+                tier_1_desc: 'For people who want structure and can follow the plan on their own.',
+                tier_1_f1: 'Individual training plan', tier_1_f2: 'Individual nutrition plan with food alternatives',
+                tier_1_f3: 'Supplementation and basic lifestyle guidelines', tier_1_f4: 'Initial questionnaire and instructions for following the plan',
+                tier_1_f5: 'One written progress check after four weeks',
+                tier_1_excluded: 'Does not include unlimited consultations, regular adjustments, or ongoing technique control.',
+
+                tier_2_label: 'Package 2 · Holistic Approach', tier_2_title: 'Online Mentorship 1-on-1',
+                tier_2_desc: 'Individual work with me, wherever you are. For people who want individual guidance, support, and an adaptive program.',
+                tier_2_f1: 'Comprehensive individual training and nutrition plan', tier_2_f2: 'Technique control via video and meal tracking',
+                tier_2_f3: 'Unlimited written consultations', tier_2_f4: 'One to two video consultations',
+                tier_2_f5: 'Tracking of measurements, photos, weight, energy, sleep, and digestion',
+                tier_2_f6: 'Individual plan adjustments and work on sustainable habits',
+                tier_2_continue: 'Continued coaching: 400 KM for the following eight weeks.',
+
+                tier_3_label: 'Package 3 · In Person', tier_3_title: 'Personal Training In Person',
+                tier_3_desc: 'Individual work in the gym — 1-on-1 training, or in a group of 2–3 people.',
+                tier_3_f1: 'Direct supervision during every session', tier_3_f2: 'Technique correction',
+                tier_3_f3: 'Load adjustment and progress tracking', tier_3_f4: 'Individual nutrition and habit plans',
+                tier_3_f5: 'Consultations',
+
+                pricing_note: "Not sure which package is right for you? Get in touch — the first conversation is free and we'll pick the right one together.",
 
 
                 // Transformations
@@ -2695,7 +3016,7 @@
             },
             bs: {
                 // Navigation
-                nav_about: 'O Meni', nav_achievements: 'Uspjesi', nav_programs: 'Programi',
+                nav_about: 'O Meni', nav_achievements: 'Uspjesi', nav_mentorship: 'Mentorstvo', nav_programs: 'Paketi',
                 nav_transformations: 'Transformacije', nav_reviews: 'Recenzije', nav_contact_btn: 'Kontakt', nav_apply_btn: 'Prijavi Se',
 
                 // Hero
@@ -2725,12 +3046,9 @@
                 apply_field_email: 'Email', apply_field_phone: 'Telefon / WhatsApp',
                 apply_field_program: 'Za koji program si zainteresovan/a?',
                 apply_opt_choose: '— Odaberi program —',
-                apply_opt_foundation: 'Foundation Program (online)',
-                apply_opt_lifestyle: 'Lifestyle Transformacija',
-                apply_opt_health: 'Health Optimization',
-                apply_opt_inperson: '1-na-1 Trening Uživo (Sarajevo)',
-                apply_opt_mealplan: 'Samo jelovnik',
-                apply_opt_trainingonly: 'Samo trening program',
+                apply_opt_start: 'Start — Individualni plan (199 KM / 8 sedmica)',
+                apply_opt_mentorship: 'Online mentorstvo 1 na 1 (500 KM / 8 sedmica)',
+                apply_opt_inperson: 'Personalni treninzi uživo (Sarajevo)',
                 apply_opt_unsure: 'Nisam siguran/na — preporuči nešto',
                 apply_field_goal: 'Tvoj cilj i trenutna situacija',
                 apply_submit: 'Pošalji Prijavu',
@@ -2746,34 +3064,70 @@
                 about_feat_1: 'FASTO Diplomirani', about_feat_2: 'Zdravlje i Lifestyle', about_feat_3: 'Personalizovana Ishrana',
                 about_feat_4: 'Mindset Coaching', about_feat_5: 'San i Oporavak', about_feat_6: 'Online i Uživo',
 
-                // Programs
-                programs_label: 'Programi',
-                programs_title: 'Coaching <span>Programi</span>',
-                programs_intro: 'Tri nivoa napravljena za prave rezultate — od osnovnih navika do potpune optimizacije zdravlja. Odaberi ono što ti odgovara.',
-                most_popular: 'Najpopularniji', per_month: '/ mjesec', per_session: '/ sesija', free: 'Besplatno',
-                price_from: 'Od',
-                pricing_note: 'Cijene su potpuno prilagođene tvojim potrebama. Jednostavni planovi — samo trening program ili samo jelovnik — kreću od €60. Kompletni coaching paketi se dogovaraju nakon besplatnog razgovora.',
+                // Moja priča
+                story_label: 'Moja Priča',
+                story_title: 'Moje Iskustvo Promijenilo Je <span>Moj Pristup Zdravlju</span>',
+                story_p1: 'Nisam počeo proučavati zdravlje samo da bih bolje trenirao druge. Počeo sam jer sam i sam tražio odgovore.',
+                story_p2: 'Suočavanje s autoimunim zdravstvenim problemom i dugogodišnja potraga za rješenjem promijenili su moj pogled na ljudsko tijelo. Dosadašnji pristupi i terapije nisu mi pružili odgovore koje sam tražio, a u inostranstvu su mi ponuđene i biološke terapije koje sam odlučio ne prihvatiti.',
+                story_p3: 'To me navelo da dublje proučavam ishranu, probavu, stres, san, suplementaciju i povezanost životnih navika sa zdravljem.',
+                story_p4: 'Kroz vlastito iskustvo i kontinuirano učenje razvio sam holistički pristup koji danas primjenjujem i u radu s klijentima, uz individualizaciju, praćenje rezultata i razumijevanje osobe kao cjeline, a ne samo njenog fizičkog izgleda.',
+                story_quote: 'Moje iskustvo me naučilo da zdravlje zahtijeva širu sliku, strpljenje i spremnost da postavljamo prava pitanja.',
 
-                tier_1_label: 'Nivo 1 · Foundation', tier_1_title: 'Foundation Program',
-                tier_1_desc: 'Tvoja polazna tačka. Strukturiran plan ishrane, trening program, dnevne navike i preporuke za suplementaciju — sve kroz aplikaciju.',
-                tier_1_f1: 'Personalizovan plan ishrane', tier_1_f2: 'Prilagođen trening program',
-                tier_1_f3: 'Praćenje navika', tier_1_f4: 'Preporuke za suplemente', tier_1_f5: 'Pristup web i app-u',
+                // Holistički pristup
+                holistic_label: 'Holistički Pristup',
+                holistic_title: 'Zdravlje Je Više Od Onoga Što Vidimo <span>U Ogledalu</span>',
+                holistic_p1: 'Naše zdravlje ne zavisi samo od treninga i ishrane. Na njega utiču i kvalitet sna, nivo stresa, probava, svakodnevno kretanje, oporavak i navike koje ponavljamo iz dana u dan.',
+                holistic_p2: 'Zato svakog klijenta posmatram individualno i povezujem ove faktore u pristup prilagođen njegovim potrebama i ciljevima.',
+                holistic_statement: 'Ne radimo samo na tome da izgledaš bolje. Radimo na tome da se <span>osjećaš bolje, funkcionišeš bolje</span> i izgradiš navike koje imaju smisla za cijeli život.',
+                pillar_nutrition: 'Ishrana', pillar_training: 'Trening', pillar_sleep: 'San', pillar_stress: 'Stres',
+                pillar_digestion: 'Probava', pillar_movement: 'Kretanje', pillar_recovery: 'Oporavak', pillar_habits: 'Navike',
 
-                tier_2_label: 'Nivo 2 · Lifestyle', tier_2_title: 'Lifestyle Transformacija',
-                tier_2_desc: 'Za održivu promjenu. Sve iz Foundation plus mindset coaching, sedmični check-in i analiza lifestyla da tvoje navike traju cijeli život.',
-                tier_2_f1: 'Sve iz Foundation programa', tier_2_f2: 'Sedmični video razgovori',
-                tier_2_f3: 'Mindset coaching', tier_2_f4: 'Optimizacija sna i stresa', tier_2_f5: 'Prilagodbe prema napretku',
+                // Online mentorstvo
+                ment_label: 'Online Mentorstvo — 8 Sedmica',
+                ment_title: 'Više Od Treninga <span>I Ishrane</span>',
+                ment_subtitle: 'Sistem za unapređenje izgleda, zdravlja i životnih navika.',
+                ment_desc: 'Individualni program prilagođen tvojim ciljevima, zdravstvenom stanju, mogućnostima i svakodnevnom životu. Uz kontinuirano praćenje i direktnu podršku, radimo na promjenama koje možeš dugoročno održati.',
+                ment_price_period: '/ 8 sedmica',
+                ment_continue: 'Nastavak saradnje: <strong>400 KM</strong> za svakih narednih 8 sedmica.',
+                ment_cta: 'Započni Mentorstvo',
+                ment_includes: 'Šta uključuje?',
+                ment_f1: 'Individualni plan ishrane s preciznim gramažama i alternativama namirnica',
+                ment_f2: 'Personalizirani plan treninga s demonstracijama, serijama, ponavljanjima i intenzitetom',
+                ment_f3: 'Smjernice za suplementaciju i nutritivne potrebe',
+                ment_f4: 'Rad na snu, oporavku, probavi, stresu i svakodnevnim navikama',
+                ment_f5: 'Korekciju tehnike vježbanja putem videozapisa',
+                ment_f6: 'Praćenje ishrane, tjelesnih mjera, fotografija i napretka',
+                ment_f7: 'Neograničene pisane konsultacije i 1–2 videokonsultacije tokom programa',
+                ment_f8: 'Individualne korekcije plana prema napretku i povratnim informacijama',
+                ment_goal: 'Tvoj cilj nije samo promijeniti tijelo, nego naučiti kako da ga održavaš zdravim i funkcionalnim.',
 
-                tier_3_label: 'Nivo 3 · Premium', tier_3_title: 'Health Optimization',
-                tier_3_desc: 'Kompletan paket. Detaljna analiza krvne slike, hormona i lifestyle markera — sa potpuno personalizovanim protokolom da to popraviš iz korijena.',
-                tier_3_f1: 'Sve iz Lifestyle programa', tier_3_f2: 'Analiza krvne slike i lipidnog panela',
-                tier_3_f3: 'Protokol za optimizaciju hormona', tier_3_f4: 'Plan za zdravlje crijeva i digestiju',
-                tier_3_f5: 'Personalizovana suplementacija', tier_3_f6: 'Mjesečne 1-na-1 video konsultacije',
+                // Paketi
+                programs_label: 'Paketi',
+                programs_title: 'Načini <span>Saradnje</span>',
+                programs_intro: 'Od samostalnog individualnog plana do potpunog vođenja 1 na 1 — odaberi ono što ti odgovara.',
+                most_popular: 'Najpopularniji', per_8_weeks: '/ 8 sedmica', per_first_8_weeks: '/ prvih 8 sedmica', price_on_request: 'Cijena na upit',
+                pricing_note: 'Nisi siguran/na koji paket ti odgovara? Javi se — prvi razgovor je besplatan i zajedno ćemo odabrati pravi.',
 
-                extra_1_title: '1-na-1 Trening Uživo',
-                extra_1_desc: 'Direktan coaching uživo sa korekcijom forme u realnom vremenu. Idealno za lokalne klijente.',
-                extra_3_title: 'Besplatan Razgovor',
-                extra_3_desc: 'Razgovor od 30 minuta bez obaveze. Razgovaramo o ciljevima, gdje si trenutno i koji program ti odgovara.',
+                tier_1_label: 'Paket 1 · Start', tier_1_title: 'Individualni Plan',
+                tier_1_desc: 'Za osobe koje žele strukturu i mogu samostalno provoditi plan.',
+                tier_1_f1: 'Individualni plan treninga', tier_1_f2: 'Individualni plan ishrane s alternativama namirnica',
+                tier_1_f3: 'Smjernice za suplementaciju i osnovne životne navike', tier_1_f4: 'Početni upitnik i upute za provođenje plana',
+                tier_1_f5: 'Jedna pisana provjera napretka nakon četiri sedmice',
+                tier_1_excluded: 'Bez neograničenih konsultacija, redovnih korekcija i kontinuirane kontrole tehnike.',
+
+                tier_2_label: 'Paket 2 · Holistički pristup', tier_2_title: 'Online Mentorstvo 1 Na 1',
+                tier_2_desc: 'Individualan rad sa mnom, gdje god da se nalaziš. Za osobe koje žele individualno vođenje, podršku i prilagođavanje programa.',
+                tier_2_f1: 'Sveobuhvatan individualni plan treninga i ishrane', tier_2_f2: 'Kontrola tehnike putem videozapisa i praćenje obroka',
+                tier_2_f3: 'Neograničene pisane konsultacije', tier_2_f4: 'Jedna do dvije videokonsultacije',
+                tier_2_f5: 'Praćenje mjera, fotografija, težine, energije, sna i probave',
+                tier_2_f6: 'Individualne korekcije plana i rad na održivim navikama',
+                tier_2_continue: 'Nastavak saradnje: 400 KM za narednih osam sedmica.',
+
+                tier_3_label: 'Paket 3 · Uživo', tier_3_title: 'Personalni Treninzi Uživo',
+                tier_3_desc: 'Individualni rad u teretani — trening 1 na 1 ili u grupi od 2–3 osobe.',
+                tier_3_f1: 'Direktan nadzor tokom svakog treninga', tier_3_f2: 'Korekcija tehnike',
+                tier_3_f3: 'Prilagođavanje opterećenja i praćenje napretka', tier_3_f4: 'Individualni planovi ishrane i navika',
+                tier_3_f5: 'Konsultacije',
 
 
                 // Transformations
